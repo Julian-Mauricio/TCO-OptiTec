@@ -1,0 +1,82 @@
+nav{
+    position: fixed;
+}
+#Logo img{
+    width: 100%;
+    height: 40px;
+}
+#ContenedorCabecera{
+    margin-bottom: 0.01rem;
+}
+#ContenedorCarousel h5{
+
+    color:#FFBF00;
+    font-family: "Helvetica", Sans-serif;
+    font-size: 40px
+}
+#ContenedorCarousel p{
+    color:black;
+    font-family: "Helvetica", Sans-serif;
+    font-size: 18px;
+}
+#ContenedorCarousel img{
+    opacity: .5;
+}
+#ContenedorCarousel a{
+    background-color:black;
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid#FFBF00;
+    text-decoration: none;
+    font-size: 18px;
+    color:  #FFBF00;
+}
+#ContenedorCarousel a:hover{
+    background-color: #FFBF00;
+    padding: .5rem;
+    border-radius: 5px;
+    border: 1px solid#FFBF00;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+.carousel-item{
+    max-height:20rem;
+}
+#ContenedorContenido{
+    background-color: #F2EAD3;
+}
+.box-shadow{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    box-sizing: 1px;
+    border-radius: 20px;
+    padding: 30px 50px 30px 50px;
+    border: none;
+}
+#imagenContenido{
+   width: 18rem;
+   height: 14rem;
+   border-radius: 5px;
+}
+#LogoFooter{
+    width: 150px;
+    height: 60px;
+}
+.color{
+    color: #FFBF00;
+}
+#Cotizar{
+    color: #FFBF00;
+    background-color: black;
+    border-radius: 5px;
+    border:2px solid #FFBF00;
+    padding: 5px;
+}
+#Cotizar:hover{
+    color: black;
+    background-color: #FFBF00;
+    border-radius: 5px;
+    border:2px solid #FFBF00;
+    padding: 5px;
+}
