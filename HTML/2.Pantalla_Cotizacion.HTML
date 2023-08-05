@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="/FRONTEND/2.Diseño_Pantalla_Cotizacion.css">
+  <title>COTIZACIONES-TCO-OPTITECT</title>
+</head>
+
+<body>
+
+  <header>
+
+    <!-------------------------------- Contenido Navegacion -------------------------------->
+
+    <section>
+      <nav class="navbar navbar-expand-md navbar-dark  bg-dark fixed-top">
+        <div class="container-fluid">
+          <!--logo-->
+          <a id="Logo" class="navbar-brand" href="/HTML/1.Pantalla_Principal.HTML"><img src="/IMAGES/Logo.png"></a>
+          <!--boton del menu-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--elementos del menu colapsable-->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link active" href="/HTML/1.Pantalla_Principal.HTML">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="">Informacion de la Compañia</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbar-Dropdown" role="button"
+                  data-bs-toggle="dropdown" href="">Mi Cuenta</a>
+                <ul id="dropdown-menu" class="dropdown-menu bg-dark">
+                  <li><button class="btn w-100 btn-dark text-white" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdropLogin">Inicio de Sesion</button></li>
+                  <li><button class="w-100 btn btn-dark text-white" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdropCrearCuenta">Crea tu Cuenta</button></li>
+                </ul>
+              </li>
+            </ul>
+            <hr class="text-white-50">
+            <!-------------------------------- enlaces redes sociales -------------------------------->
+            <ul class="navbar-nav flex-row flex-wrap text-light">
+              <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
+                    class="bi bi-facebook text-light"><small class="d-md-none ms-2">Facebook</small></i></a></li>
+              <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
+                    class="bi bi-instagram text-light"><small class="d-md-none ms-2">Instagram</small></i></a></li>
+              <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
+                    class="bi bi-twitter text-light"><small class="d-md-none ms-2">Twitter</small></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+  </header>
+
+  <main>
+
+    <!-------------------------------- Contenido Principal -------------------------------->
+
+    <section>
+      <div class="container">
+        <div id="ContenedorCotizaciones" class="row p-4">
+          <div class="col-lg-6 col-md-6 d-none d-lg-block">
+            <img src="/IMAGES/Apartado - Cotizacion.jpg" width="100%" height="100%" alt="" srcset="">
+          </div>
+          <div class="col-md-6 d-none d-md-block d-lg-none">
+            <img src="/IMAGES/Apartado - Cotizacion - PMD.jpg" width="100%" height="100%" alt="" srcset="">
+          </div>
+          <div class="col-sm-6">
+            <form>
+              <div class="mb-3">
+                <label for="input1" class="form-label">Nombre de la Empresa</label>
+                <input type="text" class="form-control" id="input1">
+              </div>
+              <div class="mb-3">
+                <label for="input2" class="form-label">Nit</label>
+                <input type="text" class="form-control" id="input2">
+              </div>
+              <div class="mb-3">
+                <label for="input3" class="form-label">Email</label>
+                <input type="text" class="form-control" id="input3">
+              </div>
+              <div class="mb-3">
+                <label for="input5" class="form-label">Medida de Caseton Alto</label>
+                <input type="text" class="form-control" id="input5">
+              </div>
+              <div class="mb-3">
+                <label for="input6" class="form-label">Medida de Caseton Largo</label>
+                <input type="text" class="form-control" id="input6">
+              </div>
+              <div class="mb-3">
+                <label for="input6" class="form-label">Medida de Caseton Ancho</label>
+                <input type="text" class="form-control" id="input6">
+              </div>
+              <div class="mb-3">
+                <label for="input6" class="form-label">Tipo de Acabado</label>
+                <select>
+                  <option value="Liso">Liso</option>
+                  <option value="Texturizado">Texturizado</option>
+                </select>
+                <label for="input6" class="form-label">Tipo de Material</label>
+                <select>
+                  <option value="Polistireno">Polistireno expandido</option>
+                  <option value="Madera">Madera</option>
+                </select>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-warning">Enviar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-------------------------------- Contenido Footer -------------------------------->
+
+  <footer>
+
+    <section>
+      <div class="container-fluid bg-dark">
+        <div class="row  p-5">
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <img class="h3 mb-3" id="LogoFooter" src="/IMAGES/Logo.png">
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3 mb-4">
+            <p class="TextoTituloFooter h5 mb-3">Ubicacion</p>
+            <div class="mb-2">
+              <p class="text-white">Ibague, Colombia</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-white">Avenida Principal 123</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3 mb-4">
+            <p class=" TextoTituloFooter h5 mb-3">Contactanos</p>
+            <div class="mb-2">
+              <p class="text-white">+1 555-123-4567</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-white">+44 777-987-6543</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-white">Casetones@TCO-OptiTec.com</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-6 col-lg-3">
+            <h1 id="BotonCotizarFooter" class="h5 mb-3 text-decoration-none">Siguenos en nuestras redes sociales</h1>
+            <div class="mb-2 mt-4">
+              <a class="text-white text-decoration-none" href=""><i class="bi bi-facebook text-light"><small
+                    class=" ms-2">Facebook</small></i></a>
+            </div>
+            <div class="mb-2 mt-2">
+              <a class="text-white text-decoration-none" href=""><i class="bi bi-instagram text-light"><small
+                    class=" ms-2">Instagram</small></i></a>
+            </div>
+            <div class="mb-2 mt-2">
+              <a class="text-white text-decoration-none" href=""><i class="bi bi-twitter text-light"><small
+                    class=" ms-2">Twitter</small></i></a>
+            </div>
+          </div>
+          <div class="pt-5">
+            <p class="text-white text-center">Copyright - All rights reserved © 2023</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </footer>
+
+  <script src="/BACKEND/INDEX1.JS"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

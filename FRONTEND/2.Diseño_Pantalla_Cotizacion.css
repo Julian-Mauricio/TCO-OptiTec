@@ -1,0 +1,55 @@
+/*NAVEGACION*/
+
+#Logo img {
+    width: 100%;
+    height: 40px;
+}
+
+/*pop up*/
+
+.modal-header h1 {
+    margin-left: 140px;
+}
+
+.modal-body input {
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+#dropdown-menu button:hover {
+    background-color: #20262E;
+}
+
+header {
+    margin-bottom: 10rem;
+}
+
+main {
+    margin-bottom: 7rem;
+}
+
+/*CONTENIDO*/
+
+#ContenedorCotizaciones {
+    -webkit-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
+    box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
+}
+
+/*FOOTER*/
+
+#LogoFooter {
+    width: 150px;
+    height: 60px;
+}
+
+.TextoTituloFooter {
+    color: #FFBF00;
+}
+
+#BotonCotizarFooter {
+    color: #FFBF00;
+    border-radius: 5px;
+    padding: 5px;
+}
+

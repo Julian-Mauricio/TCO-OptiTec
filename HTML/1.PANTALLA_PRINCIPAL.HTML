@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
@@ -13,202 +13,228 @@
 </head>
 
 <body>
-  <header id="ContenedorCabecera">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <div class="container-fluid">
-        <!--logo-->
-        <a id="Logo" class="navbar-brand" href="1.PANTALLA_PRINCIPAL.HTML"><img src="/IMAGES/Logo.png"></a>
-        <!--boton del menu-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!--elementos del menu colapsable-->
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link active" href="">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="">Informacion de la Compañia</a></li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbar-Dropdown" role="button"
-                data-bs-toggle="dropdown" href="">Mi Cuenta</a>
-              <ul id="dropdown-menu" class="dropdown-menu bg-dark">
-                <li><button class="btn w-100 btn-dark text-white" data-bs-toggle="modal" data-bs-target="#staticBackdropLogin"
-                   >Inicio de Sesion</button></li>
-                <li><button class="w-100 btn btn-dark text-white" data-bs-toggle="modal" data-bs-target="#staticBackdropCrearCuenta">Crea tu Cuenta</button></li>
-              </ul>
-            </li>
-          </ul>
-          <hr class="text-white-50">
-          <!-- enlaces redes sociales -->
-          <ul class="navbar-nav flex-row flex-wrap text-light">
-            <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
-                  class="bi bi-facebook text-light"><small class="d-md-none ms-2">Facebook</small></i></a></li>
-            <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
-                  class="bi bi-instagram text-light"><small class="d-md-none ms-2">Instagram</small></i></a></li>
-            <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
-                  class="bi bi-twitter text-light"><small class="d-md-none ms-2">Twitter</small></i></a></li>
-          </ul>
-          <!-- boton Informaion -->
-          <form class="d-flex"></form>
-          <button class="btn btn-outline-warning d-none d-md-inline-block" type="submit">Cotiza</button>
-        </div>
-      </div>
-    </nav>
 
-    <!-- Button trigger modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content bg-warning-subtle text-emphasis-danger">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">INICIO DE SESION</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form class="text-center" action="">
-              <label for="UsernameLogin1">
-                <i class="bi bi-person-fill p-1"></i>NOMBRE DE USUARIO :
-                
-              </label>
-              <div class="mb-4"><input id="UsernameLogin1" placeholder="Username" type="text" required></div>
+  <header>
 
-              <label for="PaswordLogin1">
-                <i class="bi bi-key-fill p-1"></i>CONTRASEÑA :
-                
-              </label>
-              <div class="mb-5"><input id="PaswordLogin1" placeholder="Pasword" type="password" required></div>
+    <!-------------------------------- Contenido Navegacion -------------------------------->
+
+    <section>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <!--logo-->
+          <a id="Logo" class="navbar-brand" href="/HTML/1.Pantalla_Principal.HTML"><img src="/IMAGES/Logo.png"></a>
+          <!--boton del menu-->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!--elementos del menu colapsable-->
+          <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link active" href="/HTML/1.Pantalla_Principal.HTML">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="">Informacion de la Compañia</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbar-Dropdown" role="button"
+                  data-bs-toggle="dropdown" href="">Mi Cuenta</a>
+                <ul id="dropdown-menu" class="dropdown-menu bg-dark">
+                  <li><button class="btn w-100 btn-dark text-white" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdropLogin">Inicio de Sesion</button></li>
+                  <li><button class="w-100 btn btn-dark text-white" data-bs-toggle="modal"
+                      data-bs-target="#staticBackdropCrearCuenta">Crea tu Cuenta</button></li>
+                </ul>
+              </li>
+            </ul>
+            <hr class="text-white-50">
+            <!-------------------------------- enlaces redes sociales -------------------------------->
+            <ul class="navbar-nav flex-row flex-wrap text-light">
+              <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
+                    class="bi bi-facebook text-light"><small class="d-md-none ms-2">Facebook</small></i></a></li>
+              <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
+                    class="bi bi-instagram text-light"><small class="d-md-none ms-2">Instagram</small></i></a></li>
+              <li class="nav-item col-6 col-md-auto p-3"><a href="" class="text-decoration-none"><i
+                    class="bi bi-twitter text-light"><small class="d-md-none ms-2">Twitter</small></i></a></li>
+            </ul>
+            <!-------------------------------- boton Cotizar -------------------------------->
             
-              <div>
-                <a class="text-decoration-none text-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdropCrearCuenta">NO TENGO CUENTA !!!</a>
-              </div>
-            </form>
+            <a href="/HTML/2.Pantalla_Cotizacion.HTML"><button class="btn btn-outline-warning d-none d-md-inline-block" type="submit">Cotiza</button></a>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CLOSE</button>
-            <button type="button" class="btn btn-dark">LOGIN</button>
+        </div>
+      </nav>
+    </section>
+
+    <!-------------------------------- Modal Login -------------------------------->
+    <section>
+      <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning-subtle text-emphasis-danger">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">INICIO DE SESION</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="text-center" action="">
+                <label for="UsernameLogin1">
+                  <i class="bi bi-person-fill p-1"></i>NOMBRE DE USUARIO :
+
+                </label>
+                <div class="mb-4"><input id="UsernameLogin1" placeholder="Username" type="text" required></div>
+
+                <label for="PaswordLogin1">
+                  <i class="bi bi-key-fill p-1"></i>CONTRASEÑA :
+
+                </label>
+                <div class="mb-5"><input id="PaswordLogin1" placeholder="Pasword" type="password" required></div>
+
+                <div>
+                  <a class="text-decoration-none text-secondary" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdropCrearCuenta">NO TENGO CUENTA !!!</a>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CLOSE</button>
+              <button type="button" class="btn btn-dark">LOGIN</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="modal fade" id="staticBackdropCrearCuenta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content bg-warning-subtle text-emphasis-danger">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">CREA TU CUENTA</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form class="text-center" action="">
-              <label for="UsernameCrearCuenta1">
-                <i class="bi bi-person-fill p-1"></i>NOMBRE DE USUARIO :
-              </label>
-              <div class="mb-4"><input id="UsernameCrearCuenta1" placeholder="Username" type="text" required></div>
+    <!-------------------------------- Modal Registro -------------------------------->
+    <section>
+      <div class="modal fade" id="staticBackdropCrearCuenta" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning-subtle text-emphasis-danger">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">CREA TU CUENTA</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="text-center" action="">
+                <label for="UsernameCrearCuenta1">
+                  <i class="bi bi-person-fill p-1"></i>NOMBRE DE USUARIO :
+                </label>
+                <div class="mb-4"><input id="UsernameCrearCuenta1" placeholder="Username" type="text" required></div>
 
-              <label for="Correo">
-                <i class="bi bi-person-fill p-1"></i>CORREO ELECTRONICO :
-              </label>
-              <div class="mb-4"><input id="Correo" placeholder="Correo" type="email" required></div>
+                <label for="Correo">
+                  <i class="bi bi-person-fill p-1"></i>CORREO ELECTRONICO :
+                </label>
+                <div class="mb-4"><input id="Correo" placeholder="Correo" type="email" required></div>
+
+                <label for="Dni">
+                  <i class="bi bi-person-fill p-1"></i>DNI :
+                </label>
+                <div class="mb-4">
+                  <select>
+                    <option value="rojo">CC.</option>
+                    <option value="verde">CE.</option>
+                  </select>
+                  <input class="col-lg-4" id="Dni" placeholder="Dni" type="number" required>
+                </div>
 
 
-              <label for="PasswordCrearCuenta1">
-                <i class="bi bi-key-fill p-1"></i>CONTRASEÑA :
-              </label>
-              <div class="mb-4"><input id="PasswordCrearCuenta1" placeholder="Password" type="password" required></div>
-            
-              <label for="PasswordCrearCuentaVerificacion1">
-                <i class="bi bi-key-fill p-1"></i>VERIFICA LA CONTRASEÑA :
-              </label>
-              <div class="mb-5"><input id="PasswordCrearCuentaVerificacion1" placeholder="Password" type="password" required></div>
-             
-              <div>
-               <input type="checkbox" required> <a class="text-decoration-none text-secondary" target="_blank" href="">POLITICAS DE SEGURIDAD !!!</a>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark"><i class="bi bi-google p-2"></i>GOOGLE</button>
-            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CLOSE</button>
-            <button type="button" class="btn btn-dark">CREAR CUENTA</button>
+                <label for="PasswordCrearCuenta1">
+                  <i class="bi bi-key-fill p-1"></i>CONTRASEÑA :
+                </label>
+                <div class="mb-4"><input id="PasswordCrearCuenta1" placeholder="Password" type="password" required>
+                </div>
+
+                <label for="PasswordCrearCuentaVerificacion1">
+                  <i class="bi bi-key-fill p-1"></i>VERIFICA LA CONTRASEÑA :
+                </label>
+                <div class="mb-5"><input id="PasswordCrearCuentaVerificacion1" placeholder="Password" type="password"
+                    required></div>
+
+                <div>
+                  <input type="checkbox" required> <a class="text-decoration-none text-secondary" target="_blank"
+                    href="">POLITICAS DE SEGURIDAD !!!</a>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CLOSE</button>
+              <button type="button" class="btn btn-dark">CREAR CUENTA</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
   </header>
 
-  <main id="main">
+  <main>
+
+    <!-------------------------------- Carousel Principal -------------------------------->
+
     <section id="ContenedorCarousel">
-      <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-        </div>
+      <div id="carouselExampleInterval" class="d-none d-md-block carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/IMAGES/ImagenCarouselCaseton1.jpg" class="d-block w-100" data-base-interval="2000">
-            <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="/IMAGES/Carousel-1.jpg" class="d-block w-100" data-base-interval="2000">
+            <div class="carousel-caption">
               <h5>Eleva tus construcciones con nuestros casetones</h5>
               <p>Hace énfasis en cómo los casetones contribuyen a elevar la calidad y nivel de tus proyectos de
                 construcción.</p>
             </div>
-            <div class="carousel-caption  d-md-none">
-              <a href="">Cotiza</a>
-            </div>
           </div>
-          <div class="carousel-item">
-            <img src="/IMAGES/ImagenCarouselCaseton2.jpg" class="d-block w-100" data-base-interval="2000">
-            <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="/IMAGES/Carousel-2.jpg" class="d-block w-100" data-base-interval="2000">
+            <div class="carousel-caption">
               <h5>Construye en grande con nuestros casetones</h5>
               <p> Invita a los clientes a realizar construcciones de gran escala utilizando los casetones de la empresa.
               </p>
             </div>
-            <div class="carousel-caption  d-md-none">
-              <a href="">Cotiza</a>
-            </div>
           </div>
           <div class="carousel-item">
-            <img src="/IMAGES/ImagenCarouselCaseton3.jpg" class="d-block w-100" data-base-interval="2000">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Casetones: la elección de los profesionales de la construcción</h5>
+            <img src="/IMAGES/Carousel-3.jpg" class="d-block w-100" data-base-interval="2000">
+            <div class="carousel-caption ">
+              <h5>a elección de los profesionales de la construcción</h5>
               <p>Posiciona a los casetones como la elección preferida de los profesionales de la construcción .</p>
-            </div>
-            <div class="carousel-caption  d-md-none">
-              <a href="">Cotiza</a>
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
           data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </section>
-    <section id="ContenedorContenido">
+
+
+    <div id="BannerPantallaMovil">
+      <img class="d-md-none" src="/IMAGES/BannerPantallaPequeña.jpg" alt="">
+
+    </div>
+
+
+
+    <!-------------------------------- Contenido Principal -------------------------------->
+
+    <section id="ContenedorContenidoPrincipal">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <div class="box-shadow">
-              <img id="imagenContenido" src="/IMAGES/Ventajas de Construir con Casetones.jpg" alt="">
+          <div class="d-lg-flex mb-4 mt-5">
+            <div class="imagenesContenido col-lg-6">
+              <img src="/IMAGES/Imagen-Contenido-1.jpg" alt="">
+            </div>
+            <div class="p-4">
               <h2>Ventajas de Construir con Casetones</h2>
               <p>Reducción de peso: El casetón permite construir techos más livianos al utilizar materiales ligeros en
                 su interior, como hormigón celular, arcilla expandida o materiales aislantes. Esto reduce la carga
                 estructural y los esfuerzos en la construcción.</p>
               <p>Eficiencia estructural: Al distribuir uniformemente la carga en la estructura del techo, el casetón
-                contribuye a una mejor eficiencia estructural. Proporciona una mayor resistencia y estabilidad al techo,
+                contribuye a una mejor eficiencia estructural. Proporciona una mayor resistencia y estabilidad al
+                techo,
                 lo que puede resultar en una mayor durabilidad y vida útil del edificio.</p>
-              <P>Aislamiento térmico y acústico: El relleno utilizado en el casetón actúa como una capa aislante, lo que
+              <P>Aislamiento térmico y acústico: El relleno utilizado en el casetón actúa como una capa aislante, lo
+                que
                 proporciona un mejor aislamiento térmico y acústico en el edificio. Ayuda a mantener una temperatura
                 interior más confortable y reduce el ruido externo.</P>
               <P>Versatilidad de diseño: El casetón ofrece flexibilidad en el diseño arquitectónico. Puede adaptarse a
@@ -217,22 +243,34 @@
                 belleza del espacio.</P>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="box-shadow">
-              <img id="imagenContenido" src="/IMAGES/Beneficios de Construir con Casetones.jpg" alt="">
+        </div>
+
+
+        <div class="col-lg-12">
+          <div class="d-lg-flex mb-4 mt-4">
+            <div class="imagenesContenido col-lg-6">
+              <img src="/IMAGES/Imagen-Contenido-2.jpg" alt="">
+            </div>
+            <div class="p-4">
               <h2>Beneficios de Construir con Casetones</h2>
               <p>Ahorro de costos: Construir con casetón puede generar ahorros en los costos de construcción. La
-                utilización de materiales livianos y la eficiencia en la instalación pueden reducir los costos de mano
+                utilización de materiales livianos y la eficiencia en la instalación pueden reducir los costos de
+                mano
                 de obra y acelerar el tiempo de construcción.</p>
-              <p>Sostenibilidad: El casetón puede ser una opción sostenible en la construcción. Al utilizar materiales
-                aislantes en su relleno, contribuye a mejorar la eficiencia energética del edificio, reduciendo así el
+              <p>Sostenibilidad: El casetón puede ser una opción sostenible en la construcción. Al utilizar
+                materiales
+                aislantes en su relleno, contribuye a mejorar la eficiencia energética del edificio, reduciendo así
+                el
                 consumo de energía para la calefacción o refrigeración. Además, algunos materiales utilizados en el
                 casetón, como el hormigón celular, son reciclables y respetuosos con el medio ambiente.</p>
-              <p>Resistencia al fuego: Dependiendo del material utilizado en el relleno del casetón, puede proporcionar
-                una mayor resistencia al fuego. Esto contribuye a la seguridad y protección del edificio, especialmente
+              <p>Resistencia al fuego: Dependiendo del material utilizado en el relleno del casetón, puede
+                proporcionar
+                una mayor resistencia al fuego. Esto contribuye a la seguridad y protección del edificio,
+                especialmente
                 en áreas donde se requiere una mayor resistencia al fuego.
               </p>
-              <p>Mantenimiento reducido: El casetón puede contribuir a reducir los costos y el esfuerzo de mantenimiento
+              <p>Mantenimiento reducido: El casetón puede contribuir a reducir los costos y el esfuerzo de
+                mantenimiento
                 a largo plazo. Al utilizar materiales duraderos y resistentes en su construcción, el casetón puede
                 requerir un mantenimiento mínimo.</p>
               <p>Mejora de la calidad del aire interior: Al utilizar materiales aislantes en el casetón, se puede
@@ -241,31 +279,36 @@
           </div>
         </div>
       </div>
+      </div>
     </section>
 
-    <section id="ContenedorContenido2">
+    <!-------------------------------- Contenido Gerente - Subgerente -------------------------------->
+
+    <section>
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <div class="box-shadow">
-              <i class="bi bi-person-square"></i>
-              <h2>Laura Rodríguez</h2>
-              <p>GERENTE</p>
-            </div>
+        <div class="row text-center">
+          <div class="col-md-6">
+            <i class="bi bi-person-square"></i>
+            <h2>Laura Rodríguez</h2>
+            <p>GERENTE</p>
           </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="box-shadow">
-              <i class="bi bi-person-square"></i>
-              <h2>Sofía Mendoza</h2>
-              <p>SUB GERENTE</p>
-            </div>
+          <div class="col-md-6">
+            <i class="bi bi-person-square"></i>
+            <h2>Sofía Mendoza</h2>
+            <p>SUB GERENTE</p>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
+
+  <!-------------------------------- Contenido Footer -------------------------------->
+
+
   <footer>
+
     <section>
       <div class="container-fluid bg-dark">
         <div class="row  p-5">
@@ -273,7 +316,7 @@
             <img class="h3 mb-3" id="LogoFooter" src="/IMAGES/Logo.png">
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3 mb-4">
-            <p class="color h5 mb-3">Ubicacion</p>
+            <p class="TextoTituloFooter h5 mb-3">Ubicacion</p>
             <div class="mb-2">
               <p class="text-white">Ibague, Colombia</p>
             </div>
@@ -282,7 +325,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3 mb-4">
-            <p class=" color h5 mb-3">Contactanos</p>
+            <p class=" TextoTituloFooter h5 mb-3">Contactanos</p>
             <div class="mb-2">
               <p class="text-white">+1 555-123-4567</p>
             </div>
@@ -294,7 +337,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-6 col-lg-3">
-            <a id="Cotizar" class="h5 mb-3 text-decoration-none" href="">Cotiza Con Nosotros</a>
+            <a id="BotonCotizarFooter" class="h5 mb-3 text-decoration-none" href="/HTML/2.Pantalla_Cotizacion.HTML">Cotiza Con Nosotros</a>
             <div class="mb-2 mt-4">
               <a class="text-white text-decoration-none" href=""><i class="bi bi-facebook text-light"><small
                     class=" ms-2">Facebook</small></i></a>
@@ -308,17 +351,22 @@
                     class=" ms-2">Twitter</small></i></a>
             </div>
           </div>
-          <div class=" col-xs-12 pt-5">
+          <div class="pt-5">
             <p class="text-white text-center">Copyright - All rights reserved © 2023</p>
           </div>
         </div>
       </div>
     </section>
+
   </footer>
+
+  <!-------------------------------- Enlaces de Js Bootstrap -------------------------------->
+
   <script src="/BACKEND/INDEX1.JS"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>

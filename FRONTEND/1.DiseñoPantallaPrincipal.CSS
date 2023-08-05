@@ -1,8 +1,4 @@
 /*NAVEGACION*/
-nav {
-    position: fixed;
-}
-
 #Logo img {
     width: 100%;
     height: 40px;
@@ -17,20 +13,12 @@ nav {
     border-radius: 5px;
     border: 2px solid black;
 }
-#dropdown-menu button:hover{
+
+#dropdown-menu button:hover {
     background-color: #20262E;
 }
 
 /*CAROUSEL*/
-#ContenedorCabecera {
-    margin-bottom: 0.01rem;
-}
-#ContenedorCarousel h5 {
-    color: #FFBF00;
-    font-family: "Helvetica", Sans-serif;
-    font-size: 40px
-}
-
 #ContenedorCarousel p {
     color: black;
     font-family: "Helvetica", Sans-serif;
@@ -39,6 +27,11 @@ nav {
 
 #ContenedorCarousel img {
     opacity: .5;
+}
+
+#ContenedorCarousel h5 {
+    font-size: 28px;
+    color: #FFBF00;
 }
 
 #ContenedorCarousel a {
@@ -64,37 +57,32 @@ nav {
 .carousel-item {
     max-height: 20rem;
 }
+/*BANNER SM*/
+#BannerPantallaMovil img {
+    max-width: 100%;
+}
 
 /*CONTENIDO PRINCIPAL*/
-#ContenedorContenido {
+#ContenedorContenidoPrincipal {
     background-color: #F2EAD3;
 }
 
-.box-shadow {
-    margin-top: 2rem;
-    margin-left: 1rem;
-    box-sizing: 1px;
-    border-radius: 20px;
-    padding: 30px 50px 30px 50px;
-    border: none;
+.imagenesContenido img {
+    max-width: 100%;
+    border: 2px solid black;
 }
 
-#imagenContenido {
-    width: 18rem;
-    height: 14rem;
-    border-radius: 5px;
-}
 /*CONTENIDO FOOTER*/
 #LogoFooter {
     width: 150px;
     height: 60px;
 }
 
-.color {
+.TextoTituloFooter {
     color: #FFBF00;
 }
 
-#Cotizar {
+#BotonCotizarFooter {
     color: #FFBF00;
     background-color: black;
     border-radius: 5px;
@@ -102,11 +90,10 @@ nav {
     padding: 5px;
 }
 
-#Cotizar:hover {
+#BotonCotizarFooter:hover {
     color: black;
     background-color: #FFBF00;
     border-radius: 5px;
     border: 2px solid #FFBF00;
     padding: 5px;
 }
-
