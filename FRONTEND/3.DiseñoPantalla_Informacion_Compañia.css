@@ -58,6 +58,10 @@ body {
 
 }
 
+#Logros{
+    margin-top: 7rem;
+}
+
 .Imagen_Logro img {
     max-width: 30%;
 }
