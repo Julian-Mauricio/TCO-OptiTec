@@ -1,4 +1,3 @@
-/*NAVEGACION*/
 #Logo img {
     width: 100%;
     height: 40px;
@@ -21,52 +20,12 @@
 header {
     margin-bottom: 10rem;
 }
-
-main {
-    margin-bottom: 7rem;
+main{
+    margin-bottom: 10rem;
 }
-
-/*CONTENIDO*/
-body {
+body{
     background-color: #F4EEEE;
 }
-
-#Bienvenida {
-    margin-bottom: 10rem;
-
-}
-
-#Section_Historia_Valores {
-    margin-bottom:10rem;
-}
-#Section_Directivo_Inovacion{
-    margin-bottom:10rem;
-}
-#Imagenes_Gerente IMG {
-    max-width: 50%;
-}
-
-#Imagenes_Subgerente IMG {
-    max-width: 50%;
-}
-
-.imagenesContenido {
-
-    -webkit-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
-    box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
-
-}
-
-#Logros{
-    margin-top: 7rem;
-}
-
-.Imagen_Logro img {
-    max-width: 30%;
-}
-
-
 /*CONTENIDO FOOTER*/
 #LogoFooter {
     width: 150px;
@@ -92,6 +51,3 @@ body {
     border: 2px solid #FFBF00;
     padding: 5px;
 }
-
-
-  

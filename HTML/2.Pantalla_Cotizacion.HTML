@@ -19,7 +19,7 @@
     <!-------------------------------- Contenido Navegacion -------------------------------->
 
     <section>
-      <nav class="navbar navbar-expand-md navbar-dark  bg-dark fixed-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
           <!--logo-->
           <a id="Logo" class="navbar-brand" href="/HTML/1.Pantalla_Principal.HTML"><img src="/IMAGES/Logo.png"></a>
@@ -57,6 +57,128 @@
         </div>
       </nav>
     </section>
+
+     <!-------------------------------- Modal Login -------------------------------->
+     <section>
+      <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning-subtle text-emphasis-danger">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">INICIO DE SESION</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="text-center">
+                <label for="UsernameLoguearse">
+                  <i class="bi bi-person-fill p-1"></i>Nombre de Usuario:
+
+                </label>
+                <div class="mb-4"><input id="UsernameLoguearse" placeholder="Username" type="text" required></div>
+
+                <label for="ContraseñaLoguearse">
+                  <i class="bi bi-key-fill p-1"></i>Contraseña :
+
+                </label>
+                <div class="mb-5"><input id="ContraseñaLoguearse" placeholder="Contraseña" type="password" required></div>
+
+                <div>
+                  <a class="text-decoration-none text-secondary" data-bs-toggle="modal"
+                    data-bs-target="#staticBackdropCrearCuenta">NO TENGO CUENTA !!!</a>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CERRAR</button>
+              <button type="button" class="btn btn-dark">LOGUEAR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------------- Modal Registro -------------------------------->
+    <section>
+      <div class="modal fade" id="staticBackdropCrearCuenta" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content bg-warning-subtle text-emphasis-danger">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">CREA TU CUENTA</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="text-center" action="">
+                <label for="NombreRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Nombre:
+                </label>
+                <div class="mb-4"><input id="NombreRegistro" placeholder="Nombre" type="text" required></div>
+
+                <label for="ApellidoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Apellido:
+                </label>
+                <div class="mb-4"><input id="ApellidoRegistro" placeholder="Apellido" type="text" required></div>
+
+                <label for="DniRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Dni:
+                </label>
+                <div class="mb-4"><input id="DniRegistro" placeholder="Dni" type="number" required></div>
+
+                <label for="DireccionRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Direccion:
+                </label>
+                <div class="mb-4"><input id="DireccionRegistro" placeholder="Direccion" type="text" required></div>
+
+                <label for="CorreoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Correo:
+                </label>
+                <div class="mb-4"><input id="CorreoRegistro" placeholder="Correo" type="email" required></div>
+
+                <label for="TelefonoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Telefono:
+                </label>
+                <div class="mb-4"><input id="TelefonoRegistro" placeholder="Telefono" type="number" required></div>
+
+                <label for="UsuarioRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Usuario:
+                </label>
+                <div class="mb-4"><input id="UsuarioRegistro" placeholder="Usuario" type="text" required></div>
+
+                <label for="ContraseñaRegistro">
+                  <i class="bi bi-key-fill p-1"></i>Contraseña:
+                </label>
+                <div class="mb-4"><input id="ContraseñaRegistro" placeholder="Contraseña" type="password" required>
+                </div>
+
+                <label for="FechaNacimientoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Fecha de Nacimiento:
+                </label>
+                <div class="mb-4"><input id="FechaNacimientoRegistro" placeholder="Fecha de Nacimiento" type="date" required></div>
+                
+                <label for="GeneroRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Genero  :
+                </label>
+                <select class="mb-4" id="GeneroRegistro" name="GeneroRegistro">
+                  <option value="M">MASCULINO</option>
+                  <option value="F">FEMENINO</option>
+                  <option value="ND">NO IDENTIFICADO</option>
+              </select>
+
+                <div>
+                  <input type="checkbox" required> <a class="text-decoration-none text-secondary" target="_blank"
+                    href="4.Politicas_Privacidad.HTML">POLITICAS DE SEGURIDAD !!!</a>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CERRAR</button>
+              <button type="button" class="btn btn-dark">CREAR CUENTA</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </header>
 
   <main>
@@ -83,10 +205,6 @@
                 <input type="text" class="form-control" id="input2">
               </div>
               <div class="mb-3">
-                <label for="input3" class="form-label">Email</label>
-                <input type="text" class="form-control" id="input3">
-              </div>
-              <div class="mb-3">
                 <label for="input5" class="form-label">Medida de Caseton Alto</label>
                 <input type="text" class="form-control" id="input5">
               </div>
@@ -99,11 +217,6 @@
                 <input type="text" class="form-control" id="input6">
               </div>
               <div class="mb-3">
-                <label for="input6" class="form-label">Tipo de Acabado</label>
-                <select>
-                  <option value="Liso">Liso</option>
-                  <option value="Texturizado">Texturizado</option>
-                </select>
                 <label for="input6" class="form-label">Tipo de Material</label>
                 <select>
                   <option value="Polistireno">Polistireno expandido</option>
@@ -169,13 +282,15 @@
             </div>
           </div>
           <div class="pt-5">
-            <p class="text-white text-center">Copyright - All rights reserved © 2023</p>
+            <p class="text-white text-center"> &copy; TCO-Optitec - All rights reserved © 2023</p>
           </div>
         </div>
       </div>
     </section>
 
   </footer>
+
+   <!-------------------------------- Enlaces de Js Bootstrap -------------------------------->
 
   <script src="/BACKEND/INDEX1.JS"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

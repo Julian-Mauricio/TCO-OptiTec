@@ -72,18 +72,18 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <form class="text-center" action="">
-                <label for="UsernameLogin1">
-                  <i class="bi bi-person-fill p-1"></i>NOMBRE DE USUARIO :
+              <form class="text-center">
+                <label for="UsernameLoguearse">
+                  <i class="bi bi-person-fill p-1"></i>Nombre de Usuario:
 
                 </label>
-                <div class="mb-4"><input id="UsernameLogin1" placeholder="Username" type="text" required></div>
+                <div class="mb-4"><input id="UsernameLoguearse" placeholder="Username" type="text" required></div>
 
-                <label for="PaswordLogin1">
-                  <i class="bi bi-key-fill p-1"></i>CONTRASEÑA :
+                <label for="ContraseñaLoguearse">
+                  <i class="bi bi-key-fill p-1"></i>Contraseña :
 
                 </label>
-                <div class="mb-5"><input id="PaswordLogin1" placeholder="Pasword" type="password" required></div>
+                <div class="mb-5"><input id="ContraseñaLoguearse" placeholder="Contraseña" type="password" required></div>
 
                 <div>
                   <a class="text-decoration-none text-secondary" data-bs-toggle="modal"
@@ -92,8 +92,8 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CLOSE</button>
-              <button type="button" class="btn btn-dark">LOGIN</button>
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CERRAR</button>
+              <button type="button" class="btn btn-dark">LOGUEAR</button>
             </div>
           </div>
         </div>
@@ -112,48 +112,69 @@
             </div>
             <div class="modal-body">
               <form class="text-center" action="">
-                <label for="UsernameCrearCuenta1">
-                  <i class="bi bi-person-fill p-1"></i>NOMBRE DE USUARIO :
+                <label for="NombreRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Nombre:
                 </label>
-                <div class="mb-4"><input id="UsernameCrearCuenta1" placeholder="Username" type="text" required></div>
+                <div class="mb-4"><input id="NombreRegistro" placeholder="Nombre" type="text" required></div>
 
-                <label for="Correo">
-                  <i class="bi bi-person-fill p-1"></i>CORREO ELECTRONICO :
+                <label for="ApellidoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Apellido:
                 </label>
-                <div class="mb-4"><input id="Correo" placeholder="Correo" type="email" required></div>
+                <div class="mb-4"><input id="ApellidoRegistro" placeholder="Apellido" type="text" required></div>
 
-                <label for="Dni">
-                  <i class="bi bi-person-fill p-1"></i>DNI :
+                <label for="DniRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Dni:
                 </label>
-                <div class="mb-4">
-                  <select>
-                    <option value="rojo">CC.</option>
-                    <option value="verde">CE.</option>
-                  </select>
-                  <input class="col-lg-4" id="Dni" placeholder="Dni" type="number" required>
+                <div class="mb-4"><input id="DniRegistro" placeholder="Dni" type="number" required></div>
+
+                <label for="DireccionRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Direccion:
+                </label>
+                <div class="mb-4"><input id="DireccionRegistro" placeholder="Direccion" type="text" required></div>
+
+                <label for="CorreoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Correo:
+                </label>
+                <div class="mb-4"><input id="CorreoRegistro" placeholder="Correo" type="email" required></div>
+
+                <label for="TelefonoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Telefono:
+                </label>
+                <div class="mb-4"><input id="TelefonoRegistro" placeholder="Telefono" type="number" required></div>
+
+                <label for="UsuarioRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Usuario:
+                </label>
+                <div class="mb-4"><input id="UsuarioRegistro" placeholder="Usuario" type="text" required></div>
+
+                <label for="ContraseñaRegistro">
+                  <i class="bi bi-key-fill p-1"></i>Contraseña:
+                </label>
+                <div class="mb-4"><input id="ContraseñaRegistro" placeholder="Contraseña" type="password" required>
                 </div>
 
-
-                <label for="PasswordCrearCuenta1">
-                  <i class="bi bi-key-fill p-1"></i>CONTRASEÑA :
+                <label for="FechaNacimientoRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Fecha de Nacimiento:
                 </label>
-                <div class="mb-4"><input id="PasswordCrearCuenta1" placeholder="Password" type="password" required>
-                </div>
-
-                <label for="PasswordCrearCuentaVerificacion1">
-                  <i class="bi bi-key-fill p-1"></i>VERIFICA LA CONTRASEÑA :
+                <div class="mb-4"><input id="FechaNacimientoRegistro" placeholder="Fecha de Nacimiento" type="date" required></div>
+                
+                <label for="GeneroRegistro">
+                  <i class="bi bi-person-fill p-1"></i>Genero  :
                 </label>
-                <div class="mb-5"><input id="PasswordCrearCuentaVerificacion1" placeholder="Password" type="password"
-                    required></div>
+                <select class="mb-4" id="GeneroRegistro" name="GeneroRegistro">
+                  <option value="M">MASCULINO</option>
+                  <option value="F">FEMENINO</option>
+                  <option value="ND">NO IDENTIFICADO</option>
+              </select>
 
                 <div>
                   <input type="checkbox" required> <a class="text-decoration-none text-secondary" target="_blank"
-                    href="">POLITICAS DE SEGURIDAD !!!</a>
+                    href="4.Politicas_Privacidad.HTML">POLITICAS DE SEGURIDAD !!!</a>
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CLOSE</button>
+              <button type="button" class="btn btn-dark" data-bs-dismiss="modal">CERRAR</button>
               <button type="button" class="btn btn-dark">CREAR CUENTA</button>
             </div>
           </div>
@@ -352,7 +373,7 @@
             </div>
           </div>
           <div class="pt-5">
-            <p class="text-white text-center">Copyright - All rights reserved © 2023</p>
+            <p class="text-white text-center"> &copy; TCO-Optitec - All rights reserved © 2023</p>
           </div>
         </div>
       </div>
