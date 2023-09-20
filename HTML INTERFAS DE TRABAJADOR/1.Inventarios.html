@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/FRONTEND INTERFAS DE TRABAJADOR/1.Inventarios.css">
+    <title>Página para Trabajadores</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-dark sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="" onclick="showTable('materiaPrimaTable')">
+                                Materia Prima
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="" onclick="showTable('inventarioTable')">
+                                Inventario de Producción
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <!-- Contenido de la página -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Bienvenido</h2>
+                            <div id="tableContainer">
+                                <table class="table table-bordered">
+                                    <thead><!-- head se utiliza para agrupar las filas que contienen las cabeceras de la tabla -->
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Descripcion</th>
+                                            <th>Entradas</th>
+                                            <th>Stock</th>
+                                            <th>Salida</th>
+                                            <th>Accion</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="Contenido_Tabla"> <!-- tbody agrupa el contenido principal de la tabla -->
+                                        <tr>
+                                            <td>Tipo 1</td>
+                                            <td>Descripción 1</td>
+                                            <td>10</td>
+                                            <td>50</td>
+                                            <td>5</td>
+                                            <td class="d-flex"><button class="btn btn-primary">Editar</button><div id="espacio"></div><button type="button" class="btn btn-danger">Danger</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+   
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
