@@ -1,12 +1,18 @@
 const express = require('express');
-
+const cors = require('cors');
 const respuesta = require('../../red/respuestas');
 const controlador = require('./controlador');
 
 
 const router = express.Router();
+const corsOptions = {
+    origin: 'http://127.0.0.1:5500'  // Cambia a tu origen de frontend
+};
 
-router.get('/', async function (req,res) {
+router.use(cors(corsOptions));
+
+// Definición de rutas
+router.get('/', async function (req, res) {
     try {
         const items = await controlador.Todos();
         respuesta.success(req, res, items, 200);
@@ -15,7 +21,7 @@ router.get('/', async function (req,res) {
     }
 });
 
-router.post('/Where', async function (req,res) {
+router.post('/Where', async function (req, res) {
     try {
         const items = await controlador.Where(req.body);
         respuesta.success(req, res, items, 200);
@@ -24,7 +30,7 @@ router.post('/Where', async function (req,res) {
     }
 });
 
-router.post('/Insert', async function (req,res) {
+router.post('/Insert', async function (req, res) {
     try {
         const items = await controlador.Insert(req.body);
         respuesta.success(req, res, items, 200);
@@ -34,7 +40,7 @@ router.post('/Insert', async function (req,res) {
 });
 
 
-router.patch('/Update', async function (req,res) {
+router.patch('/Update', async function (req, res) {
     try {
         const items = await controlador.Update(req.body);
         respuesta.success(req, res, items, 200);
@@ -43,7 +49,7 @@ router.patch('/Update', async function (req,res) {
     }
 });
 
-router.delete('/Delete', async function (req,res) {
+router.delete('/Delete', async function (req, res) {
     try {
         const items = await controlador.Delete(req.body);
         respuesta.success(req, res, items, 200);
