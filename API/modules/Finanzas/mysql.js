@@ -45,7 +45,7 @@ function Todos(tabla) {
 
 function Where(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`SELECT * FROM ${tabla} where id_Login = ?`, data.id_Corte, (error, result) => {
+        conexion.query(`SELECT * FROM ${tabla} where id_Corte = ?`, data.id_Corte, (error, result) => {
             if (error)
                 return reject(error);
             resolve(result);
@@ -66,7 +66,7 @@ function Insert(tabla, data) {
 
 function Update(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`Update ${tabla} SET ? WHERE id_Login = ?`, data [data,data.id_Corte],  (error, result) => {
+        conexion.query(`Update ${tabla} SET ? WHERE id_Corte = ?`, data [data,data.id_Corte],  (error, result) => {
             if (error)
                 return reject(error);
             resolve(result);
@@ -76,7 +76,7 @@ function Update(tabla, data) {
 
 function Delete(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`Delete from  ${tabla} WHERE id_Login = ?`, data.id_Corte,  (error, result) => {
+        conexion.query(`Delete from  ${tabla} WHERE id_Corte = ?`, data.id_Corte,  (error, result) => {
             if (error)
                 return reject(error);
             resolve(result);

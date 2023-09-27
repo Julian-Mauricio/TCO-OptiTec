@@ -1,80 +1,73 @@
-const table2 = document.querySelector('#table');
+const table3 = document.querySelector('#table');
 
 
-async function getfetch2() {
-    const url = 'http://localhost:4000/api/Produccion';
+async function getfetch3() {
+    const url = 'http://localhost:4000/api/Finanzas';
     try {
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
-        mostrarFetch2(data);
+        mostrarFetch3(data);
     } catch (error) {
         console.log('Error fetching data:', error);
     }
 }
 
-function mostrarFetch2(data) {
-    table2.innerHTML = '';
+function mostrarFetch3(data) {
+    table3.innerHTML = '';
     const cabecera = document.createElement('tr');
 
     const id = document.createElement('th');
     id.textContent = 'ID';
     cabecera.appendChild(id);
 
-    const tipo = document.createElement('th');
-    tipo.textContent = 'TIPO';
-    cabecera.appendChild(tipo);
+    const metodo_p = document.createElement('th');
+    metodo_p.textContent = 'METODO_PAGO';
+    cabecera.appendChild(metodo_p);
 
-    const entrada = document.createElement('th');
-    entrada.textContent = 'ENTRADA';
-    cabecera.appendChild(entrada);
+    const saldo = document.createElement('th');
+    saldo.textContent = 'SALDO';
+    cabecera.appendChild(saldo);
 
-    const stock = document.createElement('th');
-    stock.textContent = 'STOCK';
-    cabecera.appendChild(stock);
+    const total_m = document.createElement('th');
+    total_m.textContent = 'TOTAL_MONTO';
+    cabecera.appendChild(total_m);
 
-    const salida = document.createElement('th');
-    salida.textContent = 'SALIDA';
-    cabecera.appendChild(salida);
-
-    const descripcion = document.createElement('th');
-    descripcion.textContent = 'Descripcion';
-    cabecera.appendChild(descripcion);
+    const usuario = document.createElement('th');
+    usuario.textContent = 'USUARIO';
+    cabecera.appendChild(usuario);
 
     const accion = document.createElement('th');
     accion.textContent = 'ACCION';
     cabecera.appendChild(accion);
 
 
-    table2.appendChild(cabecera);
+    table3.appendChild(cabecera);
 
     for (let i = 0; i < data.body.length; i++) {
         const element = data.body[i];
         const contenido = document.createElement('tr');
 
         const idc = document.createElement('td');
-        idc.textContent = element.id_Inventario_P;
+        idc.textContent = element.id_Corte;
         contenido.appendChild(idc);
 
-        const tipoc = document.createElement('td');
-        tipoc.textContent = element.Tipo;
-        contenido.appendChild(tipoc);
+        const metodo_pc = document.createElement('td');
+        metodo_pc.textContent = element.Metodo_Pago;
+        contenido.appendChild(metodo_pc);
 
-        const entradac = document.createElement('td');
-        entradac.textContent = element.Entradas;
-        contenido.appendChild(entradac);
+        const saldoc = document.createElement('td');
+        saldoc.textContent = element.Saldo;
+        contenido.appendChild(saldoc);
 
-        const stockc = document.createElement('td');
-        stockc.textContent = element.Stock;
-        contenido.appendChild(stockc);
+        const total_m = document.createElement('td');
+        total_m.textContent = element.Total_Monto;
+        contenido.appendChild(total_m);
 
-        const salidac = document.createElement('td');
-        salidac.textContent = element.Salida;
-        contenido.appendChild(salidac);
+        const usuarioc = document.createElement('td');
+        usuarioc.textContent = element.id_Login;
+        contenido.appendChild(usuarioc);
 
-        const descripcionc = document.createElement('td');
-        descripcionc.textContent = element.Descripcion;
-        contenido.appendChild(descripcionc);
 
         //Creacion del Boton Eliminar
         const buttonEliminar = document.createElement('button');
@@ -104,9 +97,9 @@ function mostrarFetch2(data) {
 
         async function EliminarRegistro() {
             try {
-                const url = "http://localhost:4000/api/Produccion/Delete";
+                const url = "http://localhost:4000/api/Finanzas/Delete";
                 const data = {
-                    id_Inventario_P: element.id_Inventario_P,
+                    id_Corte: element.id_Corte,
                 };
                 const requestOptions = {
                     method: "DELETE", // Método de solicitud POST
@@ -139,7 +132,7 @@ function mostrarFetch2(data) {
             bootstrapModal.show();
         }
 
-
+        
 
         /*FUNCION ACTUALIZAR DATOS*/
         const id_Inventario_MP = document.querySelector('#id_Inventario_MP')
@@ -156,7 +149,7 @@ function mostrarFetch2(data) {
             try {
                 const url = "http://localhost:4000/api/Materia/Update";
                 const data = {
-                    id_Inventario_MP: id_Inventario_MP.value,
+                    id_Inventario_MP:id_Inventario_MP.value,
                     Tipo: Tipo.value,
                     Entradas: entrada.value,
                     Stock: stock.value,
@@ -205,10 +198,10 @@ function mostrarFetch2(data) {
 
 
 
-        table2.appendChild(contenido);
+        table3.appendChild(contenido);
     }
     // Agrega la tabla al elemento apropiado en el documento
-    document.body.appendChild(table2);
+    document.body.appendChild(table3);
 }
 
 

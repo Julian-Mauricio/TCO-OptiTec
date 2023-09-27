@@ -1,15 +1,10 @@
 const express = require('express');
-const cors = require('cors');
 const respuesta = require('../../red/respuestas');
 const controlador = require('./controlador');
 
 const router = express.Router();
 
-const corsOptions = {
-    origin: 'http://127.0.0.1:5500'
-};
 
-router.use(cors(corsOptions));
 
 // Definición de rutas
 router.get('/', async function (req, res) {

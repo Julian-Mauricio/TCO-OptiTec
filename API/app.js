@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const morgan = require('morgan');
 const config = require('./config');
 
 const app = express();
+
+app.use(cors());
 
 //Rutas de Login
 const Login = require('./modules/Login/rutas');
