@@ -24,16 +24,6 @@ function Where(body) {
 
 
 /**
- * Elimina registros de la tabla 'Registro_Login' basados en el cuerpo de la solicitud.
- * Cuerpo de la solicitud que contiene los parámetros para la eliminación.
- * Una promesa que indica si la eliminación se realizó con éxito o no.
- */
-
-function Delete(body) {
-    return db.Delete(Tabla, body)
-}
-
-/**
  * Inserta un nuevo registro en la tabla 'Registro_Login' basado en el cuerpo de la solicitud.
  * Cuerpo de la solicitud que contiene los datos para la inserción.
  * Una promesa que se resolverá con el resultado de la inserción.
@@ -57,7 +47,6 @@ function Update(body) {
 module.exports = {
     Todos,
     Where,
-    Delete,
     Insert,
     Update
 }

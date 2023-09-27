@@ -74,19 +74,10 @@ function Update(tabla, data) {
     });
 };
 
-function Delete(tabla, data) {
-    return new Promise((resolve, reject) => {
-        conexion.query(`Delete from  ${tabla} WHERE id_Login = ?`, data.id_Login,  (error, result) => {
-            if (error)
-                return reject(error);
-            resolve(result);
-        })
-    });
-};
+
 module.exports = {
     Todos,
     Where,
     Insert,
-    Update,
-    Delete
+    Update
 }

@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+    <!-- Configuración de la página -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -10,11 +11,14 @@
 </head>
 
 <body>
+    <!-- Contenedor principal -->
     <div class="container-fluid">
+        <!-- Barra de navegación lateral -->
         <div class="row">
             <nav class="col-md-12 d-none d-md-block bg-dark sidebar">
                 <h1 class="text-light">Sistema de Control de Inventarios</h1>
                 <ul class="nav flex-column">
+                    <!-- Botones de navegación -->
                     <li class="nav-item">
                         <button type="button" class="btn btn-light mb-2" onclick=getfetch()>
                             Inventario de Materia Prima
@@ -26,11 +30,12 @@
                         </button>
                     </li>
                 </ul>
+            </nav>
         </div>
     </div>
 
+    <!-- Contenido principal -->
     <main role="main" class="col-md-10 col-lg-12 px-4">
-        <!-- Contenido de la página -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
@@ -41,9 +46,51 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal para actualización de datos -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizacion de Datos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Contenido del modal -->
+                        <div class=" d-flex">
+                            <div class="d-block">
+                                <label for="id_Inventario_MP">Id:</label>
+                                <input type="number" id="id_Inventario_MP" name="id_Inventario_MP" class="id_Inventario_MP">
+                                <label for="tipo">TIPO</label>
+                                <input type="text" id="tipo" required>
+                            </div>
+                            <div class="d-block">
+                                <label for="entrada">ENTRADA</label>
+                                <input type="text" id="entrada" required>
+                            </div>
+                        </div>
+                        <div class=" d-flex">
+                            <div class="d-block">
+                                <label for="stock">STOCK</label>
+                                <input type="text" id="stock" required>
+                            </div>
+                            <div class="d-block">
+                                <label for="salida">SALIDA</label>
+                                <input type="text" id="salida" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Botones del modal -->
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-success" id="ActivarUpdae">Guardar Cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
-
+    <!-- Scripts -->
     <script src="/BACKEND/Tabla_Inventario_Produccion.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
