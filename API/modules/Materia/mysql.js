@@ -62,16 +62,18 @@ function Insert(tabla, data) {
         })
     });
 };
-22
+
+
 
 function Update(tabla, data) {
-    return new Promise((resolve, reject) => {
-        conexion.query(`Update ${tabla} SET ? WHERE id_Inventario_MP = ?`, data [data,data.id_Inventario_MP],  (error, result) => {
-            if (error)
+    return new Promise((resolve, reject) =>{
+        conexion.query(`Update ${tabla} SET ? WHERE id_Inventario_MP = ?`, [data,data.id_Inventario_MP], (error,result)=>{
+            if(error)
                 return reject(error);
-            resolve(result);
+                resolve(result);
+            
         })
-    });
+    })
 };
 
 function Delete(tabla, data) {

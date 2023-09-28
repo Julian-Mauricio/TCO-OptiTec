@@ -19,8 +19,8 @@ function Todos() {
  */
 
 function Where(body) {
-    return db.Where(Tabla, body);
-}
+    return db.Where(Tabla,body)
+};
 
 
 /**

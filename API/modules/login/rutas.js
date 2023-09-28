@@ -16,12 +16,12 @@ router.get('/', async function (req, res) {
     }
 });
 
-router.post('/Where', async function (req, res) {
+router.post('/Where', async function (req, res){
     try {
         const items = await controlador.Where(req.body);
-        respuesta.success(req, res, items, 200);
+        respuesta.success(req, res, items,200);
     } catch (error) {
-        respuesta.error(req, res, error, 500)
+        respuesta.error(req, res, error, 500);
     }
 });
 

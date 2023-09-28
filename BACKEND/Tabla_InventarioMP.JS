@@ -1,6 +1,7 @@
 // Selección del elemento de la tabla mediante su ID
 const table = document.querySelector('#table');
 
+
 // Selección del elemento de la tabla mediante su ID
 async function getfetch() {
     const url = 'http://localhost:4000/api/Materia';
@@ -53,6 +54,7 @@ function mostrarFetch(data) {
     // Itera sobre los datos y crea filas para cada entrada
     for (let i = 0; i < data.body.length; i++) {
         const element = data.body[i];
+
         const contenido = document.createElement('tr');
 
         const id_mpc = document.createElement('td');
@@ -79,23 +81,8 @@ function mostrarFetch(data) {
         const buttonEliminar = document.createElement('button');
         buttonEliminar.textContent = 'ELIMINAR';
         buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
+        contenido.appendChild(buttonEliminar);
 
-        //Creacion del Boton Actualizar
-        const buttonActualizar = document.createElement('button');
-        buttonActualizar.textContent = 'ACTUALIZAR';
-        buttonActualizar.classList.add('btn', 'btn-primary');
-
-        //Creacion del Boton AGREGAR
-        const buttonAgregar = document.createElement('button');
-        buttonAgregar.textContent = 'AGREGAR';
-        buttonAgregar.classList.add('btn', 'btn-success');
-
-        //Anexo los Botones 
-        const accionc = document.createElement('td');
-        accionc.appendChild(buttonEliminar);
-        accionc.appendChild(buttonActualizar);
-        accionc.appendChild(buttonAgregar);
-        contenido.appendChild(accionc);
 
         buttonEliminar.addEventListener("click", EliminarRegistro)
 
@@ -127,80 +114,25 @@ function mostrarFetch(data) {
             }
         }
 
-        buttonActualizar.addEventListener('click', function () {
-            // Llama a una función para abrir el modal
-            abrirModal();
-        });
 
-        function abrirModal() {
-            const modal = document.getElementById('exampleModal');
-            const bootstrapModal = new bootstrap.Modal(modal);
-            bootstrapModal.show();
-        }
+        //Creacion del Boton Actualizar
+        const buttonActualizar = document.createElement('button');
+        buttonActualizar.textContent = 'ACTUALIZAR';
+        buttonActualizar.classList.add('btn', 'btn-primary');
+        contenido.appendChild(buttonActualizar);
 
 
 
-        /*FUNCION ACTUALIZAR DATOS*/
-        const id_Inventario_MP = document.querySelector('#id_Inventario_MP')
-        const Tipo = document.querySelector('#tipo');
-        const entrada = document.querySelector('#entrada');
-        const stock = document.querySelector('#stock');
-        const salida = document.querySelector('#salida');
-
-        const ActivarUpdae = document.querySelector('#ActivarUpdae')
-        ActivarUpdae.addEventListener('click', UpdateRegistro);
-
-        async function UpdateRegistro(event) {
-            event.preventDefault();
-            try {
-                const url = "http://localhost:4000/api/Materia/Update";
-                const data = {
-                    id_Inventario_MP: id_Inventario_MP.value,
-                    Tipo: Tipo.value,
-                    Entradas: entrada.value,
-                    Stock: stock.value,
-                    Salidas: salida.value,
-                };
-                const requestOptions = {
-                    method: "PATCH", // Método de solicitud PATCH
-                    headers: {
-                        "Content-Type": "application/json", // Tipo de contenido del cuerpo de la solicitud
-                    },
-                    body: JSON.stringify(data), // Convierte los datos a formato JSON y los coloca en el cuerpo de la solicitud
-                };
-                const response = await fetch(url, requestOptions);
-                const Responses = await response.json();
-                if (Responses.status === 200) {
-                    alert("Registro editado correctamente");
-                    getFetch()
-                } else {
-                    alert("Error al actualizar el registro");
-                }
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        }
+        buttonActualizar.addEventListener('click', ActualizarDatos);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        //Creacion del Boton AGREGAR
+        const buttonAgregar = document.createElement('button');
+        buttonAgregar.textContent = 'AGREGAR';
+        buttonAgregar.classList.add('btn', 'btn-success');
+        contenido.appendChild(buttonAgregar);
 
 
 
@@ -208,6 +140,40 @@ function mostrarFetch(data) {
     }
     // Agrega la tabla al elemento apropiado en el documento
     document.body.appendChild(table);
+}
+//document.getElementById(actualizar).addEventListener("click", ActualizarDatos);
+
+async function ActualizarDatos(event) {
+    event.preventDefault();
+    try {
+        const url = "http://localhost:4000/api/Materia/Update";
+        const data =
+        {
+            id_Inventario_MP: 1,
+            Stock: 300,
+        };
+            
+
+        const requestOptions = {
+            method: "PATCH",
+            Headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+
+        const response = await fetch(url, requestOptions);
+        const reponses = await response.json();
+        console.log(reponses);
+       /* if (reponses.status === 200) {
+            alert("registro actualizado")
+        } else {
+            alert(" no de registro la actualizacion")
+        }*/
+
+    } catch (error) {
+        console.log("error", error);
+    }
 }
 
 

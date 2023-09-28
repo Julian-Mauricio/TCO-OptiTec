@@ -44,13 +44,14 @@ function Todos(tabla) {
 };
 
 function Where(tabla, data) {
-    return new Promise((resolve, reject) => {
-        conexion.query(`SELECT * FROM ${tabla} where id_Login = ?`, data.id_Login, (error, result) => {
-            if (error)
+    return new Promise((resolve, reject) =>{
+        conexion.query(`SELECT * FROM ${tabla} where Usuario = ? And Password = ?`, [data.Usuario,data.Password], (error,result)=>{
+            if(error)
                 return reject(error);
-            resolve(result);
+                resolve(result);
+            
         })
-    });
+    })
 };
 
 function Insert(tabla, data) {
