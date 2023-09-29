@@ -43,6 +43,14 @@ router.patch('/Update', async function (req, res) {
     }
 });
 
+router.patch('/UpdateReCup', async function (req, res) {
+    try {
+        const items = await controlador.Update(req.body);
+        respuesta.success(req, res, items, 200);
+    } catch (error) {
+        respuesta.error(req, res, error, 500)
+    }
+});
 
 
 module.exports = router;

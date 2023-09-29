@@ -6,7 +6,7 @@ const input4c = document.querySelector("#DireccionRegistro"); //traer la informa
 const input5c = document.querySelector("#CorreoRegistro"); //traer la informacion del id o clase 
 const input6c = document.querySelector("#TelefonoRegistro");
 const input7c = document.querySelector("#UsuarioRegistro");
-const input8c = document.querySelector("#ContraseñaRegistro");
+const input8c = document.querySelector("#PasswordRegistro");
 const input9c = document.querySelector("#FechaNacimientoRegistro");
 const input10c = document.querySelector("#GeneroRegistro");
 

@@ -75,10 +75,21 @@ function Update(tabla, data) {
     });
 };
 
+function UpdateReCup(tabla, data) {
+    return new Promise((resolve, reject) => {
+        conexion.query(`Update ${tabla} SET ? WHERE Usuario = ?`, data [data,data.Usuario],  (error, result) => {
+            if (error)
+                return reject(error);
+            resolve(result);
+        })
+    });
+};
+
 
 module.exports = {
     Todos,
     Where,
     Insert,
-    Update
+    Update,
+    UpdateReCup
 }

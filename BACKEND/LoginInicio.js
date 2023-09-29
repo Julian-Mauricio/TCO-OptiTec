@@ -1,8 +1,8 @@
 const form1 = document.querySelector("#formularioLogin"); //traer la informacion del id o clase
 const input1 = document.querySelector("#UsernameLoguearse"); //traer la informacion del id o clase
-const input2 = document.querySelector("#ContraseñaLoguearse"); //traer la informacion del id o clase
+const input2 = document.querySelector("#PasswordLoguearse"); //traer la informacion del id o clase
 
-document.getElementById("enviar").addEventListener("click", WhereLogin);
+document.getElementById("EnviarLogin").addEventListener("click", WhereLogin);
 
 async function WhereLogin(event) {
     event.preventDefault();
@@ -25,7 +25,7 @@ async function WhereLogin(event) {
         console.log(Responses);
         if (Responses.body[0]?.Rol === "Admin") {
             form1.reset();
-            window.open('1.Inventarios.html', '_self');
+            window.open('4.Inventarios.html', '_self');
         } else if (Responses.body[0]?.Rol === "User") {
             form1.reset();
             window.open('1.Pantalla_Principal.html', '_self');

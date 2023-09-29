@@ -3,21 +3,6 @@
     width: 100%;
     height: 40px;
 }
-
-/*pop up*/
-.modal-header h1 {
-    margin-left: 140px;
-}
-
-.modal-body input {
-    border-radius: 5px;
-    border: 2px solid black;
-}
-
-#dropdown-menu button:hover {
-    background-color: #20262E;
-}
-
 header {
     margin-bottom: 10rem;
 }
