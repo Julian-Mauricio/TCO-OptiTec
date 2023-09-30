@@ -34,16 +34,8 @@ router.post('/Insert', async function (req, res) {
     }
 });
 
-router.patch('/Update', async function (req, res) {
-    try {
-        const items = await controlador.Update(req.body);
-        respuesta.success(req, res, items, 200);
-    } catch (error) {
-        respuesta.error(req, res, error, 500)
-    }
-});
 
-router.patch('/UpdateReCup', async function (req, res) {
+router.patch('/Update', async function (req, res) {
     try {
         const items = await controlador.Update(req.body);
         respuesta.success(req, res, items, 200);

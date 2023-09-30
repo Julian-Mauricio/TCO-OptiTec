@@ -65,19 +65,10 @@ function Insert(tabla, data) {
 };
 22
 
+
 function Update(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`Update ${tabla} SET ? WHERE id_Login = ?`, data [data,data.id_Login],  (error, result) => {
-            if (error)
-                return reject(error);
-            resolve(result);
-        })
-    });
-};
-
-function UpdateReCup(tabla, data) {
-    return new Promise((resolve, reject) => {
-        conexion.query(`Update ${tabla} SET ? WHERE Usuario = ?`, data [data,data.Usuario],  (error, result) => {
+        conexion.query(`Update ${tabla} SET ? WHERE Usuario = ?`, [data,data.Usuario],  (error, result) => {
             if (error)
                 return reject(error);
             resolve(result);
@@ -91,5 +82,4 @@ module.exports = {
     Where,
     Insert,
     Update,
-    UpdateReCup
 }

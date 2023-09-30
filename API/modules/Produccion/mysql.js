@@ -66,7 +66,7 @@ function Insert(tabla, data) {
 
 function Update(tabla, data) {
     return new Promise((resolve, reject) => {
-        conexion.query(`Update ${tabla} SET ? WHERE id_Inventario_P = ?`, data [data,data.id_Inventario_P],  (error, result) => {
+        conexion.query(`Update ${tabla} SET ? WHERE id_Inventario_P = ?`,  [data,data.id_Inventario_P],  (error, result) => {
             if (error)
                 return reject(error);
             resolve(result);

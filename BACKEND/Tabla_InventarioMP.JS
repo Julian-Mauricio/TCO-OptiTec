@@ -123,10 +123,16 @@ function mostrarFetch(data) {
 
 
 
-        buttonActualizar.addEventListener('click', ActualizarDatos);
+        buttonActualizar.addEventListener('click', abrirModal);
 
 
-
+        function abrirModal() {
+            const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+            modal.show();
+        }
+        
+        
+       
 
         //Creacion del Boton AGREGAR
         const buttonAgregar = document.createElement('button');
@@ -141,22 +147,34 @@ function mostrarFetch(data) {
     // Agrega la tabla al elemento apropiado en el documento
     document.body.appendChild(table);
 }
-//document.getElementById(actualizar).addEventListener("click", ActualizarDatos);
+
+// FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
+
+const id_Inventario_MP = document.getElementById("id")
+const tipo = document.getElementById("tipo")
+const entrada = document.getElementById("entrada")
+const stock = document.getElementById("stock")
+const salida = document.getElementById("salida")
+
+document.getElementById("Actualizar").addEventListener("click", ActualizarDatos);
 
 async function ActualizarDatos(event) {
     event.preventDefault();
     try {
         const url = "http://localhost:4000/api/Materia/Update";
-        const data =
-        {
-            id_Inventario_MP: 1,
-            Stock: 300,
+        const data = {
+            id_Inventario_MP: id_Inventario_MP.value,
+            Tipo: tipo.value,
+            Entradas: entrada.value,
+            Stock: stock.value,
+            Salida: salida.value,
+
         };
-            
+
 
         const requestOptions = {
             method: "PATCH",
-            Headers: {
+            headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
@@ -165,17 +183,16 @@ async function ActualizarDatos(event) {
         const response = await fetch(url, requestOptions);
         const reponses = await response.json();
         console.log(reponses);
-       /* if (reponses.status === 200) {
-            alert("registro actualizado")
+        if (reponses.status === 200) {
+            getfetch();
         } else {
             alert(" no de registro la actualizacion")
-        }*/
+        }
 
     } catch (error) {
         console.log("error", error);
     }
 }
-
 
 
 
