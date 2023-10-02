@@ -20,12 +20,12 @@
                 <ul class="nav flex-column">
                     <!-- Botones de navegación -->
                     <li class="nav-item">
-                        <button type="button" class="btn btn-light mb-2" onclick=getfetch()>
+                        <button type="button" class="btn btn-light mb-2" onclick=getfetchInvMp()>
                             Inventario de Materia Prima
                         </button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-success mb-2" onclick=getfetch2()>
+                        <button type="button" class="btn btn-success mb-2" onclick=getfetchInvPro()>
                             Inventario de Producción
                         </button>
                     </li>
@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <h2 class="mb-4">Bienvenido al Inventario</h2>
-                    <table id="table" class="table table-bordered">
+                    <table id="tableInventarios" class="table table-bordered">
                         <!-- Contenido de la tabla -->
                     </table>
                 </div>
@@ -53,7 +53,7 @@
         </div>
 
         <!-- Modal para actualización de datos -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ActuInvMp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -64,24 +64,24 @@
                         <!-- Contenido del modal -->
                         <div class=" d-flex">
                             <div class="d-block">
-                                <label for="id">Id:</label>
-                                <input type="number" id="id">
-                                <label for="tipo">TIPO</label>
-                                <input type="text" id="tipo" required>
+                                <label for="id_InvMp">Id:</label>
+                                <input type="number" id="id_InvMp" disabled>
+                                <label for="TipoInvMp">TIPO</label>
+                                <input type="text" id="TipoInvMp" required>
                             </div>
                             <div class="d-block">
-                                <label for="entrada">ENTRADA</label>
-                                <input type="number" id="entrada" required>
+                                <label for="EntradaInvMp">ENTRADA</label>
+                                <input type="number" id="EntradaInvMp" required>
                             </div>
                         </div>
                         <div class=" d-flex">
                             <div class="d-block">
-                                <label for="stock">STOCK</label>
-                                <input type="number" id="stock" required>
+                                <label for="StockInvMp">STOCK</label>
+                                <input type="number" id="StockInvMp" required>
                             </div>
                             <div class="d-block">
-                                <label for="salida">SALIDA</label>
-                                <input type="number" id="salida" required>
+                                <label for="SalidaInvMp">SALIDA</label>
+                                <input type="number" id="SalidaInvMp" required>
                             </div>
                         </div>
                     </div>
@@ -92,6 +92,190 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal para Registro de datos -->
+        <div class="modal fade" id="RegistroMp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Datos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Contenido del modal -->
+                        <form action="" id="FormRegistroInvMp">
+                            <div class=" d-flex">
+                                <div class="d-block">
+                                    <label for="id_LoginInvMp">Id:</label>
+                                    <input type="number" id="id_LoginInvMp">
+                                    <label for="TipoRegistroInvMp">TIPO</label>
+                                    <input type="text" id="TipoRegistroInvMp" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="EntradasRegistroInvMp">ENTRADA</label>
+                                    <input type="number" id="EntradasRegistroInvMp" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="DescripcionRegistroInvMp">Desripcion</label>
+                                    <input type="text" id="DescripcionRegistroInvMp" required>
+                                </div>
+                            </div>
+                            <div class=" d-flex">
+                                <div class="d-block">
+                                    <label for="StockRegistroInvMp">STOCK</label>
+                                    <input type="number" id="StockRegistroInvMp" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="SalidaRegistroInvMp">SALIDA</label>
+                                    <input type="number" id="SalidaRegistroInvMp" required>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Botones del modal -->
+                        <button type="button" class="btn btn-success" id="RegistrarInvMp">Guardar Cambios</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="modal fade" id="ActuInvPro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizacion de Datos Inventario Produccion
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <!-- Contenido del modal -->
+                    <div class="modal-body">
+                        <form action="" id="FormularioInvPro">
+                            <div class=" d-flex">
+                                <div class="d-block">
+                                    <label for="id_InvPro">Id:</label>
+                                    <input type="number" id="id_InvPro" disabled>
+                                    <label for="TipoInvPro">TIPO</label>
+                                    <input type="text" id="TipoInvPro" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="EntradaInvPro">ENTRADA</label>
+                                    <input type="number" id="EntradaInvPro" required>
+                                </div>
+                            </div>
+                            <div class=" d-flex">
+                                <div class="d-block">
+                                    <label for="StockInvPro">STOCK</label>
+                                    <input type="number" id="StockInvPro" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="SalidaInvPro">SALIDA</label>
+                                    <input type="number" id="SalidaInvPro" required>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Botones del modal -->
+                        <button type="button" class="btn btn-success" id="ActualizarInvPro">Guardar Cambios</button>
+                    </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para Registro de datos -->
+        <div class="modal fade" id="RegistroInvPro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Registro de Datos</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Contenido del modal -->
+                        <form action="" id="FormRegistroInvPro">
+                            <div class=" d-flex">
+                                <div class="d-block">
+                                    <label for="id">Id:</label>
+                                    <input type="number" id="id_Login">
+                                    <label for="TipoRegistroInvPro">TIPO</label>
+                                    <input type="text" id="TipoRegistroInvPro" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="EntradasRegistroInvPro">ENTRADA</label>
+                                    <input type="number" id="EntradasRegistroInvPro" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="DescripcionRegistroInvPro">Desripcion</label>
+                                    <input type="text" id="DescripcionRegistroInvPro" required>
+                                </div>
+                            </div>
+                            <div class=" d-flex">
+                                <div class="d-block">
+                                    <label for="StockRegistroInvPro">STOCK</label>
+                                    <input type="number" id="StockRegistroInvPro" required>
+                                </div>
+                                <div class="d-block">
+                                    <label for="SalidaRegistroInvPro">SALIDA</label>
+                                    <input type="number" id="SalidaRegistroInvPro" required>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- Botones del modal -->
+                        <button type="button" class="btn btn-success" id="RegistrarInvPro">Guardar Cambios</button>
+                    </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </main>
 
     <!-- Scripts -->

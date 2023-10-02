@@ -1,20 +1,20 @@
-const table2 = document.querySelector('#table');
+const tableInvPro = document.querySelector('#tableInventarios');
 
 
-async function getfetch2() {
+async function getfetchInvPro() {
     const url = 'http://localhost:4000/api/Produccion';
     try {
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
-        mostrarFetch2(data);
+        mostrarFetchInvPro(data);
     } catch (error) {
         console.log('Error fetching data:', error);
     }
 }
 
-function mostrarFetch2(data) {
-    table2.innerHTML = '';
+function mostrarFetchInvPro(data) {
+    tableInvPro.innerHTML = '';
     const cabecera = document.createElement('tr');
 
     const id = document.createElement('th');
@@ -46,23 +46,24 @@ function mostrarFetch2(data) {
     cabecera.appendChild(accion);
 
 
-    table2.appendChild(cabecera);
+    tableInvPro.appendChild(cabecera);
 
     for (let i = 0; i < data.body.length; i++) {
         const element = data.body[i];
+
         const contenido = document.createElement('tr');
 
-        const idc = document.createElement('td');
-        idc.textContent = element.id_Inventario_P;
-        contenido.appendChild(idc);
+        const id_mpc = document.createElement('td');
+        id_mpc.textContent = element.id_Inventario_P;
+        contenido.appendChild(id_mpc);
 
         const tipoc = document.createElement('td');
         tipoc.textContent = element.Tipo;
         contenido.appendChild(tipoc);
 
-        const entradac = document.createElement('td');
-        entradac.textContent = element.Entradas;
-        contenido.appendChild(entradac);
+        const entradasc = document.createElement('td');
+        entradasc.textContent = element.Entradas;
+        contenido.appendChild(entradasc);
 
         const stockc = document.createElement('td');
         stockc.textContent = element.Stock;
@@ -72,31 +73,17 @@ function mostrarFetch2(data) {
         salidac.textContent = element.Salida;
         contenido.appendChild(salidac);
 
-        const descripcionc = document.createElement('td');
-        descripcionc.textContent = element.Descripcion;
-        contenido.appendChild(descripcionc);
+        const Descripcionc = document.createElement('td');
+        Descripcionc.textContent = element.Descripcion;
+        contenido.appendChild(Descripcionc);
+
+
 
         //Creacion del Boton Eliminar
         const buttonEliminar = document.createElement('button');
         buttonEliminar.textContent = 'ELIMINAR';
         buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
-
-        //Creacion del Boton Actualizar
-        const buttonActualizar = document.createElement('button');
-        buttonActualizar.textContent = 'ACTUALIZAR';
-        buttonActualizar.classList.add('btn', 'btn-primary');
-
-        //Creacion del Boton AGREGAR
-        const buttonAgregar = document.createElement('button');
-        buttonAgregar.textContent = 'AGREGAR';
-        buttonAgregar.classList.add('btn', 'btn-success');
-
-        //Anexo los Botones 
-        const accionc = document.createElement('td');
-        accionc.appendChild(buttonEliminar);
-        accionc.appendChild(buttonActualizar);
-        accionc.appendChild(buttonAgregar);
-        contenido.appendChild(accionc);
+        contenido.appendChild(buttonEliminar);
 
         buttonEliminar.addEventListener("click", EliminarRegistro)
 
@@ -119,7 +106,7 @@ function mostrarFetch2(data) {
                 const Responses = await response.json();
                 if (Responses.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
-                    getfetch();
+                    getfetchInvMp();
                 } else {
                     alert("No Se Elimino Ningun Registro");
                 }
@@ -128,18 +115,159 @@ function mostrarFetch2(data) {
             }
         }
 
+        //Creacion del Boton Actualizar
+        const buttonActualizar = document.createElement('button');
+        buttonActualizar.textContent = 'ACTUALIZAR';
+        buttonActualizar.classList.add('btn', 'btn-primary');
+        contenido.appendChild(buttonActualizar);
+
+        buttonActualizar.addEventListener('click', abrirModal);
 
 
-        table2.appendChild(contenido);
+
+
+        //Funcion Para Abrir la Ventana Modal de Actualizar Registros de Inventario de Materia Prima
+        function abrirModal() {
+            //Se traen los Campos  y se Igualan A los Valores de Los campos De Cada Fila
+            const id_Inventario_P = document.getElementById("id_InvPro");
+            const TipoAct = document.getElementById("TipoInvPro");
+            const EntradaAct = document.getElementById("EntradaInvPro");
+            const StockAct = document.getElementById("StockInvPro");
+            const SalidaAct = document.getElementById("SalidaInvPro");
+
+            id_Inventario_P.value = element.id_Inventario_P;
+            TipoAct.value = element.Tipo;
+            EntradaAct.value = element.Entradas;
+            StockAct.value = element.Stock;
+            SalidaAct.value = element.Salida;
+
+            const modal = new bootstrap.Modal(document.getElementById('ActuInvPro'));
+            modal.show();
+        }
+
+
+        //Creacion del Boton AGREGAR
+        const buttonAgregar = document.createElement('button');
+        buttonAgregar.textContent = 'AGREGAR';
+        buttonAgregar.classList.add('btn', 'btn-success');
+        contenido.appendChild(buttonAgregar);
+
+        buttonAgregar.addEventListener('click', abrirModalRegistrar);
+
+        //Funcion Para Abrir la Ventana Modal de Actualizar Registros
+        function abrirModalRegistrar() {
+            const modal = new bootstrap.Modal(document.getElementById('RegistroInvPro'));
+            modal.show();
+        }
+
+        tableInvPro.appendChild(contenido);
     }
     // Agrega la tabla al elemento apropiado en el documento
-    document.body.appendChild(table2);
+    document.body.appendChild(tableInvPro);
+}
+
+// FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
+
+
+/*********************************************************************************************/
+
+//Se Traen Los Valores a Actualiar
+
+
+
+const id_Inventario_P = document.getElementById("id_InvPro");
+const TipoActPro = document.getElementById("TipoInvPro");
+const EntradaActPro = document.getElementById("EntradaInvPro");
+const StockActPro = document.getElementById("StockInvPro");
+const SalidaActPro = document.getElementById("SalidaInvPro");
+
+document.getElementById("ActualizarInvPro").addEventListener("click", ActualizarDatos);
+
+//Funcion de Actualizar Registros de Inventario de Materia Prima
+
+async function ActualizarDatos(event) {
+    event.preventDefault();
+    try {
+        const url = "http://localhost:4000/api/Produccion/Update";
+        const data = {
+            id_Inventario_P: id_Inventario_P.value,
+            Tipo: TipoActPro.value,
+            Entradas: EntradaActPro.value,
+            Stock: StockActPro.value,
+            Salida: SalidaActPro.value,
+
+        };
+
+
+        const requestOptions = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+
+        const response = await fetch(url, requestOptions);
+        const reponses = await response.json();
+        console.log(reponses);
+        if (reponses.status === 200) {
+            getfetchInvPro();
+        } else {
+            alert(" no de registro la actualizacion")
+        }
+
+    } catch (error) {
+        console.log("error", error);
+    }
 }
 
 
 
+/*
+//Se Traen Los Valores  a Registrar
+const FormRegistro = document.getElementById("FormRegistroInvMp");
+const id_Login = document.querySelector("#id_LoginInvMp");
+const TipoRegistro = document.querySelector("#TipoRegistroInvMp");
+const DescripcionRegistro = document.querySelector("#DescripcionRegistroInvMp");
+const EntradasRegistro = document.querySelector("#EntradasRegistroInvMp");
+const StockRegistro = document.querySelector("#StockRegistroInvMp");
+const SalidaRegistro = document.querySelector("#SalidaRegistroInvMp");
 
 
+document.getElementById("RegistrarInvMp").addEventListener("click", RegistroMateria);
 
-
+//Funcion de  Registros de Inventario de Materia Prima
+async function RegistroMateria(event) {
+    event.preventDefault();
+    try {
+        const url = "http://localhost:4000/api/Materia/Insert";
+        const data = {
+            id_Login: id_Login.value,
+            Tipo: TipoRegistro.value,
+            Descripcion: DescripcionRegistro.value,
+            Entradas: EntradasRegistro.value,
+            Stock: StockRegistro.value,
+            Salida: SalidaRegistro.value,
+        };
+        const requestOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        const response = await fetch(url, requestOptions);
+        const Responses = await response.json();
+        if (Responses.status === 200) {
+            FormRegistro.reset();
+            alert("Se Agrego el Registro Correctamente");
+            getfetchInvMp();
+        } else {
+            alert("Error al intentar Agregar el Registro");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+*/
 

@@ -1,9 +1,9 @@
 // Selección del elemento de la tabla mediante su ID
-const table = document.querySelector('#table');
+const table = document.querySelector('#tableInventarios');
 
 
 // Selección del elemento de la tabla mediante su ID
-async function getfetch() {
+async function getfetchInvMp() {
     const url = 'http://localhost:4000/api/Materia';
     try {
         const response = await fetch(url);
@@ -83,7 +83,6 @@ function mostrarFetch(data) {
         buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
         contenido.appendChild(buttonEliminar);
 
-
         buttonEliminar.addEventListener("click", EliminarRegistro)
 
         //Funcion de Eliminar Registros
@@ -105,7 +104,7 @@ function mostrarFetch(data) {
                 const Responses = await response.json();
                 if (Responses.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
-                    getfetch();
+                    getfetchInvMp();
                 } else {
                     alert("No Se Elimino Ningun Registro");
                 }
@@ -114,7 +113,6 @@ function mostrarFetch(data) {
             }
         }
 
-
         //Creacion del Boton Actualizar
         const buttonActualizar = document.createElement('button');
         buttonActualizar.textContent = 'ACTUALIZAR';
@@ -122,17 +120,29 @@ function mostrarFetch(data) {
         contenido.appendChild(buttonActualizar);
 
 
-
         buttonActualizar.addEventListener('click', abrirModal);
 
 
+
+        //Funcion Para Abrir la Ventana Modal de Actualizar Registros de Inventario de Materia Prima
         function abrirModal() {
-            const modal = new bootstrap.Modal(document.getElementById('exampleModal'));
+
+            //Se traen los Campos  y se Igualan A los Valores de Los campos De Cada Fila
+            const id_Inventario_MP = document.getElementById("id_InvMp");
+            const TipoAct = document.getElementById("TipoInvMp");
+            const EntradaAct = document.getElementById("EntradaInvMp");
+            const StockAct = document.getElementById("StockInvMp");
+            const SalidaAct = document.getElementById("SalidaInvMp");
+
+            id_Inventario_MP.value = element.id_Inventario_MP;
+            TipoAct.value = element.Tipo;
+            EntradaAct.value = element.Entradas;
+            StockAct.value = element.Stock;
+            SalidaAct.value = element.Salida;
+
+            const modal = new bootstrap.Modal(document.getElementById('ActuInvMp'));
             modal.show();
         }
-        
-        
-       
 
         //Creacion del Boton AGREGAR
         const buttonAgregar = document.createElement('button');
@@ -140,7 +150,13 @@ function mostrarFetch(data) {
         buttonAgregar.classList.add('btn', 'btn-success');
         contenido.appendChild(buttonAgregar);
 
+        buttonAgregar.addEventListener('click', abrirModalRegistrar);
 
+        //Funcion Para Abrir la Ventana Modal de Actualizar Registros
+        function abrirModalRegistrar() {
+            const modal = new bootstrap.Modal(document.getElementById('RegistroMp'));
+            modal.show();
+        }
 
         table.appendChild(contenido);
     }
@@ -150,13 +166,20 @@ function mostrarFetch(data) {
 
 // FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
 
-const id_Inventario_MP = document.getElementById("id")
-const tipo = document.getElementById("tipo")
-const entrada = document.getElementById("entrada")
-const stock = document.getElementById("stock")
-const salida = document.getElementById("salida")
+
+/*********************************************************************************************/
+
+//Se Traen Los Valores a Actualiar
+const FormRegistroInvMp = document.querySelector("#FormRegistroInvMp");
+const id_Inventario_MP = document.getElementById("id_InvMp");
+const TipoAct = document.getElementById("TipoInvMp");
+const EntradaAct = document.getElementById("EntradaInvMp");
+const StockAct = document.getElementById("StockInvMp");
+const SalidaAct = document.getElementById("SalidaInvMp");
 
 document.getElementById("Actualizar").addEventListener("click", ActualizarDatos);
+
+//Funcion de Actualizar Registros de Inventario de Materia Prima
 
 async function ActualizarDatos(event) {
     event.preventDefault();
@@ -164,10 +187,10 @@ async function ActualizarDatos(event) {
         const url = "http://localhost:4000/api/Materia/Update";
         const data = {
             id_Inventario_MP: id_Inventario_MP.value,
-            Tipo: tipo.value,
-            Entradas: entrada.value,
-            Stock: stock.value,
-            Salida: salida.value,
+            Tipo: TipoAct.value,
+            Entradas: EntradaAct.value,
+            Stock: StockAct.value,
+            Salida: SalidaAct.value,
 
         };
 
@@ -184,7 +207,7 @@ async function ActualizarDatos(event) {
         const reponses = await response.json();
         console.log(reponses);
         if (reponses.status === 200) {
-            getfetch();
+            getfetchInvMp();
         } else {
             alert(" no de registro la actualizacion")
         }
@@ -195,5 +218,51 @@ async function ActualizarDatos(event) {
 }
 
 
+/*********************************************************************************************/
 
+//Se Traen Los Valores  a Registrar
+const FormRegistro = document.getElementById("FormRegistroInvMp");
+const id_Login = document.querySelector("#id_LoginInvMp");
+const TipoRegistro = document.querySelector("#TipoRegistroInvMp");
+const DescripcionRegistro = document.querySelector("#DescripcionRegistroInvMp");
+const EntradasRegistro = document.querySelector("#EntradasRegistroInvMp");
+const StockRegistro = document.querySelector("#StockRegistroInvMp");
+const SalidaRegistro = document.querySelector("#SalidaRegistroInvMp");
+
+
+document.getElementById("RegistrarInvMp").addEventListener("click", RegistroMateria);
+
+//Funcion de  Registros de Inventario de Materia Prima
+async function RegistroMateria(event) {
+    event.preventDefault();
+    try {
+        const url = "http://localhost:4000/api/Materia/Insert";
+        const data = {
+            id_Login: id_Login.value,
+            Tipo: TipoRegistro.value,
+            Descripcion: DescripcionRegistro.value,
+            Entradas: EntradasRegistro.value,
+            Stock: StockRegistro.value,
+            Salida: SalidaRegistro.value,
+        };
+        const requestOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        const response = await fetch(url, requestOptions);
+        const Responses = await response.json();
+        if (Responses.status === 200) {
+            FormRegistro.reset();
+            alert("Se Agrego el Registro Correctamente");
+            getfetchInvMp();
+        } else {
+            alert("Error al intentar Agregar el Registro");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
 
