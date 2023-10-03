@@ -1,6 +1,5 @@
-// Selección del elemento de la tabla mediante su ID
-const table = document.querySelector('#tableInventarios');
-
+const table2 = document.querySelector('#tableInventarios');
+document.getElementById("getfetchInvMp").addEventListener("click", getfetchInvMp)
 
 // Selección del elemento de la tabla mediante su ID
 async function getfetchInvMp() {
@@ -18,7 +17,7 @@ async function getfetchInvMp() {
 // Función para mostrar los datos en la tabla
 
 function mostrarFetch(data) {
-    table.innerHTML = ''; // Limpia el contenido actual de la tabla
+    table2.innerHTML = ''; // Limpia el contenido actual de la tabla
 
     // Creación de la cabecera de la tabla
     const cabecera = document.createElement('tr');
@@ -49,7 +48,7 @@ function mostrarFetch(data) {
     cabecera.appendChild(accion);
 
 
-    table.appendChild(cabecera); // Agrega la cabecera a la tabla
+    table2.appendChild(cabecera); // Agrega la cabecera a la tabla
 
     // Itera sobre los datos y crea filas para cada entrada
     for (let i = 0; i < data.body.length; i++) {
@@ -158,10 +157,10 @@ function mostrarFetch(data) {
             modal.show();
         }
 
-        table.appendChild(contenido);
+        table2.appendChild(contenido);
     }
     // Agrega la tabla al elemento apropiado en el documento
-    document.body.appendChild(table);
+    document.body.appendChild(table2);
 }
 
 // FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
