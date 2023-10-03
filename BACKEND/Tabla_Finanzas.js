@@ -1,4 +1,4 @@
-const table3 = document.querySelector('#table');
+const table = document.querySelector('#tableInventarios');
 
 
 async function getfetch3() {

@@ -23,10 +23,10 @@ async function WhereLogin(event) {
         const response = await fetch(url, requestOptions);
         const Responses = await response.json();
         console.log(Responses);
-        if (Responses.body[0]?.Rol === "Admin") {
+        if (Responses.body[0]?.Rol === "Administrador") {
             formularioLogin.reset();
             window.open('4.Inventarios.html', '_self');
-        } else if (Responses.body[0]?.Rol === "User") {
+        } else if (Responses.body[0]?.Rol === "Usuario Normal") {
             formularioLogin.reset();
             window.open('1.Pantalla_Principal.html', '_self');
         } else {

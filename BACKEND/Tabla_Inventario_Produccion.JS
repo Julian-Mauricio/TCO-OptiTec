@@ -169,7 +169,6 @@ function mostrarFetchInvPro(data) {
 // FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
 
 
-/*********************************************************************************************/
 
 //Se Traen Los Valores a Actualiar
 
@@ -223,31 +222,31 @@ async function ActualizarDatos(event) {
 
 
 
-/*
+
 //Se Traen Los Valores  a Registrar
-const FormRegistro = document.getElementById("FormRegistroInvMp");
-const id_Login = document.querySelector("#id_LoginInvMp");
-const TipoRegistro = document.querySelector("#TipoRegistroInvMp");
-const DescripcionRegistro = document.querySelector("#DescripcionRegistroInvMp");
-const EntradasRegistro = document.querySelector("#EntradasRegistroInvMp");
-const StockRegistro = document.querySelector("#StockRegistroInvMp");
-const SalidaRegistro = document.querySelector("#SalidaRegistroInvMp");
+
+const id_LoginIvnPro = document.querySelector("#id_LoginInvPro");
+const TipoRegistroIvnPro = document.querySelector("#TipoRegistroInvPro");
+const DescripcionRegistroIvnPro = document.querySelector("#DescripcionRegistroInvPro");
+const EntradasRegistroIvnPro = document.querySelector("#EntradasRegistroInvPro");
+const StockRegistroIvnPro = document.querySelector("#StockRegistroInvPro");
+const SalidaRegistroIvnPro = document.querySelector("#SalidaRegistroInvPro");
 
 
-document.getElementById("RegistrarInvMp").addEventListener("click", RegistroMateria);
+document.getElementById("RegistrarInvPro").addEventListener("click", RegistroMateria);
 
 //Funcion de  Registros de Inventario de Materia Prima
 async function RegistroMateria(event) {
     event.preventDefault();
     try {
-        const url = "http://localhost:4000/api/Materia/Insert";
+        const url = "http://localhost:4000/api/Produccion/Insert";
         const data = {
-            id_Login: id_Login.value,
-            Tipo: TipoRegistro.value,
-            Descripcion: DescripcionRegistro.value,
-            Entradas: EntradasRegistro.value,
-            Stock: StockRegistro.value,
-            Salida: SalidaRegistro.value,
+            id_Login: id_LoginIvnPro.value,
+            Tipo: TipoRegistroIvnPro.value,
+            Descripcion: DescripcionRegistroIvnPro.value,
+            Entradas: EntradasRegistroIvnPro.value,
+            Stock: StockRegistroIvnPro.value,
+            Salida: SalidaRegistroIvnPro.value,
         };
         const requestOptions = {
             method: "POST",
@@ -259,7 +258,6 @@ async function RegistroMateria(event) {
         const response = await fetch(url, requestOptions);
         const Responses = await response.json();
         if (Responses.status === 200) {
-            FormRegistro.reset();
             alert("Se Agrego el Registro Correctamente");
             getfetchInvMp();
         } else {
@@ -269,5 +267,5 @@ async function RegistroMateria(event) {
         console.error("Error:", error);
     }
 }
-*/
+
 
