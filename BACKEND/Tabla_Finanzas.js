@@ -111,9 +111,7 @@ function mostrarFetchFinz(dataFinz) {
 
         buttonUpdFinz.addEventListener('click', updateFinz);
 
-        function updateFinz() {
-            
-        }
+        fun
 
         tFinanzas.appendChild(contFinz);
     }
