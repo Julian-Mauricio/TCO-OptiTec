@@ -88,6 +88,7 @@ function mostrarFetchInvMp(data) {
         const buttonEliminar = document.createElement('button');
         buttonEliminar.textContent = 'ELIMINAR';
         buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
+        
         contenido.appendChild(buttonEliminar);
 
         buttonEliminar.addEventListener("click", EliminarRegistro)
