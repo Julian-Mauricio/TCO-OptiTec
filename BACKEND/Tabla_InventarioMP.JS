@@ -18,7 +18,6 @@ async function getfetchInvMp() {
 
 function mostrarFetchInvMp(data) {
     tableInvMp.innerHTML = ''; // Limpia el contenido actual de la tabla
-
     // Creación de la cabecera de la tabla
     const cabecera = document.createElement('tr');
 
@@ -50,7 +49,6 @@ function mostrarFetchInvMp(data) {
     const accion = document.createElement('th');
     accion.textContent = 'ACCION';
     cabecera.appendChild(accion);
-
 
     tableInvMp.appendChild(cabecera); // Agrega la cabecera a la tabla
 
