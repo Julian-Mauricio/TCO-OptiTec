@@ -1,5 +1,5 @@
 const tableInvPro = document.querySelector('#tableInventarios');
-
+document.getElementById("getfetchInvPro").addEventListener("click", getfetchInvPro)
 
 async function getfetchInvPro() {
     const url = 'http://localhost:4000/api/Produccion';
@@ -25,6 +25,10 @@ function mostrarFetchInvPro(data) {
     tipo.textContent = 'TIPO';
     cabecera.appendChild(tipo);
 
+    const descripcion = document.createElement('th');
+    descripcion.textContent = 'Descripcion';
+    cabecera.appendChild(descripcion);
+    
     const entrada = document.createElement('th');
     entrada.textContent = 'ENTRADA';
     cabecera.appendChild(entrada);
@@ -36,10 +40,6 @@ function mostrarFetchInvPro(data) {
     const salida = document.createElement('th');
     salida.textContent = 'SALIDA';
     cabecera.appendChild(salida);
-
-    const descripcion = document.createElement('th');
-    descripcion.textContent = 'Descripcion';
-    cabecera.appendChild(descripcion);
 
     const accion = document.createElement('th');
     accion.textContent = 'ACCION';
@@ -61,6 +61,10 @@ function mostrarFetchInvPro(data) {
         tipoc.textContent = element.Tipo;
         contenido.appendChild(tipoc);
 
+        const Descripcionc = document.createElement('td');
+        Descripcionc.textContent = element.Descripcion;
+        contenido.appendChild(Descripcionc);
+
         const entradasc = document.createElement('td');
         entradasc.textContent = element.Entradas;
         contenido.appendChild(entradasc);
@@ -73,9 +77,7 @@ function mostrarFetchInvPro(data) {
         salidac.textContent = element.Salida;
         contenido.appendChild(salidac);
 
-        const Descripcionc = document.createElement('td');
-        Descripcionc.textContent = element.Descripcion;
-        contenido.appendChild(Descripcionc);
+      
 
 
 
@@ -106,7 +108,7 @@ function mostrarFetchInvPro(data) {
                 const Responses = await response.json();
                 if (Responses.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
-                    getfetchInvMp();
+                    getfetchInvPro();
                 } else {
                     alert("No Se Elimino Ningun Registro");
                 }
@@ -259,7 +261,7 @@ async function RegistroMateria(event) {
         const Responses = await response.json();
         if (Responses.status === 200) {
             alert("Se Agrego el Registro Correctamente");
-            getfetchInvMp();
+            getfetchInvPro();
         } else {
             alert("Error al intentar Agregar el Registro");
         }

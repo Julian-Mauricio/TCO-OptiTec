@@ -1,4 +1,4 @@
-const table2 = document.querySelector('#tableInventarios');
+const tableInvMp = document.querySelector('#tableInventarios');
 document.getElementById("getfetchInvMp").addEventListener("click", getfetchInvMp)
 
 // Selección del elemento de la tabla mediante su ID
@@ -8,7 +8,7 @@ async function getfetchInvMp() {
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
-        mostrarFetch(data);
+        mostrarFetchInvMp(data);
     } catch (error) {
         console.log('Error fetching data:', error);
     }
@@ -16,8 +16,8 @@ async function getfetchInvMp() {
 
 // Función para mostrar los datos en la tabla
 
-function mostrarFetch(data) {
-    table2.innerHTML = ''; // Limpia el contenido actual de la tabla
+function mostrarFetchInvMp(data) {
+    tableInvMp.innerHTML = ''; // Limpia el contenido actual de la tabla
 
     // Creación de la cabecera de la tabla
     const cabecera = document.createElement('tr');
@@ -30,6 +30,10 @@ function mostrarFetch(data) {
     const tipo = document.createElement('th');
     tipo.textContent = 'TIPO';
     cabecera.appendChild(tipo);
+
+    const descripcion = document.createElement('th');
+    descripcion.textContent = 'Descripcion';
+    cabecera.appendChild(descripcion);
 
     const entrada = document.createElement('th');
     entrada.textContent = 'ENTRADA';
@@ -48,7 +52,7 @@ function mostrarFetch(data) {
     cabecera.appendChild(accion);
 
 
-    table2.appendChild(cabecera); // Agrega la cabecera a la tabla
+    tableInvMp.appendChild(cabecera); // Agrega la cabecera a la tabla
 
     // Itera sobre los datos y crea filas para cada entrada
     for (let i = 0; i < data.body.length; i++) {
@@ -63,6 +67,10 @@ function mostrarFetch(data) {
         const tipoc = document.createElement('td');
         tipoc.textContent = element.Tipo;
         contenido.appendChild(tipoc);
+
+        const Descripcionc = document.createElement('td');
+        Descripcionc.textContent = element.Descripcion;
+        contenido.appendChild(Descripcionc);
 
         const entradasc = document.createElement('td');
         entradasc.textContent = element.Entradas;
@@ -129,12 +137,14 @@ function mostrarFetch(data) {
             //Se traen los Campos  y se Igualan A los Valores de Los campos De Cada Fila
             const id_Inventario_MP = document.getElementById("id_InvMp");
             const TipoAct = document.getElementById("TipoInvMp");
+            const DescripcionAct = document.getElementById("DescripcionInvMp");
             const EntradaAct = document.getElementById("EntradaInvMp");
             const StockAct = document.getElementById("StockInvMp");
             const SalidaAct = document.getElementById("SalidaInvMp");
 
             id_Inventario_MP.value = element.id_Inventario_MP;
             TipoAct.value = element.Tipo;
+            DescripcionAct.value = element.Descripcion;
             EntradaAct.value = element.Entradas;
             StockAct.value = element.Stock;
             SalidaAct.value = element.Salida;
@@ -157,10 +167,10 @@ function mostrarFetch(data) {
             modal.show();
         }
 
-        table2.appendChild(contenido);
+        tableInvMp.appendChild(contenido);
     }
     // Agrega la tabla al elemento apropiado en el documento
-    document.body.appendChild(table2);
+    document.body.appendChild(tableInvMp);
 }
 
 // FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
@@ -168,10 +178,18 @@ function mostrarFetch(data) {
 
 /*********************************************************************************************/
 
+document.getElementById("ActualizarCancelar").addEventListener("click", ActualizarCancelar);
+function ActualizarCancelar() {
+    console.log("cancela");
+    const modal = new bootstrap.Modal(document.getElementById('ActuInvMp'));
+    modal.hide();    
+}
+
 //Se Traen Los Valores a Actualiar
 const FormRegistroInvMp = document.querySelector("#FormRegistroInvMp");
 const id_Inventario_MP = document.getElementById("id_InvMp");
 const TipoAct = document.getElementById("TipoInvMp");
+const DescripcionAct = document.getElementById("DescripcionInvMp");
 const EntradaAct = document.getElementById("EntradaInvMp");
 const StockAct = document.getElementById("StockInvMp");
 const SalidaAct = document.getElementById("SalidaInvMp");
@@ -187,6 +205,7 @@ async function ActualizarDatos(event) {
         const data = {
             id_Inventario_MP: id_Inventario_MP.value,
             Tipo: TipoAct.value,
+            Descripcion: DescripcionAct.value,
             Entradas: EntradaAct.value,
             Stock: StockAct.value,
             Salida: SalidaAct.value,

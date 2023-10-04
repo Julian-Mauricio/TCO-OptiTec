@@ -25,7 +25,7 @@
                         </button>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-success mb-2" onclick=getfetchInvPro()>
+                        <button type="button" class="btn btn-success mb-2" id="getfetchInvPro">
                             Inventario de Producción
                         </button>
                     </li>
@@ -52,48 +52,58 @@
             </div>
         </div>
 
-        <!-- Modal para actualización de datos -->
-        <div class="modal fade" id="ActuInvMp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- ************ Modal para actualización de datos de Materia Prima ************************ -->
+
+
+        <div class="modal fade" id="ActuInvMp">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">Actualizacion de Datos</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
+
+                    <h1 class="modal-title text-center" id="exampleModalLabel">Actualizacion de Datos</h1>
+
                     <div class="modal-body">
                         <!-- Contenido del modal -->
                         <div class=" d-flex">
-                            <div class="d-block">
+                            <div class="d-block p-2">
                                 <label for="id_InvMp">Id:</label>
                                 <input type="number" id="id_InvMp" disabled>
                                 <label for="TipoInvMp">TIPO</label>
                                 <input type="text" id="TipoInvMp" required>
                             </div>
-                            <div class="d-block">
+                            <div class="d-block p-2 ">
+                                <label for="DescripcionInvMp">DESCRIPCION</label>
+                                <input type="text" id="DescripcionInvMp" required>
+
                                 <label for="EntradaInvMp">ENTRADA</label>
                                 <input type="number" id="EntradaInvMp" required>
                             </div>
                         </div>
-                        <div class=" d-flex">
-                            <div class="d-block">
+                        <div class=" d-flex mb-4">
+                            <div class="d-block p-2">
                                 <label for="StockInvMp">STOCK</label>
                                 <input type="number" id="StockInvMp" required>
                             </div>
-                            <div class="d-block">
+                            <div class="d-block p-2">
                                 <label for="SalidaInvMp">SALIDA</label>
                                 <input type="number" id="SalidaInvMp" required>
                             </div>
                         </div>
+
+                        <div class="botones">
+                            <!-- Botones del modal -->
+                            <button type="button" class="btn btn-success w-100 mb-4" id="Actualizar">Guardar
+                                Cambios</button>
+                            <button type="button" class="btn btn-secondary w-100 " id="ActualizarCancelar">Cancelar
+                                Cambios</button>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <!-- Botones del modal -->
-                        <button type="button" class="btn btn-success" id="Actualizar">Guardar Cambios</button>
-                    </div>
+
                 </div>
             </div>
         </div>
 
-        <!-- Modal para Registro de datos -->
+        <!-- ****************** Modal para Registro de datos Materia Prima ************************ -->
+
         <div class="modal fade" id="RegistroMp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -141,20 +151,13 @@
             </div>
         </div>
 
-       
+
+        <!-- ***************************************************************************************************** -->
 
 
+        <!-- ************ Modal para actualización de datos del Inventario de Produccion ************************ -->
 
-
-
-
-
-
-
-
-
-
-        <div class="modal fade" id="ActuInvPro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ActuInvPro">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -199,8 +202,10 @@
             </div>
         </div>
 
-        <!-- Modal para Registro de datos -->
-        <div class="modal fade" id="RegistroInvPro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- ****************** Modal para Registro de datos del Inventario de Produccion ************************ -->
+
+        <div class="modal fade" id="RegistroInvPro" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -246,36 +251,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </main>
 
     <!-- Scripts -->
