@@ -1,118 +1,100 @@
-const table = document.querySelector('#tableInventarios');
+const tFinanzas = document.querySelector('#tableInventarios');
+document.getElementById("getfetchFinz").addEventListener("click", getfetchFinz)
 
-
-async function getfetch3() {
-    const url = 'http://localhost:4000/api/Finanzas';
+async function getfetchFinz() {
+    const urlFinz = 'http://localhost:4000/api/Finanzas';
     try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        mostrarFetch3(data);
+        const responseFinz = await fetch(urlFinz);
+        const dataFinz = await responseFinz.json();
+        console.log(dataFinz);
+        mostrarFetchFinz(dataFinz);
     } catch (error) {
         console.log('Error fetching data:', error);
     }
 }
 
-function mostrarFetch3(data) {
-    table3.innerHTML = '';
-    const cabecera = document.createElement('tr');
+// Función para mostrar los datos en la tabla
 
-    const id = document.createElement('th');
-    id.textContent = 'ID';
-    cabecera.appendChild(id);
+function mostrarFetchFinz(dataFinz) {
+    tFinanzas.innerHTML = '';
 
-    const metodo_p = document.createElement('th');
-    metodo_p.textContent = 'METODO_PAGO';
-    cabecera.appendChild(metodo_p);
+    const cabFinz = document.createElement('tr');
 
-    const saldo = document.createElement('th');
-    saldo.textContent = 'SALDO';
-    cabecera.appendChild(saldo);
+    const idFinz = document.createElement('th');
+    idFinz.textContent = 'Id';
+    cabFinz.appendChild(idFinz);
 
-    const total_m = document.createElement('th');
-    total_m.textContent = 'TOTAL_MONTO';
-    cabecera.appendChild(total_m);
+    const idCorFinz = document.createElement('th');
+    idCorFinz.textContent = 'Id Corte';
+    cabFinz.appendChild(idCorFinz);
 
-    const usuario = document.createElement('th');
-    usuario.textContent = 'USUARIO';
-    cabecera.appendChild(usuario);
+    const saldFinz = document.createElement('th');
+    saldFinz.textContent = 'Saldo';
+    cabFinz.appendChild(saldFinz);
 
-    const accion = document.createElement('th');
-    accion.textContent = 'ACCION';
-    cabecera.appendChild(accion);
+    const pagFinz = document.createElement('th');
+    pagFinz.textContent = 'Metodo Pago';
+    cabFinz.appendChild(pagFinz);
 
+    const totFinz = document.createElement('th');
+    totFinz.textContent = 'Total';
+    cabFinz.appendChild(totFinz);
 
-    table3.appendChild(cabecera);
+    tFinanzas.appendChild(cabFinz);
 
-    for (let i = 0; i < data.body.length; i++) {
-        const element = data.body[i];
-        const contenido = document.createElement('tr');
+    for (let i = 0; i < dataFinz.body.length; i++) {
+        const elementFinz = dataFinz.body[i];
 
-        const idc = document.createElement('td');
-        idc.textContent = element.id_Corte;
-        contenido.appendChild(idc);
+        const contFinz = document.createElement('tr');
 
-        const metodo_pc = document.createElement('td');
-        metodo_pc.textContent = element.Metodo_Pago;
-        contenido.appendChild(metodo_pc);
+        const id_LonFinz = document.createElement('td');
+        id_LonFinz.textContent = elementFinz.id_Login;
+        contFinz.appendChild(id_LonFinz);
 
-        const saldoc = document.createElement('td');
-        saldoc.textContent = element.Saldo;
-        contenido.appendChild(saldoc);
+        const id_Finz = document.createElement('td');
+        id_Finz.textContent = elementFinz.id_Corte;
+        contFinz.appendChild(id_Finz);
 
-        const total_m = document.createElement('td');
-        total_m.textContent = element.Total_Monto;
-        contenido.appendChild(total_m);
+        const Sald = document.createElement('td');
+        Sald.textContent = elementFinz.Saldo;
+        contFinz.appendChild(Sald);
 
-        const usuarioc = document.createElement('td');
-        usuarioc.textContent = element.id_Login;
-        contenido.appendChild(usuarioc);
+        const metPag = document.createElement('td');
+        metPag.textContent = elementFinz.Metodo_Pago;
+        contFinz.appendChild(metPag);
 
+        const totMon = document.createElement('td');
+        totMon.textContent = elementFinz.Total_Monto;
+        contFinz.appendChild(totMon);
 
         //Creacion del Boton Eliminar
-        const buttonEliminar = document.createElement('button');
-        buttonEliminar.textContent = 'ELIMINAR';
-        buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
+        const deletFinz = document.createElement('button');
+        deletFinz.textContent = 'ELIMINAR';
+        deletFinz.classList.add('btn', 'btn-danger');
 
-        //Creacion del Boton Actualizar
-        const buttonActualizar = document.createElement('button');
-        buttonActualizar.textContent = 'ACTUALIZAR';
-        buttonActualizar.classList.add('btn', 'btn-primary');
-
-        //Creacion del Boton AGREGAR
-        const buttonAgregar = document.createElement('button');
-        buttonAgregar.textContent = 'AGREGAR';
-        buttonAgregar.classList.add('btn', 'btn-success');
-
-        //Anexo los Botones 
-        const accionc = document.createElement('td');
-        accionc.appendChild(buttonEliminar);
-        accionc.appendChild(buttonActualizar);
-        accionc.appendChild(buttonAgregar);
-        contenido.appendChild(accionc);
-
-        buttonEliminar.addEventListener("click", EliminarRegistro)
+        contFinz.appendChild(deletFinz);
+        deletFinz.addEventListener('click', DeleteFinz)
 
         //Funcion de Eliminar Registros
 
-        async function EliminarRegistro() {
+        async function DeleteFinz() {
             try {
-                const url = "http://localhost:4000/api/Finanzas/Delete";
+                const urlFinzDel = 'http://localhost:4000/api/Finanzas/Delete';
                 const data = {
                     id_Corte: element.id_Corte,
-                };
+                }
                 const requestOptions = {
-                    method: "DELETE", // Método de solicitud POST
+                    method: "DELETE", 
                     headers: {
-                        "Content-Type": "application/json", // Tipo de contenido del cuerpo de la solicitud
+                        "Content-Type": "application/json", 
                     },
-                    body: JSON.stringify(data), // Convierte los datos a formato JSON y los coloca en el cuerpo de la solicitud
+                    body: JSON.stringify(data), 
                 };
-                const response = await fetch(url, requestOptions);
-                const Responses = await response.json();
-                if (Responses.status === 200) {
+                const responseFinzDel = await fetch(urlFinzDel, requestOptions);
+                const responDelFinz = await responseFinzDel.JSON();
+                if (responDelFinz.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
-                    getfetch();
+                    getfetchFinz();
                 } else {
                     alert("No Se Elimino Ningun Registro");
                 }
@@ -121,17 +103,19 @@ function mostrarFetch3(data) {
             }
         }
 
+        //Creacion del Boton Actualizar
+        const buttonUpdFinz = document.createElement('button')
+        buttonUpdFinz.textContent = 'ACTUALIZAR';
+        buttonUpdFinz.classList.add('btn', 'btn-primary');
+        contFinz.appendChild(buttonUpdFinz);
 
-        table3.appendChild(contenido);
+        buttonUpdFinz.addEventListener('click', updateFinz);
+
+        function updateFinz() {
+            
+        }
+
+        tFinanzas.appendChild(contFinz);
     }
-    // Agrega la tabla al elemento apropiado en el documento
-    document.body.appendChild(table3);
 }
-
-
-
-
-
-
-
-
+document.body.appendChild(tFinanzas);
