@@ -1,0 +1,12 @@
+.header{
+    background-image: url(/IMAGES/Banner.png);
+    background-position: center;
+    background-size: cover;
+    
+}
+.img-logo{
+    width: 40px;
+}
+.vh-50{
+    height: 100vmin;
+}
