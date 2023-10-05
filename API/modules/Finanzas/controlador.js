@@ -1,6 +1,8 @@
 const db = require('./mysql'); // Importa el módulo mysql.js para interactuar con la base de datos MySQL.
 
-const Tabla = 'gestion_finanzas'; // Define el nombre de la tabla en la base de datos.
+const Tabla = 'Gestion_Finanzas';
+const TablaJoin = 'Registro_Login';
+// Define el nombre de la tabla en la base de datos.
 
 
 /**
@@ -10,6 +12,10 @@ const Tabla = 'gestion_finanzas'; // Define el nombre de la tabla en la base de 
 
 function Todos() {
     return db.Todos(Tabla);
+}
+
+function Join() {
+    return db.Join(Tabla,TablaJoin);
 }
 
 /**
@@ -59,5 +65,6 @@ module.exports = {
     Where,
     Delete,
     Insert,
-    Update
+    Update,
+    Join
 }

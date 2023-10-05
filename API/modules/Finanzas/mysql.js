@@ -62,7 +62,6 @@ function Insert(tabla, data) {
         })
     });
 };
-22
 
 function Update(tabla, data) {
     return new Promise((resolve, reject) => {
@@ -83,10 +82,21 @@ function Delete(tabla, data) {
         })
     });
 };
+
+function Join(tabla,TablaJoin) {
+    return new Promise((resolve, reject) => {
+        conexion.query(`SELECT * FROM ${tabla} as f join ${TablaJoin} as l on f.id_Login = l.id_Login`, (error, result) => {
+            if (error)
+                return reject(error);
+            resolve(result);
+        })
+    });
+};
 module.exports = {
     Todos,
     Where,
     Insert,
     Update,
-    Delete
+    Delete,
+    Join
 }

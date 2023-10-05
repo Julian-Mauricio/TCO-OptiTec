@@ -84,11 +84,11 @@ function mostrarFetchFinz(dataFinz) {
                     id_Corte: element.id_Corte,
                 }
                 const requestOptions = {
-                    method: "DELETE", 
+                    method: "DELETE",
                     headers: {
-                        "Content-Type": "application/json", 
+                        "Content-Type": "application/json",
                     },
-                    body: JSON.stringify(data), 
+                    body: JSON.stringify(data),
                 };
                 const responseFinzDel = await fetch(urlFinzDel, requestOptions);
                 const responDelFinz = await responseFinzDel.JSON();
@@ -111,9 +111,120 @@ function mostrarFetchFinz(dataFinz) {
 
         buttonUpdFinz.addEventListener('click', updateFinz);
 
-        fun
+        function updateFinz() {
+            const id_Finanzas = document.getElementById("id_actFinz");
+            const saldoFinanza = document.getElementById("saldoactFinz");
+            const metPagFinzs = document.getElementById("metPagactFinz");
+            const totMonFinzs = document.getElementById("totMonactFinz");
+
+            id_Finanzas.value = element.id_Login;
+            saldoFinanza.value = element.Saldo;
+            metPagFinzs.value = element.Metodo_Pago;
+            totMonFinzs.value = element.Total_Monto;
+
+            const modalFinzs = new bootstrap.Modal(document.getElementById('ActuFinz'));
+            modalFinzs.show();
+        }
+
+        //Creacion del Boton AGREGAR
+        const buttonAgregarFinz = document.createElement('button');
+        buttonAgregarFinz.textContent = 'AGREGAR';
+        buttonAgregarFinz.classList.add('btn', 'btn-success');
+        contFinz.appendChild(buttonAgregarFinz);
+
+        buttonAgregarFinz.addEventListener('click', abrirModalRegistrarFinz);
+
+        function abrirModalRegistrarFinz() {
+            const modalFinzs = new bootstrap.Modal(document.getElementById('RegistroFinz'));
+            modalFinzs.show();
+        }
 
         tFinanzas.appendChild(contFinz);
     }
+    // Agrega la tabla al elemento apropiado en el documento
+    document.body.appendChild(tFinanzas);
 }
-document.body.appendChild(tFinanzas);
+
+
+const id_Finanzas = document.getElementById("id_actFinz");
+const saldo_Finanza = document.getElementById("saldoactFinz");
+const metPag_Finzs = document.getElementById("metPagactFinz");
+const totMon_Finzs = document.getElementById("totMonactFinz");
+
+document.getElementById("ActualizarFinz").addEventListener("click", ActualizarFinz);
+
+//Funcion de Actualizar Registros de Inventario de Materia Prima
+
+async function ActualizarFinz(event) {
+    event.preventDefault();
+    try {
+        const urlupdFinz = "http://localhost:4000/api/Finanzas/Update";
+        const data = {
+            id_Login: id_Finanzas.value,
+            Saldo: saldoFinanza.value,
+            Metodo_Pago: metPagFinzs.value,
+            Total_Monto: totMonFinzs.value
+        }
+
+        const requestOptions = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+
+        const responseactFinz = await fetch(urlupdFinz, requestOptions);
+        const reponsesactFinzs = await responseactFinz.json();
+        console.log(reponsesactFinzs);
+        if (reponsesactFinzs.status === 200) {
+            getfetchInvPro();
+        } else {
+            alert(" no de registro la actualizacion")
+        }
+
+    } catch (error) {
+        console.log("error", error);
+    }
+}
+
+//Se Traen Los Valores  a Registrar
+
+const id_CorteReg = document.querySelector("#id_regFinz");
+const saldoRegFinz = document.querySelector("#saldoregFinz");
+const metPagRegFinz = document.querySelector("#metPagregFinz");
+const totMonRegFinz = document.querySelector("#totMonregFinz");
+const descripcionRegistroFinz = document.querySelector("#DescripcionRegistroFinz");
+
+document.getElementById("RegistrarFinz").addEventListener("click", RegistroFinanzas);
+
+async function RegistroFinanzas(event) {
+    event.preventDefault();
+    try {
+        const urlreg = "http://localhost:4000/api/Finanzas/Insert";
+        const data = {
+            id_Login: id_CorteReg.value,
+            Saldo: saldoRegFinz.value,
+            Metodo_Pago: metPagRegFinz.value,
+            Total_Monto: totMonRegFinz.value,
+            Descripcion: descripcionRegistroFinz.value
+        };
+        const requestOptions = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        };
+        const responsereg = await fetch(urlreg, requestOptions);
+        const ResponsesReg = await responsereg.json();
+        if (ResponsesReg.status === 200) {
+            alert("Se Agrego el Registro Correctamente");
+            getfetchInvPro();
+        } else {
+            alert("Error al intentar Agregar el Registro");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}

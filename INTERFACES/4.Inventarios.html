@@ -235,8 +235,6 @@
                         </div>
                     </form>
                 </div>
-
-
             </div>
         </div>
     </div>
@@ -296,6 +294,122 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+    <!-- ************ Modal para actualización de datos de Finanzas ************************ -->
+
+    <div class="modal fade" id="ActuFinz">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <h1 class="modal-title text-center mb-4" id="exampleModalLabelFinz">Actualizacion de Datos Finanzas
+                </h1>
+
+                <div class="modal-body">
+                    <form id="FormularioActFinz" action="" class="text-center">
+                        <!-- Contenido del modal -->
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="id_actFinz">ID AL QUE REALIZA CAMBIOS</label>
+                                <input type="number" id="id_actFinz" disabled>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="saldoactFinz">Saldo</label>
+                                <input type="text" id="saldoactFinz" required>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="DescripactFinz">Descripcion</label>
+                                <input type="text" id="DescripactFinz" required>
+                            </div>
+                            
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label for="metPagactFinz">Metodo de Pago</label>
+                                <input type="number" id="metPagactFinz" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="totMonactFinz">Total</label>
+                                <input type="number" id="totMonactFinz" required>
+                            </div>
+                        </div>
+
+                        <div class="botones">
+                            <!-- Botones del modal -->
+                            <button type="button" class="btn btn-success w-100 mb-4" id="ActualizarFinz">Guardar
+                                Cambios</button>
+                            <button type="button" class="btn btn-secondary w-100 " id="ActualizarCancelarFinz">Cancelar
+                                Cambios</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- ****************** Modal para Registro de datos Finanzas ************************ -->
+
+<div class="modal fade" id="RegistroFinz">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- Contenido del modal -->
+                <h1 class="modal-title text-center mb-4" id="exampleModalLabelFinz">Registro de Datos Inventario MP
+                </h1>
+                <form action="" id="FormRegistroInvMp" class="text-center">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="id_regFinz">Id Corte</label>
+                            <input type="number" id="id_regFinz">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="saldoregFinz">Saldo</label>
+                            <input type="text" id="saldoregFinz" required>
+                        </div>
+                    </div>
+                        <div class="col-md-6">
+                            <label for="metPagregFinz">Metodo Pago</label>
+                            <input type="number" id="metPagregFinz" required>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <label for="totMonregFinz">Total</label>
+                            <input type="number" id="totMonregFinz" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="DescripcionRegistroFinz">Descripción</label>
+                            <input type="text" id="DescripcionRegistroFinz" required>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Botones del modal -->
+                        <button type="button" class="btn btn-success w-100 mb-2" id="RegistrarFinz">Guardar
+                            Cambios</button>
+                        <button type="button" class="btn btn-secondary w-100 mb-2"
+                            id="RegistrarFinzCancelar">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 
     </main>
 
