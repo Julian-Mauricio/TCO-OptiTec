@@ -81,7 +81,7 @@ function mostrarFetchFinz(dataFinz) {
             try {
                 const urlFinzDel = 'http://localhost:4000/api/Finanzas/Delete';
                 const data = {
-                    id_Corte: element.id_Corte,
+                    id_Corte: elementFinz.id_Corte,
                 }
                 const requestOptions = {
                     method: "DELETE",
@@ -91,7 +91,9 @@ function mostrarFetchFinz(dataFinz) {
                     body: JSON.stringify(data),
                 };
                 const responseFinzDel = await fetch(urlFinzDel, requestOptions);
-                const responDelFinz = await responseFinzDel.JSON();
+                const responDelFinz = await responseFinzDel.json();
+               
+              
                 if (responDelFinz.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
                     getfetchFinz();
@@ -117,10 +119,10 @@ function mostrarFetchFinz(dataFinz) {
             const metPagFinzs = document.getElementById("metPagactFinz");
             const totMonFinzs = document.getElementById("totMonactFinz");
 
-            id_Finanzas.value = element.id_Login;
-            saldoFinanza.value = element.Saldo;
-            metPagFinzs.value = element.Metodo_Pago;
-            totMonFinzs.value = element.Total_Monto;
+            id_Finanzas.value = elementFinz.id_Login;
+            saldoFinanza.value = elementFinz.Saldo;
+            metPagFinzs.value = elementFinz.Metodo_Pago;
+            totMonFinzs.value = elementFinz.Total_Monto;
 
             const modalFinzs = new bootstrap.Modal(document.getElementById('ActuFinz'));
             modalFinzs.show();
@@ -135,8 +137,9 @@ function mostrarFetchFinz(dataFinz) {
         buttonAgregarFinz.addEventListener('click', abrirModalRegistrarFinz);
 
         function abrirModalRegistrarFinz() {
-            const modalFinzs = new bootstrap.Modal(document.getElementById('RegistroFinz'));
-            modalFinzs.show();
+            console.log("entra");
+            const modalFinzs2 = new bootstrap.Modal(document.getElementById('RegistroFinz'));
+            modalFinzs2.show();
         }
 
         tFinanzas.appendChild(contFinz);
@@ -161,9 +164,9 @@ async function ActualizarFinz(event) {
         const urlupdFinz = "http://localhost:4000/api/Finanzas/Update";
         const data = {
             id_Login: id_Finanzas.value,
-            Saldo: saldoFinanza.value,
-            Metodo_Pago: metPagFinzs.value,
-            Total_Monto: totMonFinzs.value
+            Saldo: saldo_Finanza.value,
+            Metodo_Pago: metPag_Finzs.value,
+            Total_Monto: totMon_Finzs.value
         }
 
         const requestOptions = {
