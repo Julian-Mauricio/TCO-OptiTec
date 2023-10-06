@@ -118,7 +118,7 @@ function mostrarFetchFinz(dataFinz) {
             const metPagFinzs = document.getElementById("metPagactFinz");
             const totMonFinzs = document.getElementById("totMonactFinz");
 
-            id_Finanzas.value = elementFinz.id_Login;
+            id_Finanzas.value = elementFinz.id_Corte;
             saldoFinanza.value = elementFinz.Saldo;
             metPagFinzs.value = elementFinz.Metodo_Pago;
             totMonFinzs.value = elementFinz.Total_Monto;
@@ -162,7 +162,7 @@ async function ActualizarFinz(event) {
     try {
         const urlupdFinz = "http://localhost:4000/api/Finanzas/Update";
         const data = {
-            id_Login: id_Finanzas.value,
+            id_Corte: id_Finanzas.value,
             Saldo: saldo_Finanza.value,
             Metodo_Pago: metPag_Finzs.value,
             Total_Monto: totMon_Finzs.value
@@ -180,7 +180,7 @@ async function ActualizarFinz(event) {
         const reponsesactFinzs = await responseactFinz.json();
         console.log(reponsesactFinzs);
         if (reponsesactFinzs.status === 200) {
-            getfetchInvPro();
+            getfetchFinz();
         } else {
             alert(" no de registro la actualizacion")
         }
@@ -204,7 +204,7 @@ async function RegistroFinanzas(event) {
     try {
         const urlreg = "http://localhost:4000/api/Finanzas/Insert";
         const data = {
-            id_Login: id_CorteReg.value,
+            id_Login: 5,
             Saldo: saldo_RegFinz.value,
             Metodo_Pago: metPag_RegFinz.value,
             Total_Monto: totMon_RegFinz.value
@@ -220,7 +220,7 @@ async function RegistroFinanzas(event) {
         const ResponsesReg = await responsereg.json();
         if (ResponsesReg.status === 200) {
             alert("Se Agrego el Registro Correctamente");
-            getfetchInvPro();
+            getfetchFinz(); 
         } else {
             alert("Error al intentar Agregar el Registro");
         }

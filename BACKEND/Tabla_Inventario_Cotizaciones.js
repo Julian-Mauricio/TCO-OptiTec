@@ -1,5 +1,5 @@
 const tableInvCot = document.querySelector('#tableInventarios');
-document.getElementById("getfetchInvPro").addEventListener("click", getfetchInvCot)
+document.getElementById("getfetchInvCot").addEventListener("click", getfetchInvCot)
 
 async function getfetchInvCot() {
     const url = 'http://localhost:4000/api/Cotizacion';
@@ -21,25 +21,47 @@ function mostrarFetchInvCot(data) {
     id.textContent = 'ID';
     cabecera.appendChild(id);
 
-    const tipo = document.createElement('th');
-    tipo.textContent = 'TIPO';
-    cabecera.appendChild(tipo);
+    const Nombre = document.createElement('th');
+    Nombre.textContent = 'Nombre';
+    cabecera.appendChild(Nombre);
 
-    const descripcion = document.createElement('th');
-    descripcion.textContent = 'Descripcion';
-    cabecera.appendChild(descripcion);
+    const Nit = document.createElement('th');
+    Nit.textContent = 'Nit';
+    cabecera.appendChild(Nit);
     
-    const entrada = document.createElement('th');
-    entrada.textContent = 'ENTRADA';
-    cabecera.appendChild(entrada);
+    const Direccion = document.createElement('th');
+    Direccion.textContent = 'Direccion';
+    cabecera.appendChild(Direccion);
 
-    const stock = document.createElement('th');
-    stock.textContent = 'STOCK';
-    cabecera.appendChild(stock);
+    const Telefono = document.createElement('th');
+    Telefono.textContent = 'Telefono';
+    cabecera.appendChild(Telefono);
 
-    const salida = document.createElement('th');
-    salida.textContent = 'SALIDA';
-    cabecera.appendChild(salida);
+    const Email = document.createElement('th');
+    Email.textContent = 'Email';
+    cabecera.appendChild(Email);
+
+    const Tipo_Elemento = document.createElement('th');
+    Tipo_Elemento.textContent = 'Tipo_Elemento';
+    cabecera.appendChild(Tipo_Elemento);
+
+    const Cantidad = document.createElement('th');
+    Cantidad.textContent = 'Cantidad';
+    cabecera.appendChild(Cantidad);
+
+
+    const Medidas = document.createElement('th');
+    Medidas.textContent = 'Medidas';
+    cabecera.appendChild(Medidas);
+
+
+    const Metod_Entrega = document.createElement('th');
+    Metod_Entrega.textContent = 'Metod_Entrega';
+    cabecera.appendChild(Metod_Entrega);
+
+    const Estado = document.createElement('th');
+    Estado.textContent = 'Estado';
+    cabecera.appendChild(Estado);
 
     const accion = document.createElement('th');
     accion.textContent = 'ACCION';
@@ -53,31 +75,49 @@ function mostrarFetchInvCot(data) {
 
         const contenido = document.createElement('tr');
 
-        const id_mpc = document.createElement('td');
-        id_mpc.textContent = element.id_Inventario_P;
-        contenido.appendChild(id_mpc);
+        const id_Cotizacionc = document.createElement('td');
+        id_Cotizacionc.textContent = element.id_Cotizacion;
+        contenido.appendChild(id_Cotizacionc);
 
-        const tipoc = document.createElement('td');
-        tipoc.textContent = element.Tipo;
-        contenido.appendChild(tipoc);
+        const Nombrec = document.createElement('td');
+        Nombrec.textContent = element.Nombre;
+        contenido.appendChild(Nombrec);
 
-        const Descripcionc = document.createElement('td');
-        Descripcionc.textContent = element.Descripcion;
-        contenido.appendChild(Descripcionc);
+        const Nit_Empresarialc = document.createElement('td');
+        Nit_Empresarialc.textContent = element.Nit_Empresarial;
+        contenido.appendChild(Nit_Empresarialc);
 
-        const entradasc = document.createElement('td');
-        entradasc.textContent = element.Entradas;
-        contenido.appendChild(entradasc);
+        const Direccionc = document.createElement('td');
+        Direccionc.textContent = element.Direccion;
+        contenido.appendChild(Direccionc);
 
-        const stockc = document.createElement('td');
-        stockc.textContent = element.Stock;
-        contenido.appendChild(stockc);
+        const Telefonoc = document.createElement('td');
+        Telefonoc.textContent = element.Telefono;
+        contenido.appendChild(Telefonoc);
 
-        const salidac = document.createElement('td');
-        salidac.textContent = element.Salida;
-        contenido.appendChild(salidac);
+        const Emailc = document.createElement('td');
+        Emailc.textContent = element.Correo;
+        contenido.appendChild(Emailc);
 
-      
+        const Tipo_Elementoc = document.createElement('td');
+        Tipo_Elementoc.textContent = element.Tipo_Elemento;
+        contenido.appendChild(Tipo_Elementoc);
+
+        const Cantidadc = document.createElement('td');
+        Cantidadc.textContent = element.Cantidad;
+        contenido.appendChild(Cantidadc);
+
+        const Medidasc = document.createElement('td');
+        Medidasc.textContent = element.Medidas;
+        contenido.appendChild(Medidasc);
+
+        const Metod_Entregac = document.createElement('td');
+        Metod_Entregac.textContent = element.Metod_Entrega;
+        contenido.appendChild(Metod_Entregac);
+
+        const Estadoc = document.createElement('td');
+        Estadoc.textContent = element.Estado;
+        contenido.appendChild(Estadoc);
 
 
 
@@ -87,11 +127,11 @@ function mostrarFetchInvCot(data) {
         buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
         contenido.appendChild(buttonEliminar);
 
-        buttonEliminar.addEventListener("click", EliminarRegistro)
+       // buttonEliminar.addEventListener("click", EliminarRegistro)
 
         //Funcion de Eliminar Registros
 
-        async function EliminarRegistro() {
+       /* async function EliminarRegistro() {
             try {
                 const url = "http://localhost:4000/api/Produccion/Delete";
                 const data = {
@@ -115,7 +155,7 @@ function mostrarFetchInvCot(data) {
             } catch (error) {
                 console.error("Error:", error);
             }
-        }
+        }*/
 
         //Creacion del Boton Actualizar
         const buttonActualizar = document.createElement('button');
@@ -123,7 +163,7 @@ function mostrarFetchInvCot(data) {
         buttonActualizar.classList.add('btn', 'btn-primary');
         contenido.appendChild(buttonActualizar);
 
-        buttonActualizar.addEventListener('click', abrirModal);
+        //buttonActualizar.addEventListener('click', abrirModal);
 
 
 
@@ -154,7 +194,7 @@ function mostrarFetchInvCot(data) {
         buttonAgregar.classList.add('btn', 'btn-success');
         contenido.appendChild(buttonAgregar);
 
-        buttonAgregar.addEventListener('click', abrirModalRegistrar);
+        //buttonAgregar.addEventListener('click', abrirModalRegistrar);
 
         //Funcion Para Abrir la Ventana Modal de Actualizar Registros
         /*function abrirModalRegistrar() {
