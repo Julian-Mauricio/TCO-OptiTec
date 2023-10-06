@@ -92,8 +92,7 @@ function mostrarFetchFinz(dataFinz) {
                 };
                 const responseFinzDel = await fetch(urlFinzDel, requestOptions);
                 const responDelFinz = await responseFinzDel.json();
-               
-              
+                
                 if (responDelFinz.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
                     getfetchFinz();
@@ -138,7 +137,7 @@ function mostrarFetchFinz(dataFinz) {
 
         function abrirModalRegistrarFinz() {
             console.log("entra");
-            const modalFinzs2 = new bootstrap.Modal(document.getElementById('RegistroFinz'));
+            const modalFinzs2 = new bootstrap.Modal(document.getElementById('Registro_Finz'));
             modalFinzs2.show();
         }
 
@@ -194,12 +193,11 @@ async function ActualizarFinz(event) {
 //Se Traen Los Valores  a Registrar
 
 const id_CorteReg = document.querySelector("#id_regFinz");
-const saldoRegFinz = document.querySelector("#saldoregFinz");
-const metPagRegFinz = document.querySelector("#metPagregFinz");
-const totMonRegFinz = document.querySelector("#totMonregFinz");
-const descripcionRegistroFinz = document.querySelector("#DescripcionRegistroFinz");
+const saldo_RegFinz = document.querySelector("#saldoregFinz");
+const metPag_RegFinz = document.querySelector("#metPagregFinz");
+const totMon_RegFinz = document.querySelector("#totMonregFinz");
 
-document.getElementById("RegistrarFinz").addEventListener("click", RegistroFinanzas);
+document.getElementById("RegistrarButton_Finz").addEventListener("click", RegistroFinanzas);
 
 async function RegistroFinanzas(event) {
     event.preventDefault();
@@ -207,10 +205,9 @@ async function RegistroFinanzas(event) {
         const urlreg = "http://localhost:4000/api/Finanzas/Insert";
         const data = {
             id_Login: id_CorteReg.value,
-            Saldo: saldoRegFinz.value,
-            Metodo_Pago: metPagRegFinz.value,
-            Total_Monto: totMonRegFinz.value,
-            Descripcion: descripcionRegistroFinz.value
+            Saldo: saldo_RegFinz.value,
+            Metodo_Pago: metPag_RegFinz.value,
+            Total_Monto: totMon_RegFinz.value
         };
         const requestOptions = {
             method: "POST",
