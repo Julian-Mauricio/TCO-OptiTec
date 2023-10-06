@@ -92,7 +92,7 @@ function mostrarFetchFinz(dataFinz) {
                 };
                 const responseFinzDel = await fetch(urlFinzDel, requestOptions);
                 const responDelFinz = await responseFinzDel.json();
-                
+
                 if (responDelFinz.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
                     getfetchFinz();
@@ -123,9 +123,14 @@ function mostrarFetchFinz(dataFinz) {
             metPagFinzs.value = elementFinz.Metodo_Pago;
             totMonFinzs.value = elementFinz.Total_Monto;
 
-            const modalFinzs = new bootstrap.Modal(document.getElementById('ActuFinz'));
-            modalFinzs.show();
+            $('#ActuFinz').modal('show');
         }
+
+        // Cerrar el modal al hacer clic en otro botón, 
+        // Asigna el evento de click para cerrar la modal al botón "Cancelar Cambios"
+        document.getElementById('ActualizarCancelarFinz').addEventListener('click', function () {
+            $('#ActuFinz').modal('hide');
+        });
 
         //Creacion del Boton AGREGAR
         const buttonAgregarFinz = document.createElement('button');
@@ -136,10 +141,13 @@ function mostrarFetchFinz(dataFinz) {
         buttonAgregarFinz.addEventListener('click', abrirModalRegistrarFinz);
 
         function abrirModalRegistrarFinz() {
-            console.log("entra");
-            const modalFinzs2 = new bootstrap.Modal(document.getElementById('Registro_Finz'));
-            modalFinzs2.show();
+            $('#Registro_Finz').modal('show');
         }
+
+        document.getElementById('RegistrarFinzCancelar').addEventListener('click', function () {
+            $('#Registro_Finz').modal('hide');
+        });
+
 
         tFinanzas.appendChild(contFinz);
     }
@@ -220,7 +228,7 @@ async function RegistroFinanzas(event) {
         const ResponsesReg = await responsereg.json();
         if (ResponsesReg.status === 200) {
             alert("Se Agrego el Registro Correctamente");
-            getfetchFinz(); 
+            getfetchFinz();
         } else {
             alert("Error al intentar Agregar el Registro");
         }

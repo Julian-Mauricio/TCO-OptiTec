@@ -143,10 +143,12 @@ function mostrarFetchInvPro(data) {
             StockAct.value = element.Stock;
             SalidaAct.value = element.Salida;
 
-            const modal = new bootstrap.Modal(document.getElementById('ActuInvPro'));
-            modal.show();
+            $('#ActuInvPro').modal('show');
         }
 
+        document.getElementById('ActualizarInvProCancelar').addEventListener('click', function () {
+            $('#ActuInvPro').modal('hide');
+        });
 
         //Creacion del Boton AGREGAR
         const buttonAgregar = document.createElement('button');
@@ -158,9 +160,12 @@ function mostrarFetchInvPro(data) {
 
         //Funcion Para Abrir la Ventana Modal de Actualizar Registros
         function abrirModalRegistrar() {
-            const modal = new bootstrap.Modal(document.getElementById('RegistroInvPro'));
-            modal.show();
+            $('#RegistroInvPro').modal('show');
         }
+
+        document.getElementById('RegistrarInvProCancelar').addEventListener('click', function () {
+            $('#RegistroInvPro').modal('hide');
+        });
 
         tableInvPro.appendChild(contenido);
     }
@@ -168,7 +173,7 @@ function mostrarFetchInvPro(data) {
     document.body.appendChild(tableInvPro);
 }
 
-// FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
+
 
 
 

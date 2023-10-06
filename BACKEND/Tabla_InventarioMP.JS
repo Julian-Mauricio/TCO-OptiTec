@@ -148,9 +148,12 @@ function mostrarFetchInvMp(data) {
             StockAct.value = element.Stock;
             SalidaAct.value = element.Salida;
 
-            const modal = new bootstrap.Modal(document.getElementById('ActuInvMp'));
-            modal.show();
+            $('#ActuInvMp').modal('show');
         }
+
+        
+
+       
 
         //Creacion del Boton AGREGAR
         const buttonAgregar = document.createElement('button');
@@ -162,9 +165,13 @@ function mostrarFetchInvMp(data) {
 
         //Funcion Para Abrir la Ventana Modal de Actualizar Registros
         function abrirModalRegistrar() {
-            const modal = new bootstrap.Modal(document.getElementById('RegistroMp'));
-            modal.show();
+            $('#RegistroMp').modal('show');
         }
+
+        document.getElementById('RegistrarInvMpCancelar').addEventListener('click', function  () {
+            $('#RegistroMp').modal('hide');
+        });
+
 
         tableInvMp.appendChild(contenido);
     }
@@ -173,16 +180,16 @@ function mostrarFetchInvMp(data) {
 }
 
 // FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
+function ocultarModal() {
+    $('#ActuInvMp').modal('hide');
+}
+
+document.getElementById('ActualizarInvMpCancelar').addEventListener('click', ocultarModal);
 
 
 /*********************************************************************************************/
 
-document.getElementById("ActualizarCancelar").addEventListener("click", ActualizarCancelar);
-function ActualizarCancelar() {
-    console.log("cancela");
-    const modal = new bootstrap.Modal(document.getElementById('ActuInvMp'));
-    modal.hide();    
-}
+
 
 //Se Traen Los Valores a Actualiar
 const FormRegistroInvMp = document.querySelector("#FormRegistroInvMp");
@@ -225,6 +232,7 @@ async function ActualizarDatos(event) {
         console.log(reponses);
         if (reponses.status === 200) {
             getfetchInvMp();
+            ocultarModal();
         } else {
             alert(" no de registro la actualizacion")
         }

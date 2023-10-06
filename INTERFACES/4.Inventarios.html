@@ -75,7 +75,7 @@
         <!-- ************ Modal para actualización de datos de Materia Prima ************************ -->
 
 
-        <div class="modal fade" id="ActuInvMp">
+        <div class="modal fade" id="ActuInvMp" tabindex="-1" aria-labelledby="ActuInvMpLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -120,7 +120,7 @@
                                 <!-- Botones del modal -->
                                 <button type="button" class="btn btn-success w-100 mb-4" id="Actualizar">Guardar
                                     Cambios</button>
-                                <button type="button" class="btn btn-secondary w-100 " id="ActualizarCancelar">Cancelar
+                                <button type="button" class="btn btn-secondary w-100 " id="ActualizarInvMpCancelar">Cancelar
                                     Cambios</button>
                             </div>
                         </form>
@@ -135,7 +135,7 @@
 
         <!-- ****************** Modal para Registro de datos Materia Prima ************************ -->
 
-        <div class="modal fade" id="RegistroMp">
+        <div class="modal fade" id="RegistroMp" tabindex="-1" aria-labelledby="RegistroMpLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
@@ -194,10 +194,10 @@
 
         <!-- ************ Modal para actualización de datos del Inventario de Produccion ************************ -->
 
-        <div class="modal fade" id="ActuInvPro">
+        <div class="modal fade" id="ActuInvPro" tabindex="-1" aria-labelledby="ActuInvProLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <h1 class="modal-title text-center mb-4">Actualizacion de Datos Inventario Prod</h1>
+                    <h1 class="modal-title text-center mb-4">Actualizacion de Datos Inventario Produccion</h1>
                     <!-- Contenido del modal -->
                     <div class="modal-body">
                         <form action="" id="FormularioInvPro" class="text-center">
@@ -247,10 +247,10 @@
 
         <!-- ****************** Modal para Registro de datos del Inventario de Produccion ************************ -->
 
-        <div class="modal fade" id="RegistroInvPro">
+        <div class="modal fade" id="RegistroInvPro" tabindex="-1" aria-labelledby="RegistroInvProLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabel">Registro de Datos</h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabel">Registro de Datos Inventario Produccion</h1>
                     <div class="modal-body">
                         <!-- Contenido del modal -->
                         <form action="" id="FormRegistroInvPro" class="text-center">
@@ -308,12 +308,11 @@
 
         <!-- ************ Modal para actualización de datos de Finanzas ************************ -->
 
-        <div class="modal fade" id="ActuFinz">
+        <div class="modal fade" id="ActuFinz" tabindex="-1" aria-labelledby="ActuFinzLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelFinz">Actualizacion de Datos Finanzas
-                    </h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelFinz">Actualizacion de Datos Finanzas</h1>
 
                     <div class="modal-body">
                         <form id="FormularioActFinz" action="" class="text-center">
@@ -357,12 +356,11 @@
 
         <!-- ****************** Modal para Registro de datos Finanzas ************************ -->
 
-        <div class="modal fade" id="Registro_Finz">
+        <div class="modal fade" id="Registro_Finz" tabindex="-1" aria-labelledby="Registro_FinzLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelupdFinz">Registrar de Datos Finanzas
-                    </h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelupdFinz">Registrar de Datos Finanzas</h1>
 
                     <div class="modal-body">
                         <form id="FormRegistroupdFinz" action="" class="text-center">
@@ -412,6 +410,112 @@
 
 
 
+
+
+
+
+
+
+
+
+        <!-- ************ Modal para actualización de datos de Finanzas ************************ -->
+
+        <div class="modal fade" id="ActuCot" tabindex="-1" aria-labelledby="ActuCotLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelCot">Actualizacion de Datos Cotizaciones</h1>
+
+                    <div class="modal-body">
+                        <form id="FormularioActCot" action="" class="text-center">
+                            <!-- Contenido del modal -->
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <label for="id_actCot">ID AL QUE REALIZA CAMBIOS</label>
+                                    <input type="number" id="id_actCot" class="w-100" disabled>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="NombreCot">Nombre</label>
+                                    <input type="text" id="NombreCot" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="CedulaCot">Cedula</label>
+                                    <input type="text" id="CedulaCot" required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="NitCot">Nit_Empresarial</label>
+                                    <input type="text" id="NitCot" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="DireccionCot">Direccion</label>
+                                    <input type="text" id="DireccionCot" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="TelefonoCot">Telefono</label>
+                                    <input type="text" id="TelefonoCot" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="EmailCot">Email</label>
+                                    <input type="text" id="EmailCot" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="TipoCot">Tipo_Elemento</label>
+                                    <input type="text" id="TipoCot" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="CantidadCot">Cantidad</label>
+                                    <input type="text" id="CantidadCot" required>
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="MedidasCot">Medidas: 10 cm alto x 20 cm base x 30 cm ancho </label>
+                                    <input type="text" id="MedidasCot" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="MetoEntregaCot">Metod_Entrega</label>
+                                    <input type="text" id="MetoEntregaCot" required>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="TotalCot">Precio_Total</label>
+                                    <input type="number" id="TotalCot" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="EstadoCot">Estado</label>
+                                    <input type="text" id="EstadoCot" required>
+                                </div>
+                            </div>
+                            <div class="botones">
+                                <!-- Botones del modal -->
+                                <button type="button" class="btn btn-success w-100 mb-4" id="ActualizarCot">Guardar
+                                    Cambios</button>
+                                <button type="button" class="btn btn-secondary w-100 "
+                                    id="ActualizarCancelarCot">Cancelar
+                                    Cambios</button>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- Scripts -->

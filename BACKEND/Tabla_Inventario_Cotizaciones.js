@@ -25,10 +25,14 @@ function mostrarFetchInvCot(data) {
     Nombre.textContent = 'Nombre';
     cabecera.appendChild(Nombre);
 
+    const Cedula = document.createElement('th');
+    Cedula.textContent = 'Cedula';
+    cabecera.appendChild(Cedula);
+
     const Nit = document.createElement('th');
     Nit.textContent = 'Nit';
     cabecera.appendChild(Nit);
-    
+
     const Direccion = document.createElement('th');
     Direccion.textContent = 'Direccion';
     cabecera.appendChild(Direccion);
@@ -63,6 +67,10 @@ function mostrarFetchInvCot(data) {
     Estado.textContent = 'Estado';
     cabecera.appendChild(Estado);
 
+    const Precio_Total = document.createElement('td');
+    Precio_Total.textContent = 'Precio Total';
+    cabecera.appendChild(Precio_Total);
+
     const accion = document.createElement('th');
     accion.textContent = 'ACCION';
     cabecera.appendChild(accion);
@@ -82,6 +90,10 @@ function mostrarFetchInvCot(data) {
         const Nombrec = document.createElement('td');
         Nombrec.textContent = element.Nombre;
         contenido.appendChild(Nombrec);
+
+        const Cedulac = document.createElement('td');
+        Cedulac.textContent = element.Cedula;
+        contenido.appendChild(Cedulac);
 
         const Nit_Empresarialc = document.createElement('td');
         Nit_Empresarialc.textContent = element.Nit_Empresarial;
@@ -119,6 +131,9 @@ function mostrarFetchInvCot(data) {
         Estadoc.textContent = element.Estado;
         contenido.appendChild(Estadoc);
 
+        const Precio_Totalc = document.createElement('td');
+        Precio_Totalc.textContent = element.Precio_Total;
+        contenido.appendChild(Precio_Totalc);
 
 
         //Creacion del Boton Eliminar
@@ -127,15 +142,15 @@ function mostrarFetchInvCot(data) {
         buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
         contenido.appendChild(buttonEliminar);
 
-       // buttonEliminar.addEventListener("click", EliminarRegistro)
+        buttonEliminar.addEventListener("click", EliminarRegistroCot)
 
         //Funcion de Eliminar Registros
 
-       /* async function EliminarRegistro() {
+        async function EliminarRegistroCot() {
             try {
-                const url = "http://localhost:4000/api/Produccion/Delete";
+                const url = "http://localhost:4000/api/Cotizacion/Delete";
                 const data = {
-                    id_Inventario_P: element.id_Inventario_P,
+                    id_Cotizacion: element.id_Cotizacion,
                 };
                 const requestOptions = {
                     method: "DELETE", // Método de solicitud POST
@@ -148,14 +163,14 @@ function mostrarFetchInvCot(data) {
                 const Responses = await response.json();
                 if (Responses.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
-                    getfetchInvPro();
+                    getfetchInvCot();
                 } else {
                     alert("No Se Elimino Ningun Registro");
                 }
             } catch (error) {
                 console.error("Error:", error);
             }
-        }*/
+        }
 
         //Creacion del Boton Actualizar
         const buttonActualizar = document.createElement('button');
@@ -163,44 +178,56 @@ function mostrarFetchInvCot(data) {
         buttonActualizar.classList.add('btn', 'btn-primary');
         contenido.appendChild(buttonActualizar);
 
-        //buttonActualizar.addEventListener('click', abrirModal);
+        buttonActualizar.addEventListener('click', abrirModalCot);
 
-
-
+        // Función para cerrar la ventana modal
 
         //Funcion Para Abrir la Ventana Modal de Actualizar Registros de Inventario de Materia Prima
-       /* function abrirModal() {
+        function abrirModalCot() {
             //Se traen los Campos  y se Igualan A los Valores de Los campos De Cada Fila
-            const id_Inventario_P = document.getElementById("id_InvPro");
-            const TipoAct = document.getElementById("TipoInvPro");
-            const EntradaAct = document.getElementById("EntradaInvPro");
-            const StockAct = document.getElementById("StockInvPro");
-            const SalidaAct = document.getElementById("SalidaInvPro");
-
-            id_Inventario_P.value = element.id_Inventario_P;
-            TipoAct.value = element.Tipo;
-            EntradaAct.value = element.Entradas;
-            StockAct.value = element.Stock;
-            SalidaAct.value = element.Salida;
-
-            const modal = new bootstrap.Modal(document.getElementById('ActuInvPro'));
-            modal.show();
-        }*/
+            const id_actAct = document.getElementById("id_actCot");
+            const NombreAct = document.getElementById("NombreCot");
+            const CedulaAct = document.getElementById("CedulaCot");
+            const NitAct = document.getElementById("NitCot");
+            const DireccionAct = document.getElementById("DireccionCot");
+            const TelefonoAct = document.getElementById("TelefonoCot");
+            const EmailAct = document.getElementById("EmailCot");
+            const TipoAct = document.getElementById("TipoCot");
+            const CantidadAct = document.getElementById("CantidadCot");
+            const MedidasAct = document.getElementById("MedidasCot");
+            const MetoEntregaAct = document.getElementById("MetoEntregaCot");
+            const TotalAct = document.getElementById("TotalCot");
+            const EstadoAct = document.getElementById("EstadoCot");
 
 
-        //Creacion del Boton AGREGAR
-        const buttonAgregar = document.createElement('button');
-        buttonAgregar.textContent = 'AGREGAR';
-        buttonAgregar.classList.add('btn', 'btn-success');
-        contenido.appendChild(buttonAgregar);
+            id_actAct.value = element.id_Cotizacion;
+            NombreAct.value = element.Nombre;
+            CedulaAct.value = element.Cedula;
+            NitAct.value = element.Nit_Empresarial;
+            DireccionAct.value = element.Direccion;
+            TelefonoAct.value = element.Telefono;
+            EmailAct.value = element.Correo;
+            TipoAct.value = element.Tipo_Elemento;
+            CantidadAct.value = element.Cantidad;
+            MedidasAct.value = element.Medidas;
+            MetoEntregaAct.value = element.Metod_Entrega;
+            TotalAct.value = element.Precio_Total;
+            EstadoAct.value = element.Estado;
 
-        //buttonAgregar.addEventListener('click', abrirModalRegistrar);
+            $('#ActuCot').modal('show');
 
-        //Funcion Para Abrir la Ventana Modal de Actualizar Registros
-        /*function abrirModalRegistrar() {
-            const modal = new bootstrap.Modal(document.getElementById('RegistroInvPro'));
-            modal.show();
-        }*/
+        }
+
+
+
+
+
+        // Cerrar el modal al hacer clic en otro botón, 
+        // Asigna el evento de click para cerrar la modal al botón "Cancelar Cambios"
+        document.getElementById('ActualizarCancelarCot').addEventListener('click', function () {
+            $('#ActuCot').modal('hide');
+        });
+
 
         tableInvCot.appendChild(contenido);
     }
@@ -208,7 +235,9 @@ function mostrarFetchInvCot(data) {
     document.body.appendChild(tableInvCot);
 }
 
-// FALTA EL CERRA VENTANA MODAL Y NO ESPECIFICAR ID
+
+
+
 
 
 
@@ -216,26 +245,43 @@ function mostrarFetchInvCot(data) {
 
 
 
-/*const id_Inventario_P = document.getElementById("id_InvPro");
-const TipoActPro = document.getElementById("TipoInvPro");
-const EntradaActPro = document.getElementById("EntradaInvPro");
-const StockActPro = document.getElementById("StockInvPro");
-const SalidaActPro = document.getElementById("SalidaInvPro");
+const id_actAct = document.getElementById("id_actCot");
+const NombreAct = document.getElementById("NombreCot");
+const CedulaAct = document.getElementById("CedulaCot");
+const NitAct = document.getElementById("NitCot");
+const DireccionAct = document.getElementById("DireccionCot");
+const TelefonoAct = document.getElementById("TelefonoCot");
+const EmailAct = document.getElementById("EmailCot");
+const TipoElementoAct = document.getElementById("TipoCot");
+const CantidadAct = document.getElementById("CantidadCot");
+const MedidasAct = document.getElementById("MedidasCot");
+const MetoEntregaAct = document.getElementById("MetoEntregaCot");
+const TotalAct = document.getElementById("TotalCot");
+const EstadoAct = document.getElementById("EstadoCot");
 
-document.getElementById("ActualizarInvPro").addEventListener("click", ActualizarDatos);
+document.getElementById("ActualizarCot").addEventListener("click", ActualizarCot);
 
 //Funcion de Actualizar Registros de Inventario de Materia Prima
 
-async function ActualizarDatos(event) {
+async function ActualizarCot(event) {
     event.preventDefault();
     try {
-        const url = "http://localhost:4000/api/Produccion/Update";
+        const url = "http://localhost:4000/api/Cotizacion/Update";
         const data = {
-            id_Inventario_P: id_Inventario_P.value,
-            Tipo: TipoActPro.value,
-            Entradas: EntradaActPro.value,
-            Stock: StockActPro.value,
-            Salida: SalidaActPro.value,
+
+            id_Cotizacion: id_actAct.value,
+            Nombre: NombreAct.value,
+            Cedula: CedulaAct.value,
+            Nit_Empresarial: NitAct.value,
+            Direccion: DireccionAct.value,
+            Telefono: TelefonoAct.value,
+            Correo: EmailAct.value,
+            Tipo_Elemento: TipoElementoAct.value,
+            Cantidad: CantidadAct.value,
+            Medidas: MedidasAct.value,
+            Metod_Entrega: MetoEntregaAct.value,
+            Precio_Total: TotalAct.value,
+            Estado: EstadoAct.value,
 
         };
 
@@ -252,7 +298,7 @@ async function ActualizarDatos(event) {
         const reponses = await response.json();
         console.log(reponses);
         if (reponses.status === 200) {
-            getfetchInvPro();
+            getfetchInvCot();
         } else {
             alert(" no de registro la actualizacion")
         }
@@ -264,50 +310,3 @@ async function ActualizarDatos(event) {
 
 
 
-
-//Se Traen Los Valores  a Registrar
-
-const id_LoginIvnPro = document.querySelector("#id_LoginInvPro");
-const TipoRegistroIvnPro = document.querySelector("#TipoRegistroInvPro");
-const DescripcionRegistroIvnPro = document.querySelector("#DescripcionRegistroInvPro");
-const EntradasRegistroIvnPro = document.querySelector("#EntradasRegistroInvPro");
-const StockRegistroIvnPro = document.querySelector("#StockRegistroInvPro");
-const SalidaRegistroIvnPro = document.querySelector("#SalidaRegistroInvPro");
-
-
-document.getElementById("RegistrarInvPro").addEventListener("click", RegistroMateria);
-
-//Funcion de  Registros de Inventario de Materia Prima
-async function RegistroMateria(event) {
-    event.preventDefault();
-    try {
-        const url = "http://localhost:4000/api/Produccion/Insert";
-        const data = {
-            id_Login: id_LoginIvnPro.value,
-            Tipo: TipoRegistroIvnPro.value,
-            Descripcion: DescripcionRegistroIvnPro.value,
-            Entradas: EntradasRegistroIvnPro.value,
-            Stock: StockRegistroIvnPro.value,
-            Salida: SalidaRegistroIvnPro.value,
-        };
-        const requestOptions = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-        };
-        const response = await fetch(url, requestOptions);
-        const Responses = await response.json();
-        if (Responses.status === 200) {
-            alert("Se Agrego el Registro Correctamente");
-            getfetchInvPro();
-        } else {
-            alert("Error al intentar Agregar el Registro");
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
-
-*/
