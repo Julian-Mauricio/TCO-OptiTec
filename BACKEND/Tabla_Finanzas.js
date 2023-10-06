@@ -92,8 +92,7 @@ function mostrarFetchFinz(dataFinz) {
                 };
                 const responseFinzDel = await fetch(urlFinzDel, requestOptions);
                 const responDelFinz = await responseFinzDel.json();
-               
-              
+                
                 if (responDelFinz.status === 200) {
                     alert("Se Elimino de Manera Correcta el Registro");
                     getfetchFinz();
@@ -197,7 +196,6 @@ const id_CorteReg = document.querySelector("#id_regFinz");
 const saldo_RegFinz = document.querySelector("#saldoregFinz");
 const metPag_RegFinz = document.querySelector("#metPagregFinz");
 const totMon_RegFinz = document.querySelector("#totMonregFinz");
-const descripcion_RegistroFinz = document.querySelector("#DescripcionRegistroFinz");
 
 document.getElementById("RegistrarButton_Finz").addEventListener("click", RegistroFinanzas);
 
@@ -209,8 +207,7 @@ async function RegistroFinanzas(event) {
             id_Login: id_CorteReg.value,
             Saldo: saldo_RegFinz.value,
             Metodo_Pago: metPag_RegFinz.value,
-            Total_Monto: totMon_RegFinz.value,
-            Descripcion: descripcion_RegistroFinz.value
+            Total_Monto: totMon_RegFinz.value
         };
         const requestOptions = {
             method: "POST",
