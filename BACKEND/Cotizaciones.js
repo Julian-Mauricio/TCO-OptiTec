@@ -1,6 +1,7 @@
 //Se Traen Los Valores  a Registrar
 const FormularioCotizacion = document.getElementById("FormularioCotizacion");
 const Nombre = document.querySelector("#Nombre");
+const Cedula = document.querySelector("#Cedula");
 const Telefono = document.querySelector("#Telefono");
 const Email = document.querySelector("#Email");
 const NombreEmpresa = document.querySelector("#NombreEmpresa");
@@ -21,6 +22,7 @@ async function RegistrarCotizacion(event) {
         const url = "http://localhost:4000/api/Cotizacion/Insert";
         const data = {
             Nombre: Nombre.value,
+            Cedula: Cedula.value,
             Nit_Empresarial: Nit.value,
             Direccion: Direccion.value,
             Telefono: Telefono.value,
@@ -29,6 +31,7 @@ async function RegistrarCotizacion(event) {
             Cantidad: Cantidad.value,
             Medidas: Medidas.value,
             Metod_Entrega: MetodoEntrega.value,
+            Precio_Total:0,
             Estado: "Pendiente",
         };
         const requestOptions = {
@@ -43,7 +46,6 @@ async function RegistrarCotizacion(event) {
         if (Responses.status === 200) {
             FormularioCotizacion.reset();
             alert("Se Agrego el Registro Correctamente");
-            RegistrarCotizacion();
         } else {
             alert("Error al intentar Agregar el Registro");
         }

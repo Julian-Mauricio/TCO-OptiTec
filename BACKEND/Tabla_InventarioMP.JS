@@ -26,12 +26,20 @@ function mostrarFetchInvMp(data) {
     id.textContent = 'ID';
     cabecera.appendChild(id);
 
+    const administrador = document.createElement('th');
+    administrador.textContent = 'Administrador';
+    cabecera.appendChild(administrador);
+
+    const administradorCedula = document.createElement('th');
+    administradorCedula.textContent = 'AdministradorCedula';
+    cabecera.appendChild(administradorCedula);
+
     const tipo = document.createElement('th');
     tipo.textContent = 'TIPO';
     cabecera.appendChild(tipo);
 
     const descripcion = document.createElement('th');
-    descripcion.textContent = 'Descripcion';
+    descripcion.textContent = 'DESCRIPCCION';
     cabecera.appendChild(descripcion);
 
     const entrada = document.createElement('th');
@@ -61,6 +69,14 @@ function mostrarFetchInvMp(data) {
         const id_mpc = document.createElement('td');
         id_mpc.textContent = element.id_Inventario_MP;
         contenido.appendChild(id_mpc);
+
+        const administradorC = document.createElement('td');
+        administradorC.textContent = element.Nombre;
+        contenido.appendChild(administradorC);
+
+        const administradorCedulaC = document.createElement('td');
+        administradorCedulaC.textContent = element.Cedula;
+        contenido.appendChild(administradorCedulaC);
 
         const tipoc = document.createElement('td');
         tipoc.textContent = element.Tipo;
@@ -168,9 +184,7 @@ function mostrarFetchInvMp(data) {
             $('#RegistroMp').modal('show');
         }
 
-        document.getElementById('RegistrarInvMpCancelar').addEventListener('click', function  () {
-            $('#RegistroMp').modal('hide');
-        });
+       
 
 
         tableInvMp.appendChild(contenido);
@@ -183,8 +197,12 @@ function mostrarFetchInvMp(data) {
 function ocultarModal() {
     $('#ActuInvMp').modal('hide');
 }
-
 document.getElementById('ActualizarInvMpCancelar').addEventListener('click', ocultarModal);
+
+function ocultarModalRegistroMp() {
+    $('#RegistroMp').modal('hide');
+}
+document.getElementById('RegistrarInvMpCancelar').addEventListener('click', ocultarModalRegistroMp);
 
 
 /*********************************************************************************************/
@@ -247,7 +265,6 @@ async function ActualizarDatos(event) {
 
 //Se Traen Los Valores  a Registrar
 const FormRegistro = document.getElementById("FormRegistroInvMp");
-const id_Login = document.querySelector("#id_LoginInvMp");
 const TipoRegistro = document.querySelector("#TipoRegistroInvMp");
 const DescripcionRegistro = document.querySelector("#DescripcionRegistroInvMp");
 const EntradasRegistro = document.querySelector("#EntradasRegistroInvMp");
@@ -263,12 +280,13 @@ async function RegistroMateria(event) {
     try {
         const url = "http://localhost:4000/api/Materia/Insert";
         const data = {
-            id_Login: id_Login.value,
             Tipo: TipoRegistro.value,
             Descripcion: DescripcionRegistro.value,
             Entradas: EntradasRegistro.value,
             Stock: StockRegistro.value,
             Salida: SalidaRegistro.value,
+            Nombre: "Julian",
+            Cedula: 1110001110,
         };
         const requestOptions = {
             method: "POST",
@@ -283,6 +301,7 @@ async function RegistroMateria(event) {
             FormRegistro.reset();
             alert("Se Agrego el Registro Correctamente");
             getfetchInvMp();
+            ocultarModalRegistroMp();
         } else {
             alert("Error al intentar Agregar el Registro");
         }

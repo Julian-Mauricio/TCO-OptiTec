@@ -20,13 +20,17 @@ function mostrarFetchFinz(dataFinz) {
 
     const cabFinz = document.createElement('tr');
 
-    const idFinz = document.createElement('th');
-    idFinz.textContent = 'Id';
-    cabFinz.appendChild(idFinz);
-
     const idCorFinz = document.createElement('th');
     idCorFinz.textContent = 'Id Corte';
     cabFinz.appendChild(idCorFinz);
+
+    const NombreFinz = document.createElement('th');
+    NombreFinz.textContent = 'Usuario';
+    cabFinz.appendChild(NombreFinz);
+
+    const NombreCedulaFinz = document.createElement('th');
+    NombreCedulaFinz.textContent = 'Cedula';
+    cabFinz.appendChild(NombreCedulaFinz);
 
     const saldFinz = document.createElement('th');
     saldFinz.textContent = 'Saldo';
@@ -47,13 +51,17 @@ function mostrarFetchFinz(dataFinz) {
 
         const contFinz = document.createElement('tr');
 
-        const id_LonFinz = document.createElement('td');
-        id_LonFinz.textContent = elementFinz.id_Login;
-        contFinz.appendChild(id_LonFinz);
-
         const id_Finz = document.createElement('td');
         id_Finz.textContent = elementFinz.id_Corte;
         contFinz.appendChild(id_Finz);
+
+        const NombreFinzc = document.createElement('td');
+        NombreFinzc.textContent = elementFinz.Nombre;
+        contFinz.appendChild(NombreFinzc);
+
+        const NombreCedulaFinzc = document.createElement('td');
+        NombreCedulaFinzc.textContent = elementFinz.Cedula;
+        contFinz.appendChild(NombreCedulaFinzc);
 
         const Sald = document.createElement('td');
         Sald.textContent = elementFinz.Saldo;
@@ -115,22 +123,21 @@ function mostrarFetchFinz(dataFinz) {
         function updateFinz() {
             const id_Finanzas = document.getElementById("id_actFinz");
             const saldoFinanza = document.getElementById("saldoactFinz");
+            const NombreFinanza = document.getElementById("NombreactFinz");
+            const CedulaFinanza = document.getElementById("CedulaactFinz");
             const metPagFinzs = document.getElementById("metPagactFinz");
             const totMonFinzs = document.getElementById("totMonactFinz");
 
+            
             id_Finanzas.value = elementFinz.id_Corte;
+            NombreFinanza.value = elementFinz.Nombre;
+            CedulaFinanza.value = elementFinz.Cedula;
             saldoFinanza.value = elementFinz.Saldo;
             metPagFinzs.value = elementFinz.Metodo_Pago;
             totMonFinzs.value = elementFinz.Total_Monto;
 
             $('#ActuFinz').modal('show');
         }
-
-        // Cerrar el modal al hacer clic en otro botón, 
-        // Asigna el evento de click para cerrar la modal al botón "Cancelar Cambios"
-        document.getElementById('ActualizarCancelarFinz').addEventListener('click', function () {
-            $('#ActuFinz').modal('hide');
-        });
 
         //Creacion del Boton AGREGAR
         const buttonAgregarFinz = document.createElement('button');
@@ -144,10 +151,6 @@ function mostrarFetchFinz(dataFinz) {
             $('#Registro_Finz').modal('show');
         }
 
-        document.getElementById('RegistrarFinzCancelar').addEventListener('click', function () {
-            $('#Registro_Finz').modal('hide');
-        });
-
 
         tFinanzas.appendChild(contFinz);
     }
@@ -155,8 +158,23 @@ function mostrarFetchFinz(dataFinz) {
     document.body.appendChild(tFinanzas);
 }
 
+// Cerrar el modal al hacer clic en otro botón, 
+// Asigna el evento de click para cerrar la modal al botón "Cancelar Cambios"
+function ocultarModalActuFinz() {
+    $('#ActuFinz').modal('hide');
+}
+document.getElementById('ActualizarCancelarFinz').addEventListener('click', ocultarModalActuFinz);
+
+
+function ocultarModalRegistroFinz() {
+    $('#Registro_Finz').modal('hide');
+}
+document.getElementById('RegistrarFinzCancelar').addEventListener('click', ocultarModalRegistroFinz);
+
 
 const id_Finanzas = document.getElementById("id_actFinz");
+const NombreFinanza = document.getElementById("NombreactFinz");
+const CedulaFinanza = document.getElementById("CedulaactFinz");
 const saldo_Finanza = document.getElementById("saldoactFinz");
 const metPag_Finzs = document.getElementById("metPagactFinz");
 const totMon_Finzs = document.getElementById("totMonactFinz");
@@ -171,6 +189,8 @@ async function ActualizarFinz(event) {
         const urlupdFinz = "http://localhost:4000/api/Finanzas/Update";
         const data = {
             id_Corte: id_Finanzas.value,
+            Nombre: NombreFinanza.value,
+            Cedula: CedulaFinanza.value,
             Saldo: saldo_Finanza.value,
             Metodo_Pago: metPag_Finzs.value,
             Total_Monto: totMon_Finzs.value
@@ -189,6 +209,7 @@ async function ActualizarFinz(event) {
         console.log(reponsesactFinzs);
         if (reponsesactFinzs.status === 200) {
             getfetchFinz();
+            ocultarModalActuFinz();
         } else {
             alert(" no de registro la actualizacion")
         }
@@ -201,6 +222,8 @@ async function ActualizarFinz(event) {
 //Se Traen Los Valores  a Registrar
 
 const id_CorteReg = document.querySelector("#id_regFinz");
+const Nombre_RegFinz = document.querySelector("#NombreregFinz");
+const Cedula_RegFinz = document.querySelector("#CedularegFinz");
 const saldo_RegFinz = document.querySelector("#saldoregFinz");
 const metPag_RegFinz = document.querySelector("#metPagregFinz");
 const totMon_RegFinz = document.querySelector("#totMonregFinz");
@@ -212,7 +235,8 @@ async function RegistroFinanzas(event) {
     try {
         const urlreg = "http://localhost:4000/api/Finanzas/Insert";
         const data = {
-            id_Login: 5,
+            Nombre: Nombre_RegFinz.value,
+            Cedula: Cedula_RegFinz.value,
             Saldo: saldo_RegFinz.value,
             Metodo_Pago: metPag_RegFinz.value,
             Total_Monto: totMon_RegFinz.value
@@ -229,6 +253,7 @@ async function RegistroFinanzas(event) {
         if (ResponsesReg.status === 200) {
             alert("Se Agrego el Registro Correctamente");
             getfetchFinz();
+            ocultarModalRegistroFinz();
         } else {
             alert("Error al intentar Agregar el Registro");
         }

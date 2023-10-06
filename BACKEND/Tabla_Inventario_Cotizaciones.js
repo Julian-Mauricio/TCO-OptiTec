@@ -1,4 +1,7 @@
 const tableInvCot = document.querySelector('#tableInventarios');
+const titulo = document.getElementById('#titulo');
+
+
 document.getElementById("getfetchInvCot").addEventListener("click", getfetchInvCot)
 
 async function getfetchInvCot() {
@@ -46,7 +49,7 @@ function mostrarFetchInvCot(data) {
     cabecera.appendChild(Email);
 
     const Tipo_Elemento = document.createElement('th');
-    Tipo_Elemento.textContent = 'Tipo_Elemento';
+    Tipo_Elemento.textContent = 'Tipo Elemento';
     cabecera.appendChild(Tipo_Elemento);
 
     const Cantidad = document.createElement('th');
@@ -60,7 +63,7 @@ function mostrarFetchInvCot(data) {
 
 
     const Metod_Entrega = document.createElement('th');
-    Metod_Entrega.textContent = 'Metod_Entrega';
+    Metod_Entrega.textContent = 'Metodo Entrega';
     cabecera.appendChild(Metod_Entrega);
 
     const Estado = document.createElement('th');
@@ -75,6 +78,11 @@ function mostrarFetchInvCot(data) {
     accion.textContent = 'ACCION';
     cabecera.appendChild(accion);
 
+   
+    //Funcion Para Abrir la Ventana Modal de Actualizar Registros
+    function abrirModalRegistrar() {
+        $('#RegistroInvPro').modal('show');
+    }
 
     tableInvCot.appendChild(cabecera);
 
@@ -218,17 +226,6 @@ function mostrarFetchInvCot(data) {
 
         }
 
-
-
-
-
-        // Cerrar el modal al hacer clic en otro botón, 
-        // Asigna el evento de click para cerrar la modal al botón "Cancelar Cambios"
-        document.getElementById('ActualizarCancelarCot').addEventListener('click', function () {
-            $('#ActuCot').modal('hide');
-        });
-
-
         tableInvCot.appendChild(contenido);
     }
     // Agrega la tabla al elemento apropiado en el documento
@@ -237,7 +234,13 @@ function mostrarFetchInvCot(data) {
 
 
 
-
+// Cerrar el modal al hacer clic en otro botón, 
+        // Asigna el evento de click para cerrar la modal al botón "Cancelar Cambios"
+        function ocultarModalActuCot() {
+            $('#ActuCot').modal('hide');
+        }
+        
+        document.getElementById('ActualizarCancelarCot').addEventListener('click', ocultarModalActuCot);
 
 
 
@@ -299,6 +302,7 @@ async function ActualizarCot(event) {
         console.log(reponses);
         if (reponses.status === 200) {
             getfetchInvCot();
+            ocultarModalActuCot();
         } else {
             alert(" no de registro la actualizacion")
         }

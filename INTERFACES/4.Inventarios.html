@@ -57,18 +57,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
+        
         <!-- Contenido principal -->
 
 
@@ -120,7 +109,8 @@
                                 <!-- Botones del modal -->
                                 <button type="button" class="btn btn-success w-100 mb-4" id="Actualizar">Guardar
                                     Cambios</button>
-                                <button type="button" class="btn btn-secondary w-100 " id="ActualizarInvMpCancelar">Cancelar
+                                <button type="button" class="btn btn-secondary w-100 "
+                                    id="ActualizarInvMpCancelar">Cancelar
                                     Cambios</button>
                             </div>
                         </form>
@@ -144,13 +134,9 @@
                         </h1>
                         <form action="" id="FormRegistroInvMp" class="text-center">
                             <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="id_LoginInvMp">ID ADMINISTRADOR</label>
-                                    <input type="number" id="id_LoginInvMp">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="TipoRegistroInvMp">TIPO</label>
-                                    <input type="text" id="TipoRegistroInvMp" required>
+                                <div class="col-md-12">
+                                    <label for="DescripcionRegistroInvMp">Descripción</label>
+                                    <input type="text" id="DescripcionRegistroInvMp" class="w-100" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -169,8 +155,8 @@
                                     <input type="number" id="SalidaRegistroInvMp" required>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="DescripcionRegistroInvMp">Descripción</label>
-                                    <input type="text" id="DescripcionRegistroInvMp" required>
+                                    <label for="TipoRegistroInvMp">TIPO</label>
+                                    <input type="text" id="TipoRegistroInvMp" required>
                                 </div>
                             </div>
                             <div>
@@ -214,7 +200,7 @@
                             <div class="row mb-3">
                                 <div class="col-md-6">
                                     <label for="DescripcionInvPro">DESCRIPCION</label>
-                                    <input type="number" id="DescripcionInvPro" required>
+                                    <input type="text" id="DescripcionInvPro" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="EntradaInvPro">ENTRADA</label>
@@ -247,27 +233,25 @@
 
         <!-- ****************** Modal para Registro de datos del Inventario de Produccion ************************ -->
 
-        <div class="modal fade" id="RegistroInvPro" tabindex="-1" aria-labelledby="RegistroInvProLabel" aria-hidden="true">
+        <div class="modal fade" id="RegistroInvPro" tabindex="-1" aria-labelledby="RegistroInvProLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabel">Registro de Datos Inventario Produccion</h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabel">Registro de Datos Inventario
+                        Produccion</h1>
                     <div class="modal-body">
                         <!-- Contenido del modal -->
                         <form action="" id="FormRegistroInvPro" class="text-center">
                             <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <label for="id_LoginInvPro">ID ADMINISTRADOR</label>
-                                    <input type="number" id="id_LoginInvPro">
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="TipoRegistroInvPro">TIPO</label>
-                                    <input type="text" id="TipoRegistroInvPro" required>
+                                <div class="col-md-12">
+                                    <label for="DescripcionRegistroInvPro">Descripción</label>
+                                    <input type="text" id="DescripcionRegistroInvPro" class="w-100" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="DescripcionRegistroInvPro">Descripción</label>
-                                    <input type="text" id="DescripcionRegistroInvPro" required>
+                                    <label for="TipoRegistroInvPro">TIPO</label>
+                                    <input type="text" id="TipoRegistroInvPro" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="EntradasRegistroInvPro">ENTRADA</label>
@@ -300,19 +284,14 @@
             </div>
         </div>
 
-
-
-
-
-
-
         <!-- ************ Modal para actualización de datos de Finanzas ************************ -->
 
         <div class="modal fade" id="ActuFinz" tabindex="-1" aria-labelledby="ActuFinzLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelFinz">Actualizacion de Datos Finanzas</h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelFinz">Actualizacion de Datos Finanzas
+                    </h1>
 
                     <div class="modal-body">
                         <form id="FormularioActFinz" action="" class="text-center">
@@ -321,6 +300,16 @@
                                 <div class="col-md-6">
                                     <label for="id_actFinz">ID AL QUE REALIZA CAMBIOS</label>
                                     <input type="number" id="id_actFinz" disabled>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="NombreactFinz">Nombre</label>
+                                    <input type="text" id="NombreactFinz" required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <label for="CedulaactFinz">Cedula</label>
+                                    <input type="text" id="CedulaactFinz" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="saldoactFinz">Saldo</label>
@@ -356,33 +345,45 @@
 
         <!-- ****************** Modal para Registro de datos Finanzas ************************ -->
 
-        <div class="modal fade" id="Registro_Finz" tabindex="-1" aria-labelledby="Registro_FinzLabel" aria-hidden="true">
+        <div class="modal fade" id="Registro_Finz" tabindex="-1" aria-labelledby="Registro_FinzLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelupdFinz">Registrar de Datos Finanzas</h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelupdFinz">Registrar de Datos Finanzas
+                    </h1>
 
                     <div class="modal-body">
                         <form id="FormRegistroupdFinz" action="" class="text-center">
                             <!-- Contenido del modal -->
                             <div class="row mb-4">
-                                <div class="col-md-6">
-                                    <label for="id_regFinz">ID CORTE</label>
-                                    <input type="number" id="id_regFinz" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="saldoregFinz">Saldo</label>
-                                    <input type="text" id="saldoregFinz" required>
+                                <div class="col-md-12">
+                                    <label for="NombreregFinz">Nombre</label>
+                                    <input type="text" id="NombreregFinz" class="w-100" required>
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <div class="col-md-6">
-                                    <label for="metPagregFinz">Metodo de Pago</label>
-                                    <input type="text" id="metPagregFinz" required>
+                                <div class="col-md-12">
+                                    <label for="CedularegFinz">Cedula</label>
+                                    <input type="text" id="CedularegFinz" class="w-100" required>
                                 </div>
-                                <div class="col-md-6">
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <label for="saldoregFinz">Saldo</label>
+                                    <input type="text" id="saldoregFinz" class="w-100" required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-12">
+                                    <label for="metPagregFinz">Metodo de Pago</label>
+                                    <input type="text" id="metPagregFinz" class="w-100" required>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-md-12">
                                     <label for="totMonregFinz">Total</label>
-                                    <input type="number" id="totMonregFinz" required>
+                                    <input type="number" id="totMonregFinz" class="w-100" required>
                                 </div>
                             </div>
 
@@ -404,27 +405,14 @@
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- ************ Modal para actualización de datos de Finanzas ************************ -->
+        <!-- ************ Modal para actualización de datos de Cotizacion ************************ -->
 
         <div class="modal fade" id="ActuCot" tabindex="-1" aria-labelledby="ActuCotLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
-                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelCot">Actualizacion de Datos Cotizaciones</h1>
+                    <h1 class="modal-title text-center mb-4" id="exampleModalLabelCot">Actualizacion de Datos
+                        Cotizaciones</h1>
 
                     <div class="modal-body">
                         <form id="FormularioActCot" action="" class="text-center">
@@ -519,10 +507,10 @@
     </main>
 
     <!-- Scripts -->
+    <script src="/BACKEND/Tabla_InventarioMP.JS"></script>
+    <script src="/BACKEND/Tabla_Inventario_Produccion.JS"></script>
     <script src="/BACKEND/Tabla_Inventario_Cotizaciones.js"></script>
     <script src="/BACKEND/Tabla_Finanzas.js"></script>
-    <script src="/BACKEND/Tabla_Inventario_Produccion.JS"></script>
-    <script src="/BACKEND/Tabla_InventarioMP.JS"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>

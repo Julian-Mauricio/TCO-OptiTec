@@ -21,14 +21,22 @@ function mostrarFetchInvPro(data) {
     id.textContent = 'ID';
     cabecera.appendChild(id);
 
+    const NombreAdministrador = document.createElement('th');
+    NombreAdministrador.textContent = 'Administrador';
+    cabecera.appendChild(NombreAdministrador);
+
+    const AdministradorCedulac = document.createElement('th');
+    AdministradorCedulac.textContent = 'AdministradorCedula';
+    cabecera.appendChild(AdministradorCedulac);
+
     const tipo = document.createElement('th');
     tipo.textContent = 'TIPO';
     cabecera.appendChild(tipo);
 
     const descripcion = document.createElement('th');
-    descripcion.textContent = 'Descripcion';
+    descripcion.textContent = 'DESCRIPCCION';
     cabecera.appendChild(descripcion);
-    
+
     const entrada = document.createElement('th');
     entrada.textContent = 'ENTRADA';
     cabecera.appendChild(entrada);
@@ -57,6 +65,14 @@ function mostrarFetchInvPro(data) {
         id_mpc.textContent = element.id_Inventario_P;
         contenido.appendChild(id_mpc);
 
+        const NombreAdministradorc = document.createElement('td');
+        NombreAdministradorc.textContent = element.Nombre;
+        contenido.appendChild(NombreAdministradorc);
+
+        const AdministradorCedulacc = document.createElement('td');
+        AdministradorCedulacc.textContent = element.Cedula;
+        contenido.appendChild(AdministradorCedulacc);
+
         const tipoc = document.createElement('td');
         tipoc.textContent = element.Tipo;
         contenido.appendChild(tipoc);
@@ -77,7 +93,7 @@ function mostrarFetchInvPro(data) {
         salidac.textContent = element.Salida;
         contenido.appendChild(salidac);
 
-      
+
 
 
 
@@ -133,12 +149,14 @@ function mostrarFetchInvPro(data) {
             //Se traen los Campos  y se Igualan A los Valores de Los campos De Cada Fila
             const id_Inventario_P = document.getElementById("id_InvPro");
             const TipoAct = document.getElementById("TipoInvPro");
+            const DescripcionAct = document.getElementById("DescripcionInvPro");
             const EntradaAct = document.getElementById("EntradaInvPro");
             const StockAct = document.getElementById("StockInvPro");
             const SalidaAct = document.getElementById("SalidaInvPro");
 
             id_Inventario_P.value = element.id_Inventario_P;
             TipoAct.value = element.Tipo;
+            DescripcionAct.value = element.Descripcion;
             EntradaAct.value = element.Entradas;
             StockAct.value = element.Stock;
             SalidaAct.value = element.Salida;
@@ -163,10 +181,6 @@ function mostrarFetchInvPro(data) {
             $('#RegistroInvPro').modal('show');
         }
 
-        document.getElementById('RegistrarInvProCancelar').addEventListener('click', function () {
-            $('#RegistroInvPro').modal('hide');
-        });
-
         tableInvPro.appendChild(contenido);
     }
     // Agrega la tabla al elemento apropiado en el documento
@@ -174,8 +188,16 @@ function mostrarFetchInvPro(data) {
 }
 
 
+function ActualizarInvProCancelar() {
+    $('#ActuInvPro').modal('hide');
+}
+document.getElementById('ActualizarInvProCancelar').addEventListener('click', ActualizarInvProCancelar);  
+    
 
-
+function ocultarModalRegistroInvPro() {
+    $('#RegistroInvPro').modal('hide');
+}
+document.getElementById('RegistrarInvProCancelar').addEventListener('click', ocultarModalRegistroInvPro);
 
 //Se Traen Los Valores a Actualiar
 
@@ -218,6 +240,7 @@ async function ActualizarDatos(event) {
         console.log(reponses);
         if (reponses.status === 200) {
             getfetchInvPro();
+            ActualizarInvProCancelar();
         } else {
             alert(" no de registro la actualizacion")
         }
@@ -232,7 +255,7 @@ async function ActualizarDatos(event) {
 
 //Se Traen Los Valores  a Registrar
 
-const id_LoginIvnPro = document.querySelector("#id_LoginInvPro");
+
 const TipoRegistroIvnPro = document.querySelector("#TipoRegistroInvPro");
 const DescripcionRegistroIvnPro = document.querySelector("#DescripcionRegistroInvPro");
 const EntradasRegistroIvnPro = document.querySelector("#EntradasRegistroInvPro");
@@ -248,12 +271,13 @@ async function RegistroMateria(event) {
     try {
         const url = "http://localhost:4000/api/Produccion/Insert";
         const data = {
-            id_Login: id_LoginIvnPro.value,
             Tipo: TipoRegistroIvnPro.value,
             Descripcion: DescripcionRegistroIvnPro.value,
             Entradas: EntradasRegistroIvnPro.value,
             Stock: StockRegistroIvnPro.value,
             Salida: SalidaRegistroIvnPro.value,
+            Nombre:"julian",
+            Cedula:"1110001110",
         };
         const requestOptions = {
             method: "POST",
@@ -267,6 +291,7 @@ async function RegistroMateria(event) {
         if (Responses.status === 200) {
             alert("Se Agrego el Registro Correctamente");
             getfetchInvPro();
+            ocultarModalRegistroInvPro();
         } else {
             alert("Error al intentar Agregar el Registro");
         }
