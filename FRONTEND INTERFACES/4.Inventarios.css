@@ -6,23 +6,22 @@
     padding: 1rem;
 }
 
-
-/* Estilo para el botón */
-.boton {
+/* Estilo para el botón/icono */
+.boton-icono {
     position: absolute;
-    top: 30px; /* Ajusta la distancia desde la parte superior */
-    right: 10px; /* Ajusta la distancia desde la derecha */
-    padding: 10px 20px;
+    top: 30px;
+    right: 10px;
+    padding: 10px;
     background-color: #ffc107;
     color: #333;
     text-decoration: none;
-    border: 2px solid #0056b3; /* Agrega un borde sólido al botón */
-    border-radius: 5px;
+    border: 2px solid #0056b3; 
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out; /* Agrega una transición suave al color de fondo */
+    transition: background-color 0.3s ease-in-out;
 }
 
-.boton:hover {
+.boton-icono:hover {
     background-color: #0056b3;
     color: #fff;
     text-decoration: none;
