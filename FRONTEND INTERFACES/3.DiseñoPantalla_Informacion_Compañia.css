@@ -1,58 +1,207 @@
-/*NAVEGACION*/
+/* Estilos generales */
+body {
+    background-color: #F4EEEE; /* Fondo general */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+/* Estilos para el encabezado */
+header {
+    background-color: #343a40; /* Color de fondo del encabezado */
+    margin-bottom: 10rem;
+}
+
 #Logo img {
     width: 100%;
     height: 40px;
 }
-header {
-    margin-bottom: 10rem;
+
+.navbar-toggler-icon {
+    border-color: #fff; /* Color del icono del botón de menú */
 }
 
+.nav-link {
+    color: #fff; /* Color de los enlaces del menú */
+    margin-right: 20px;
+}
+
+/* Estilos para el contenido principal */
 main {
-    margin-bottom: 7rem;
+    background-color: #fff; /* Color de fondo del contenido principal */
+    padding: 20px; /* Espaciado interior del contenido principal */
+    border: 1px solid #ddd; /* Borde alrededor del contenido principal */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra alrededor del contenido principal */
 }
 
-/*CONTENIDO*/
-body {
-    background-color: #F4EEEE;
-}
-
+/* Estilos para la sección de bienvenida */
 #Bienvenida {
-    margin-bottom: 10rem;
-
+    background-color: #fff; /* Color de fondo de la sección */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
-#Section_Historia_Valores {
-    margin-bottom:10rem;
-}
-#Section_Directivo_Inovacion{
-    margin-bottom:10rem;
-}
-#Imagenes_Gerente IMG {
-    max-width: 50%;
+/* Estilos para el contenido dentro de la sección */
+#Bienvenida h1 {
+    font-size: 36px;
+    color: #333; /* Color del texto del encabezado */
 }
 
-#Imagenes_Subgerente IMG {
-    max-width: 50%;
+#Bienvenida h3 {
+    font-size: 18px;
+    color: #666; /* Color del texto del párrafo */
+    margin-top: 20px; /* Espacio superior entre los párrafos */
+}
+
+#Bienvenida h2 {
+    font-size: 24px;
+    color: #FFBF00; /* Color del texto del segundo encabezado */
+    margin-top: 20px; /* Espacio superior entre los párrafos */
+}
+
+
+section {
+    margin-bottom: 40px; /* Espacio entre secciones */
+}
+
+/* Estilos para las divisiones dentro de la sección Section_Historia_Valores */
+#Section_Historia_Valores .col-lg-6 {
+    border: 1px solid #ddd; /* Borde de 1px sólido */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 10px; /* Margen entre cuadros */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: #fff; /* Color de fondo */
+    margin-bottom: 20px; /* Espaciado inferior entre los cuadros */
+}
+
+#Section_Historia_Valores h1 {
+    font-size: 30px; /* Tamaño del encabezado */
+    margin-bottom: 10px; /* Espaciado inferior del encabezado */
+}
+
+#Section_Historia_Valores h6 {
+    font-size: 16px; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espaciado inferior del texto */
+}
+
+
+/* Estilos para la sección de equipo directivo y experiencia */
+#Section_Directivo_Inovacion .col-lg-6 {
+    border: 1px solid #ddd; /* Borde de 1px sólido */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    margin: 10px; /* Margen entre cuadros */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: #fff; /* Color de fondo */
+    margin-bottom: 20px; /* Espaciado inferior entre los cuadros */
+}
+
+#Section_Directivo_Inovacion h1 {
+    font-size: 30px; /* Tamaño del encabezado */
+    margin-bottom: 10px; /* Espaciado inferior del encabezado */
+}
+
+#Section_Directivo_Inovacion h6 {
+    font-size: 16px; /* Tamaño del texto */
+    margin-bottom: 10px; /* Espaciado inferior del texto */
+}
+
+/* Estilos para la sección con divisiones y cuadros */
+.section-cuadros .col-lg-6{
+    background-color: #fff; /* Color de fondo de la sección */
+    padding: 60px 20px  20px;
+    border: 1px solid #ccc; /* Borde del contenedor */
+    margin: 10px; /* Margen entre cuadros */
+    border-radius: 10px; /* Bordes redondos para el contenedor */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); /* Sombra del contenedor */
+}
+
+/* Estilos para el icono dentro de los cuadros */
+.section-cuadros i.bi-person-square {
+    font-size: 10rem; /* Tamaño del icono */
+    margin-bottom: 10px; /* Espaciado inferior del icono */
+}
+
+/* Estilos para el texto dentro de los cuadros */
+.section-cuadros h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.section-cuadros h6 {
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .imagenesContenido {
-
     -webkit-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
     -moz-box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
     box-shadow: 10px 10px 5px -11px rgba(0, 0, 0, 1);
-
 }
 
-#Logros{
-    margin-top: 7rem;
+/* Estilos para la sección de logros */
+
+/* Estilos para la sección de Logros_imagen */
+#Logros_imagen {
+    background-color: #fff; /* Color de fondo */
+    padding: 0; /* Sin relleno */
+    margin: 0; /* Sin márgenes en todos los lados */
+    border: 1px solid #ddd; /* Borde sólido */
+    border-radius: 10px; /* Radio de borde para suavizar esquinas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin-top: -20px; /* Margen superior negativo para subir el borde inferior */
+    margin-left: 180px;
+    margin-right: 180px;
 }
 
-.Imagen_Logro img {
-    max-width: 30%;
+#Logros_imagen h1 {
+    margin: 15px 0; /* Margen superior e inferior para el título */
+    font-size: 3rem; /* Tamaño de fuente más grande (cambia el valor según tus necesidades) */
+}
+
+#Logros_imagen img {
+    max-width: 100%;
 }
 
 
-/*CONTENIDO FOOTER*/
+/* Estilos para la clase .Logros */
+.Logros {
+    padding: 20px;
+    border: 1px solid #ccc; /* Borde del contenedor */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra del contenedor */
+    border-radius: 10px; /* Bordes redondeados para el contenedor */
+    margin: 10px; /* Margen entre cuadros */
+}
+
+/* Estilos para los elementos <h6> dentro de .Logros */
+.Logros h6 {
+    margin: 0; /* Elimina el margen predeterminado de los elementos <h6> */
+    padding: 10px 0; /* Espaciado interno de los elementos <h6> */
+    border-bottom: 1px solid #ccc; /* Borde inferior de cada elemento <h6> */
+    border-radius: 5px; /* Bordes redondeados para los elementos <h6> */
+}
+
+/* Estilos para el último elemento <h6> dentro de .Logros para eliminar el borde inferior */
+.Logros h6:last-child {
+    border-bottom: none; /* Elimina el borde inferior del último elemento <h6> */
+}
+
+
+
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #343a40; /* Color de fondo del pie de página */
+    color: #fff; /* Color del texto en el pie de página */
+    padding: 40px 0;
+}
+
 #LogoFooter {
     width: 150px;
     height: 60px;
@@ -77,6 +226,3 @@ body {
     border: 2px solid #FFBF00;
     padding: 5px;
 }
-
-
-  
