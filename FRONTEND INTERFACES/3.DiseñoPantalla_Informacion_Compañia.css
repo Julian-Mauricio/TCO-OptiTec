@@ -1,3 +1,14 @@
+/*NAVEGACION*/
+.img-logo{
+    max-width: 10rem;
+}
+header {
+    margin-bottom: 10rem;
+    background-color: black;
+}
+
+
+/* Estilos para el contenido principal */
 /* Estilos generales */
 body {
     background-color: #F4EEEE; /* Fondo general */
@@ -6,36 +17,15 @@ body {
     padding: 0;
 }
 
-.container-fluid {
-    padding: 20px;
-}
-
-/* Estilos para el encabezado */
-header {
-    background-color: #343a40; /* Color de fondo del encabezado */
-    margin-bottom: 10rem;
-}
-
-#Logo img {
-    width: 100%;
-    height: 40px;
-}
-
-.navbar-toggler-icon {
-    border-color: #fff; /* Color del icono del botón de menú */
-}
-
-.nav-link {
-    color: #fff; /* Color de los enlaces del menú */
-    margin-right: 20px;
-}
-
-/* Estilos para el contenido principal */
 main {
     background-color: #fff; /* Color de fondo del contenido principal */
     padding: 20px; /* Espaciado interior del contenido principal */
     border: 1px solid #ddd; /* Borde alrededor del contenido principal */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra alrededor del contenido principal */
+}
+
+.container-fluid {
+    padding: 20px;
 }
 
 /* Estilos para la sección de bienvenida */
@@ -195,34 +185,83 @@ section {
 
 
 
+
 /* Estilos para el pie de página */
-footer {
-    background-color: #343a40; /* Color de fondo del pie de página */
-    color: #fff; /* Color del texto en el pie de página */
-    padding: 40px 0;
-}
 
-#LogoFooter {
-    width: 150px;
-    height: 60px;
-}
 
-.TextoTituloFooter {
-    color: #FFBF00;
+/****************** Footer  ********************************/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
-
-#BotonCotizarFooter {
-    color: #FFBF00;
+/*:::::Pie de Pagina*/
+.pie-pagina{
+    width: 100%;
     background-color: black;
-    border-radius: 5px;
-    border: 2px solid #FFBF00;
-    padding: 5px;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #ffc107;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: aqua;
+}
+.pie-pagina .grupo-2{
+    background-color: #FFC436;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media (max-width: 767px) {
+
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+  
 }
 
-#BotonCotizarFooter:hover {
-    color: black;
-    background-color: #FFBF00;
-    border-radius: 5px;
-    border: 2px solid #FFBF00;
-    padding: 5px;
-}
