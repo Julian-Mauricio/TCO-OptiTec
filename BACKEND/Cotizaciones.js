@@ -45,7 +45,7 @@ async function RegistrarCotizacion(event) {
         const Responses = await response.json();
         if (Responses.status === 200) {
             FormularioCotizacion.reset();
-            alert("Se Agrego el Registro Correctamente");
+            alert("Se Envio tu Cotizacion Correctamente");
         } else {
             alert("Error al intentar Agregar el Registro");
         }

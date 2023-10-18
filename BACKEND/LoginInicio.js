@@ -23,12 +23,12 @@ async function WhereLogin(event) {
         const response = await fetch(url, requestOptions);
         const Responses = await response.json();
         console.log(Responses);
-        if (Responses.body[0]?.Rol === "Administrador") {
+        if (Responses.body[0]?.Rol === "Admin") {
             formularioLogin.reset();
             window.open('4.Inventarios.html', '_self');
-        } else if (Responses.body[0]?.Rol === "Usuario Normal") {
+        } else if (Responses.body[0]?.Rol === "User") {
             formularioLogin.reset();
-            window.open('1.Pantalla_Principal.html', '_self');
+            window.open('1.Interfas_Principal.html', '_self');
         } else {
             alert("El usuarion con las credenciales ingresadas no puede acceder a la aplicacion por favor intente de nuevo");
         }

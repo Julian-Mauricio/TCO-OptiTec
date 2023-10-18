@@ -43,7 +43,7 @@ async function RegistroLogin(event) {
     if (Responses.status === 200) {
       FormRegistro.reset();
       alert("El usuario se registro correctamente");
-      window.open('1.Pantalla_Principal.html', '_self');
+      window.open('1.Interfas_Principal.html', '_self');
     }else {
       alert("Error al intentar registrarse");
     }
