@@ -26,7 +26,7 @@ async function WhereLogin(event) {
         if (Responses.body[0]?.Rol === "Admin") {
             formularioLogin.reset();
             window.open('4.Inventarios.html', '_self');
-        } else if (Responses.body[0]?.Rol === "User") {
+        } else if (Responses.body[0]?.Rol === "Usuario") {
             formularioLogin.reset();
             window.open('1.Interfas_Principal.html', '_self');
         } else {

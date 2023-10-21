@@ -220,7 +220,7 @@ async function ActualizarFinz(event) {
 }
 
 //Se Traen Los Valores  a Registrar
-
+const FormRegistroupdFinz = document.querySelector("#FormRegistroupdFinz");
 const id_CorteReg = document.querySelector("#id_regFinz");
 const Nombre_RegFinz = document.querySelector("#NombreregFinz");
 const Cedula_RegFinz = document.querySelector("#CedularegFinz");
@@ -252,6 +252,7 @@ async function RegistroFinanzas(event) {
         const ResponsesReg = await responsereg.json();
         if (ResponsesReg.status === 200) {
             alert("Se Agrego el Registro Correctamente");
+            FormRegistroupdFinz
             getfetchFinz();
             ocultarModalRegistroFinz();
         } else {

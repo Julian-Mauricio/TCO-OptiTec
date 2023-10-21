@@ -1,4 +1,4 @@
-const FormRegistro = document.querySelector("#FormRegistro"); 
+const FormRegistro = document.querySelector("#FormularioRegistro"); 
 const NombreRegistro = document.querySelector("#NombreRegistro");
 const ApellidoRegistro = document.querySelector("#ApellidoRegistro"); 
 const DniRegistro = document.querySelector("#DniRegistro"); 
@@ -15,7 +15,6 @@ document.getElementById("EnviarRegistro").addEventListener("click", RegistroLogi
 
 async function RegistroLogin(event) {
   event.preventDefault();
-  console.log(input9c.value);
   try {
     const url = "http://localhost:4000/api/Login/Insert";
     const data = {
@@ -28,7 +27,7 @@ async function RegistroLogin(event) {
         Usuario: UsuarioRegistro.value,
         Password: PasswordRegistro.value,
         Fecha_Nacimiento: FechaNacimientoRegistro.value,
-        Rol: "User",
+        Rol: "UserUsuario",
         Gender: GeneroRegistro.value,
     };
     const requestOptions = {
