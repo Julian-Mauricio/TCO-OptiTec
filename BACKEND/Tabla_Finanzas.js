@@ -252,7 +252,7 @@ async function RegistroFinanzas(event) {
         const ResponsesReg = await responsereg.json();
         if (ResponsesReg.status === 200) {
             alert("Se Agrego el Registro Correctamente");
-            FormRegistroupdFinz
+            FormRegistroupdFinz.reset();
             getfetchFinz();
             ocultarModalRegistroFinz();
         } else {

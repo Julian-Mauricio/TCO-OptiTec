@@ -256,6 +256,7 @@ async function ActualizarDatos(event) {
 //Se Traen Los Valores  a Registrar
 
 
+const FormRegistroInvPro = document.querySelector("#FormRegistroInvPro");
 const TipoRegistroIvnPro = document.querySelector("#TipoRegistroInvPro");
 const DescripcionRegistroIvnPro = document.querySelector("#DescripcionRegistroInvPro");
 const EntradasRegistroIvnPro = document.querySelector("#EntradasRegistroInvPro");
@@ -289,6 +290,7 @@ async function RegistroMateria(event) {
         const response = await fetch(url, requestOptions);
         const Responses = await response.json();
         if (Responses.status === 200) {
+            FormRegistroInvPro.reset();
             alert("Se Agrego el Registro Correctamente");
             getfetchInvPro();
             ocultarModalRegistroInvPro();
