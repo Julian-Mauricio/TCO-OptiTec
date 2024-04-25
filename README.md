@@ -11,8 +11,8 @@
 
 ------------------------------------------------------------------------------ 
 
-### Instalación de dependencias:
-
+> [!IMPORTANT]
+> ### Instalación de dependencias:
 > Abre una terminal y navega hasta la carpeta raíz del proyecto.
 \
 > Ejecuta el siguiente comando para instalar las dependencias:
@@ -21,16 +21,16 @@
 
 ------------------------------------------------------------------------------ 
 
-### Ejecución de la API:
-
+> [!IMPORTANT]
+> ### Ejecución de la API:
 > Para ejecutar la API, ejecuta el siguiente comando en tu terminal:
 
 `npm run dev`
 
 ------------------------------------------------------------------------------ 
 
-### Lista de dependencias:
-
+> [!NOTE]
+> ### Lista de dependencias:
 * `cors:` Permite que la API reciba solicitudes desde diferentes dominios.
 * `express:` Framework web ligero y flexible para Node.js.
 * `morgan:` Registra información sobre las solicitudes HTTP realizadas a la API.
@@ -39,8 +39,8 @@
 
 ------------------------------------------------------------------------------ 
 
-### Lista de devDependencies:
-
+> [!NOTE]
+> ### Lista de devDependencies:
 * `dotenv:` Permite cargar variables de entorno desde un archivo .env.
 
 ------------------------------------------------------------------------------ 
