@@ -16,7 +16,6 @@
 > Abre una terminal y navega hasta la carpeta raíz del proyecto.
 \
 > Ejecuta el siguiente comando para instalar las dependencias:
-
 `npm install`
 
 ------------------------------------------------------------------------------ 
@@ -24,18 +23,17 @@
 > [!IMPORTANT]
 > ### Ejecución de la API:
 > Para ejecutar la API, ejecuta el siguiente comando en tu terminal:
-
 `npm run dev`
 
 ------------------------------------------------------------------------------ 
 
 > [!NOTE]
 > ### Lista de dependencias:
-* `cors:` Permite que la API reciba solicitudes desde diferentes dominios.
-* `express:` Framework web ligero y flexible para Node.js.
-* `morgan:` Registra información sobre las solicitudes HTTP realizadas a la API.
-* `mysql:` Controlador de base de datos MySQL para Node.js.
-* `nodemon:` Reinicia automáticamente la API cuando se realizan cambios en el código.
+> * `cors:` Permite que la API reciba solicitudes desde diferentes dominios.
+> * `express:` Framework web ligero y flexible para Node.js.
+> * `morgan:` Registra información sobre las solicitudes HTTP realizadas a la API.
+> * `mysql:` Controlador de base de datos MySQL para Node.js.
+> * `nodemon:` Reinicia automáticamente la API cuando se realizan cambios en el código.
 
 ------------------------------------------------------------------------------ 
 
