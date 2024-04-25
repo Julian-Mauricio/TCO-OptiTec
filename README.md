@@ -2,9 +2,9 @@
 
 ## *Requisitos previos:*
 
-
-### Instalar Node.js:
-
+> [!TIP]
+> ### Instalar Node.js:
+\
 > Descarga e instala Node.js desde la página oficial: 
 [NodeJS](https://nodejs.org/en/download)
 \
