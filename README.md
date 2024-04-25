@@ -47,6 +47,7 @@
 # Creadores:
 
 @Julian-Mauricio = :money_mouth_face: Julian Mauricio Romero Garcia :mechanical_arm:
+\
 @Ronald-Lozano = :alien: Ronald Stidwar Lozano Zamora :love_you_gesture:
 
 ------------------------------------------------------------------------------ 
