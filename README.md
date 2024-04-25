@@ -49,6 +49,6 @@
 > # Creadores:
 > __@Julian-Mauricio__ = :gem: Julian Mauricio Romero Garcia :trident:
 \
-> __@Ronald-Lozano__ = :alien: Ronald Stidwar Lozano Zamora :om:
+> __[@Ronald-Lozano](https://github.com/Ronald-Lozano)__ = :alien: Ronald Stidwar Lozano Zamora :om:
 
 ------------------------------------------------------------------------------ 
