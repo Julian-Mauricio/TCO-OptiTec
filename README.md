@@ -16,14 +16,14 @@
 > Abre una terminal y navega hasta la carpeta raíz del proyecto.
 \
 > Ejecuta el siguiente comando para instalar las dependencias:
-`npm install`
+> `npm install`
 
 ------------------------------------------------------------------------------ 
 
 > [!IMPORTANT]
 > ### Ejecución de la API:
 > Para ejecutar la API, ejecuta el siguiente comando en tu terminal:
-`npm run dev`
+> `npm run dev`
 
 ------------------------------------------------------------------------------ 
 
