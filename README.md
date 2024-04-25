@@ -4,7 +4,8 @@
 
 > [!TIP]
 > ### Instalar Node.js:
-> Descarga e instala Node.js desde la página oficial: 
+> Descarga e instala Node.js desde la página oficial:
+\
 [NodeJS](https://nodejs.org/en/download)
 \
 > Verifica que la instalación se haya realizado correctamente ejecutando el comando node -v en tu terminal.
