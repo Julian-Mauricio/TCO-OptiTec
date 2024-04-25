@@ -39,14 +39,14 @@
 
 > [!NOTE]
 > ### Lista de devDependencies:
-* `dotenv:` Permite cargar variables de entorno desde un archivo .env.
+> * `dotenv:` Permite cargar variables de entorno desde un archivo .env.
 
 ------------------------------------------------------------------------------ 
 
-# Creadores:
-
-@Julian-Mauricio = :gem: Julian Mauricio Romero Garcia :trident:
+> [!CAUTION]
+> # Creadores:
+> @Julian-Mauricio = :gem: Julian Mauricio Romero Garcia :trident:
 \
-@Ronald-Lozano = :alien: Ronald Stidwar Lozano Zamora :om:
+> @Ronald-Lozano = :alien: Ronald Stidwar Lozano Zamora :om:
 
 ------------------------------------------------------------------------------ 
