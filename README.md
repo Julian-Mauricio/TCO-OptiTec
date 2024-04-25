@@ -2,11 +2,12 @@
 
 ## *Requisitos previos:*
 
-> [!TIP]
-> ### Instalar Node.js:
+
+### Instalar Node.js:
 
 > Descarga e instala Node.js desde la página oficial: 
 [NodeJS](https://nodejs.org/en/download)
+\
 > Verifica que la instalación se haya realizado correctamente ejecutando el comando node -v en tu terminal.
 
 ------------------------------------------------------------------------------ 
@@ -14,6 +15,7 @@
 ### Instalación de dependencias:
 
 > Abre una terminal y navega hasta la carpeta raíz del proyecto.
+\
 > Ejecuta el siguiente comando para instalar las dependencias:
 
 `npm install`
@@ -46,8 +48,8 @@
 
 # Creadores:
 
-@Julian-Mauricio = :money_mouth_face: Julian Mauricio Romero Garcia :mechanical_arm:
+@Julian-Mauricio = :gem: Julian Mauricio Romero Garcia :trident:
 \
-@Ronald-Lozano = :alien: Ronald Stidwar Lozano Zamora :love_you_gesture:
+@Ronald-Lozano = :alien: Ronald Stidwar Lozano Zamora :om:
 
 ------------------------------------------------------------------------------ 
