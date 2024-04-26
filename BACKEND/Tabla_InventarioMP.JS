@@ -25,38 +25,47 @@ function mostrarFetchInvMp(data) {
     const id = document.createElement('th');
     id.textContent = 'ID';
     cabecera.appendChild(id);
+    id.style.textAlign = 'center';
 
     const administrador = document.createElement('th');
     administrador.textContent = 'Administrador';
     cabecera.appendChild(administrador);
+    administrador.style.textAlign = 'center';
 
     const administradorCedula = document.createElement('th');
-    administradorCedula.textContent = 'AdministradorCedula';
+    administradorCedula.textContent = 'Numero de Documento';
     cabecera.appendChild(administradorCedula);
+    administradorCedula.style.textAlign = 'center';
 
     const tipo = document.createElement('th');
-    tipo.textContent = 'TIPO';
+    tipo.textContent = 'Tipo';
     cabecera.appendChild(tipo);
+    tipo.style.textAlign = 'center';
 
     const descripcion = document.createElement('th');
-    descripcion.textContent = 'DESCRIPCCION';
+    descripcion.textContent = 'Descripción';
     cabecera.appendChild(descripcion);
+    descripcion.style.textAlign = 'center';
 
     const entrada = document.createElement('th');
-    entrada.textContent = 'ENTRADA';
+    entrada.textContent = 'Entrada';
     cabecera.appendChild(entrada);
+    entrada.style.textAlign = 'center';
 
     const stock = document.createElement('th');
-    stock.textContent = 'STOCK';
+    stock.textContent = 'Stock';
     cabecera.appendChild(stock);
+    stock.style.textAlign = 'center';
 
     const salida = document.createElement('th');
-    salida.textContent = 'SALIDA';
+    salida.textContent = 'Salida';
     cabecera.appendChild(salida);
+    salida.style.textAlign = 'center';
 
     const accion = document.createElement('th');
-    accion.textContent = 'ACCION';
+    accion.textContent = 'Acción';
     cabecera.appendChild(accion);
+    accion.style.textAlign = 'center';
 
     tableInvMp.appendChild(cabecera); // Agrega la cabecera a la tabla
 
@@ -69,40 +78,50 @@ function mostrarFetchInvMp(data) {
         const id_mpc = document.createElement('td');
         id_mpc.textContent = element.id_Inventario_MP;
         contenido.appendChild(id_mpc);
+        id_mpc.style.textAlign = 'center';
 
         const administradorC = document.createElement('td');
         administradorC.textContent = element.Nombre;
         contenido.appendChild(administradorC);
+        administradorC.style.textAlign = 'center';
 
         const administradorCedulaC = document.createElement('td');
         administradorCedulaC.textContent = element.Cedula;
         contenido.appendChild(administradorCedulaC);
+        administradorCedulaC.style.textAlign = 'center';
 
         const tipoc = document.createElement('td');
         tipoc.textContent = element.Tipo;
         contenido.appendChild(tipoc);
+        tipoc.style.textAlign = 'center';
 
         const Descripcionc = document.createElement('td');
         Descripcionc.textContent = element.Descripcion;
         contenido.appendChild(Descripcionc);
+        Descripcionc.style.textAlign = 'center';
 
         const entradasc = document.createElement('td');
         entradasc.textContent = element.Entradas;
         contenido.appendChild(entradasc);
+        entradasc.style.textAlign = 'center';
 
         const stockc = document.createElement('td');
         stockc.textContent = element.Stock;
         contenido.appendChild(stockc);
+        stockc.style.textAlign = 'center';
 
         const salidac = document.createElement('td');
         salidac.textContent = element.Salida;
         contenido.appendChild(salidac);
+        salidac.style.textAlign = 'center';
 
         //Creacion del Boton Eliminar
         const buttonEliminar = document.createElement('button');
         buttonEliminar.textContent = 'ELIMINAR';
-        buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
-        
+        buttonEliminar.classList.add('btn', 'btn-danger');
+        buttonEliminar.style.marginLeft = '9rem';
+        buttonEliminar.style.marginTop = '5px';
+
         contenido.appendChild(buttonEliminar);
 
         buttonEliminar.addEventListener("click", EliminarRegistro)
@@ -140,7 +159,7 @@ function mostrarFetchInvMp(data) {
         buttonActualizar.textContent = 'ACTUALIZAR';
         buttonActualizar.classList.add('btn', 'btn-primary');
         contenido.appendChild(buttonActualizar);
-
+        buttonActualizar.style.marginTop = '5px';
 
         buttonActualizar.addEventListener('click', abrirModal);
 
@@ -167,15 +186,13 @@ function mostrarFetchInvMp(data) {
             $('#ActuInvMp').modal('show');
         }
 
-        
-
-       
 
         //Creacion del Boton AGREGAR
         const buttonAgregar = document.createElement('button');
         buttonAgregar.textContent = 'AGREGAR';
         buttonAgregar.classList.add('btn', 'btn-success');
         contenido.appendChild(buttonAgregar);
+        buttonAgregar.style.marginTop = '5px';
 
         buttonAgregar.addEventListener('click', abrirModalRegistrar);
 
@@ -183,9 +200,6 @@ function mostrarFetchInvMp(data) {
         function abrirModalRegistrar() {
             $('#RegistroMp').modal('show');
         }
-
-       
-
 
         tableInvMp.appendChild(contenido);
     }
