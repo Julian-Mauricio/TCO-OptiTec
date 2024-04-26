@@ -1,71 +1,77 @@
+body {
+    background-color: rgb(12, 16, 22);
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(73, 73, 73, 0.2);
+    font-family: Arial, sans-serif;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}
+
 .nav-item {
-    width: 100%;
+    border-radius: 2px;
+}
+
+.img-logo {
+    max-width: 10rem;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-bottom: 0;
+    position: relative;
 }
 
 #espacio {
     padding: 1rem;
 }
 
-/* Estilo para el botón/icono */
 .boton-icono {
     position: absolute;
-    top: 30px;
-    right: 10px;
+    top: 70px;
+    transform: translateY(-50%);
+    right: 40px;
     padding: 10px;
-    background-color: #ffc107;
-    color: #333;
+    background-color: transparent;
+    color: black;
     text-decoration: none;
-    border: 2px solid #0056b3; 
-    border-radius: 50%;
+    border: 2px solid black;
+    border-radius: 60%;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
 
 .boton-icono:hover {
-    background-color: #0056b3;
+    background-color: rgb(12, 16, 22);
     color: #fff;
     text-decoration: none;
-    border-color: #ffc107;
-}
-
-
-/* Diseño Ventana Modal Inventario Materia Prima */
-
-/* Estilos generales */
-body {
-    background-color: #f5f5f5;
-    /* Fondo claro */
-    font-family: Arial, sans-serif;
+    border-color: white;
 }
 
 .container-fluid {
+    background-color: rgb(76, 80, 91); ;
     padding: 20px;
     text-align: center;
-    /* Centrar contenido */
 }
 
 .container-fluid h1 {
     font-size: 36px;
-    /* Tamaño de fuente más grande */
     font-weight: bold;
-    /* Texto en negrita */
 }
 
-/* Barra de navegación lateral */
 .sidebar {
-    background-color: #333;
-    /* Fondo oscuro */
     color: #fff;
-    /* Texto blanco */
     padding: 20px;
 }
 
 .sidebar h1 {
-
     margin-bottom: 20px;
 }
 
-/* Alineación horizontal de los botones */
 .nav-item {
     display: inline-block;
     /* Mostrar botones en línea horizontal */
@@ -73,53 +79,40 @@ body {
     /* Espacio entre botones (ajusta según necesites) */
 }
 
-
-
-
-/* Contenido principal */
 main {
-    background-color: #fff;
-    /* Fondo blanco */
+    background-color: rgb(76, 80, 91);
+    color: azure;
+    margin-top: 20px;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(73, 73, 73, 0.2);
 }
 
-/* Botones de navegación */
 .btn {
     margin-right: 10px;
-    /* Ajusta la cantidad de espacio entre los botones según tus preferencias */
-    background-color: #ffc107;
-    /* Color naranja */
+    background-color: transparent;
     color: #fff;
-    /* Texto blanco */
 }
 
-/* Tabla */
 .table {
-    background-color: #fff;
-    /* Fondo blanco */
+    background-color: rgb(76, 80, 91);
+    color: azure;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(73, 73, 73, 0.2);
+    padding: 15px;
 }
 
-/* Modales */
 .modal-content {
-    background-color: #fff;
-    /* Fondo blanco */
+    background-color: rgb(76, 80, 91);
 }
 
-/* Inputs en los modales */
 .modal-body input {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
 }
 
-/* Botones en los modales */
 .modal-body .btn {
-    background-color: #ffc107;
-    /* Color naranja */
+    background-color: transparent;
     color: #fff;
-    /* Texto blanco */
 }
-
-/* Estilos adicionales según tus necesidades */
