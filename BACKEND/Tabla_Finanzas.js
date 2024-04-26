@@ -23,26 +23,37 @@ function mostrarFetchFinz(dataFinz) {
     const idCorFinz = document.createElement('th');
     idCorFinz.textContent = 'Id Corte';
     cabFinz.appendChild(idCorFinz);
+    idCorFinz.style.textAlign = 'center';
 
     const NombreFinz = document.createElement('th');
     NombreFinz.textContent = 'Usuario';
     cabFinz.appendChild(NombreFinz);
+    NombreFinz.style.textAlign = 'center';
 
     const NombreCedulaFinz = document.createElement('th');
     NombreCedulaFinz.textContent = 'Cedula';
     cabFinz.appendChild(NombreCedulaFinz);
+    NombreCedulaFinz.style.textAlign = 'center';
 
     const saldFinz = document.createElement('th');
     saldFinz.textContent = 'Saldo';
     cabFinz.appendChild(saldFinz);
+    saldFinz.style.textAlign = 'center';
 
     const pagFinz = document.createElement('th');
     pagFinz.textContent = 'Metodo Pago';
     cabFinz.appendChild(pagFinz);
+    pagFinz.style.textAlign = 'center';
 
     const totFinz = document.createElement('th');
     totFinz.textContent = 'Total';
     cabFinz.appendChild(totFinz);
+    totFinz.style.textAlign = 'center';
+
+    const accion = document.createElement('th');
+    accion.textContent = 'Acción';
+    cabFinz.appendChild(accion);
+    accion.style.textAlign = 'center';
 
     tFinanzas.appendChild(cabFinz);
 
@@ -54,31 +65,39 @@ function mostrarFetchFinz(dataFinz) {
         const id_Finz = document.createElement('td');
         id_Finz.textContent = elementFinz.id_Corte;
         contFinz.appendChild(id_Finz);
+        id_Finz.style.textAlign = 'center';
 
         const NombreFinzc = document.createElement('td');
         NombreFinzc.textContent = elementFinz.Nombre;
         contFinz.appendChild(NombreFinzc);
+        NombreFinzc.style.textAlign = 'center';
 
         const NombreCedulaFinzc = document.createElement('td');
         NombreCedulaFinzc.textContent = elementFinz.Cedula;
         contFinz.appendChild(NombreCedulaFinzc);
+        NombreCedulaFinzc.style.textAlign = 'center';
 
         const Sald = document.createElement('td');
         Sald.textContent = elementFinz.Saldo;
         contFinz.appendChild(Sald);
+        Sald.style.textAlign = 'center';
 
         const metPag = document.createElement('td');
         metPag.textContent = elementFinz.Metodo_Pago;
         contFinz.appendChild(metPag);
+        metPag.style.textAlign = 'center';
 
         const totMon = document.createElement('td');
         totMon.textContent = elementFinz.Total_Monto;
         contFinz.appendChild(totMon);
+        totMon.style.textAlign = 'center';
 
         //Creacion del Boton Eliminar
         const deletFinz = document.createElement('button');
         deletFinz.textContent = 'ELIMINAR';
         deletFinz.classList.add('btn', 'btn-danger');
+        deletFinz.style.marginLeft = '20rem';
+        deletFinz.style.marginTop = '5px';
 
         contFinz.appendChild(deletFinz);
         deletFinz.addEventListener('click', DeleteFinz)
@@ -117,6 +136,7 @@ function mostrarFetchFinz(dataFinz) {
         buttonUpdFinz.textContent = 'ACTUALIZAR';
         buttonUpdFinz.classList.add('btn', 'btn-primary');
         contFinz.appendChild(buttonUpdFinz);
+        buttonUpdFinz.style.marginTop = '5px';
 
         buttonUpdFinz.addEventListener('click', updateFinz);
 
@@ -144,6 +164,7 @@ function mostrarFetchFinz(dataFinz) {
         buttonAgregarFinz.textContent = 'AGREGAR';
         buttonAgregarFinz.classList.add('btn', 'btn-success');
         contFinz.appendChild(buttonAgregarFinz);
+        buttonAgregarFinz.style.marginTop = '5px';
 
         buttonAgregarFinz.addEventListener('click', abrirModalRegistrarFinz);
 

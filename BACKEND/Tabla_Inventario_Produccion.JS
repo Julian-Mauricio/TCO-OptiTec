@@ -20,39 +20,47 @@ function mostrarFetchInvPro(data) {
     const id = document.createElement('th');
     id.textContent = 'ID';
     cabecera.appendChild(id);
+    id.style.textAlign = 'center';
 
     const NombreAdministrador = document.createElement('th');
     NombreAdministrador.textContent = 'Administrador';
     cabecera.appendChild(NombreAdministrador);
+    NombreAdministrador.style.textAlign = 'center';
 
     const AdministradorCedulac = document.createElement('th');
-    AdministradorCedulac.textContent = 'AdministradorCedula';
+    AdministradorCedulac.textContent = 'Numero de Documento';
     cabecera.appendChild(AdministradorCedulac);
+    AdministradorCedulac.style.textAlign = 'center';
 
     const tipo = document.createElement('th');
-    tipo.textContent = 'TIPO';
+    tipo.textContent = 'Tipo';
     cabecera.appendChild(tipo);
+    tipo.style.textAlign = 'center';
 
     const descripcion = document.createElement('th');
-    descripcion.textContent = 'DESCRIPCCION';
+    descripcion.textContent = 'Descripción';
     cabecera.appendChild(descripcion);
+    descripcion.style.textAlign = 'center';
 
     const entrada = document.createElement('th');
-    entrada.textContent = 'ENTRADA';
+    entrada.textContent = 'Entrada';
     cabecera.appendChild(entrada);
+    entrada.style.textAlign = 'center';
 
     const stock = document.createElement('th');
-    stock.textContent = 'STOCK';
+    stock.textContent = 'Stock';
     cabecera.appendChild(stock);
+    stock.style.textAlign = 'center';
 
     const salida = document.createElement('th');
-    salida.textContent = 'SALIDA';
+    salida.textContent = 'Salida';
     cabecera.appendChild(salida);
+    salida.style.textAlign = 'center';
 
     const accion = document.createElement('th');
-    accion.textContent = 'ACCION';
+    accion.textContent = 'Acción';
     cabecera.appendChild(accion);
-
+    accion.style.textAlign = 'center';
 
     tableInvPro.appendChild(cabecera);
 
@@ -64,43 +72,50 @@ function mostrarFetchInvPro(data) {
         const id_mpc = document.createElement('td');
         id_mpc.textContent = element.id_Inventario_P;
         contenido.appendChild(id_mpc);
+        id_mpc.style.textAlign = 'center';
 
         const NombreAdministradorc = document.createElement('td');
         NombreAdministradorc.textContent = element.Nombre;
         contenido.appendChild(NombreAdministradorc);
+        NombreAdministradorc.style.textAlign = 'center';
 
         const AdministradorCedulacc = document.createElement('td');
         AdministradorCedulacc.textContent = element.Cedula;
         contenido.appendChild(AdministradorCedulacc);
+        AdministradorCedulacc.style.textAlign = 'center';
 
         const tipoc = document.createElement('td');
         tipoc.textContent = element.Tipo;
         contenido.appendChild(tipoc);
+        tipoc.style.textAlign = 'center';
 
         const Descripcionc = document.createElement('td');
         Descripcionc.textContent = element.Descripcion;
         contenido.appendChild(Descripcionc);
+        Descripcionc.style.textAlign = 'center';
 
         const entradasc = document.createElement('td');
         entradasc.textContent = element.Entradas;
         contenido.appendChild(entradasc);
+        entradasc.style.textAlign = 'center';
 
         const stockc = document.createElement('td');
         stockc.textContent = element.Stock;
         contenido.appendChild(stockc);
+        stockc.style.textAlign = 'center';
 
         const salidac = document.createElement('td');
         salidac.textContent = element.Salida;
         contenido.appendChild(salidac);
-
-
-
-
+        salidac.style.textAlign = 'center';
 
         //Creacion del Boton Eliminar
         const buttonEliminar = document.createElement('button');
         buttonEliminar.textContent = 'ELIMINAR';
-        buttonEliminar.classList.add('btn', 'btn-danger');  // Clases de Bootstrap
+        buttonEliminar.classList.add('btn', 'btn-danger');
+        buttonEliminar.style.marginLeft = '9rem';
+        buttonEliminar.style.marginTop = '5px';
+
         contenido.appendChild(buttonEliminar);
 
         buttonEliminar.addEventListener("click", EliminarRegistro)
@@ -138,14 +153,13 @@ function mostrarFetchInvPro(data) {
         buttonActualizar.textContent = 'ACTUALIZAR';
         buttonActualizar.classList.add('btn', 'btn-primary');
         contenido.appendChild(buttonActualizar);
+        buttonActualizar.style.marginTop = '5px';
 
         buttonActualizar.addEventListener('click', abrirModal);
 
-
-
-
         //Funcion Para Abrir la Ventana Modal de Actualizar Registros de Inventario de Materia Prima
         function abrirModal() {
+
             //Se traen los Campos  y se Igualan A los Valores de Los campos De Cada Fila
             const id_Inventario_P = document.getElementById("id_InvPro");
             const TipoAct = document.getElementById("TipoInvPro");
@@ -173,6 +187,7 @@ function mostrarFetchInvPro(data) {
         buttonAgregar.textContent = 'AGREGAR';
         buttonAgregar.classList.add('btn', 'btn-success');
         contenido.appendChild(buttonAgregar);
+        buttonAgregar.style.marginTop = '5px';
 
         buttonAgregar.addEventListener('click', abrirModalRegistrar);
 
@@ -192,16 +207,15 @@ function ActualizarInvProCancelar() {
     $('#ActuInvPro').modal('hide');
 }
 document.getElementById('ActualizarInvProCancelar').addEventListener('click', ActualizarInvProCancelar);  
-    
 
 function ocultarModalRegistroInvPro() {
     $('#RegistroInvPro').modal('hide');
 }
 document.getElementById('RegistrarInvProCancelar').addEventListener('click', ocultarModalRegistroInvPro);
 
+/*********************************************************************************************/
+
 //Se Traen Los Valores a Actualiar
-
-
 
 const id_Inventario_P = document.getElementById("id_InvPro");
 const TipoActPro = document.getElementById("TipoInvPro");
@@ -223,9 +237,7 @@ async function ActualizarDatos(event) {
             Entradas: EntradaActPro.value,
             Stock: StockActPro.value,
             Salida: SalidaActPro.value,
-
         };
-
 
         const requestOptions = {
             method: "PATCH",

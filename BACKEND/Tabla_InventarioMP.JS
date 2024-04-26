@@ -67,9 +67,8 @@ function mostrarFetchInvMp(data) {
     cabecera.appendChild(accion);
     accion.style.textAlign = 'center';
 
-    tableInvMp.appendChild(cabecera); // Agrega la cabecera a la tabla
+    tableInvMp.appendChild(cabecera); 
 
-    // Itera sobre los datos y crea filas para cada entrada
     for (let i = 0; i < data.body.length; i++) {
         const element = data.body[i];
 
@@ -163,8 +162,6 @@ function mostrarFetchInvMp(data) {
 
         buttonActualizar.addEventListener('click', abrirModal);
 
-
-
         //Funcion Para Abrir la Ventana Modal de Actualizar Registros de Inventario de Materia Prima
         function abrirModal() {
 
@@ -218,12 +215,10 @@ function ocultarModalRegistroMp() {
 }
 document.getElementById('RegistrarInvMpCancelar').addEventListener('click', ocultarModalRegistroMp);
 
-
 /*********************************************************************************************/
 
-
-
 //Se Traen Los Valores a Actualiar
+
 const FormRegistroInvMp = document.querySelector("#FormRegistroInvMp");
 const id_Inventario_MP = document.getElementById("id_InvMp");
 const TipoAct = document.getElementById("TipoInvMp");
@@ -247,9 +242,7 @@ async function ActualizarDatos(event) {
             Entradas: EntradaAct.value,
             Stock: StockAct.value,
             Salida: SalidaAct.value,
-
         };
-
 
         const requestOptions = {
             method: "PATCH",
