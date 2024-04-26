@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="icon" href="../assets/letra-t.png" type="image/png">
+  <link rel="stylesheet" href="../styles/Cotizacion.css">
+  <title>COTIZACIONES-TCO-OPTITECT</title>
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid" style="height: 200px; display: flex; align-items: center; justify-content: center;">
+        <div class="mb-4 d-flex align-items-center justify-content-center">
+          <div style="max-width: 6%;">
+            <a href="../pages/main.html"><img src="../assets/TCO-OptiTec-logos_transparent.webp" alt="" srcset=""
+                style="width: 100%;"></a>
+          </div>
+          <a class="navbar-brand logonav" href="#" style="margin-left: 2rem;"> TCO-Optitec</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: center;">
+            <ul class="navbar-nav  mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a href="../pages/main.html" class="textNav nav-link text-decoration-none px-5">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="textNav nav-link text-decoration-none px-5">Información de la
+                  compañía</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="textNav nav-link px-5">Cotiza con Nosotros</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex" style="margin-right: 2rem;">
+            <button class="btn btn-outline-warning me-4" type="submit" data-bs-toggle="modal"
+              data-bs-target="#staticBackdropLogin"> <span><i class="bi bi-person-fill me-1"></i></span>Iniciar
+              seccion</button>
+            <button class="btn btn btn-warning buttonlogin" type="submit" data-bs-toggle="modal"
+              data-bs-target="#staticBackdropCrearCuenta"><span><i
+                  class="bi bi-person-plus-fill me-1"></i></span>Registrase</button>
+          </div>
+        </div>
+
+      </div>
+
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-------------------------------- Contenido Principal -------------------------------->
+
+    <section>
+      <div class="container">
+        <div id="ContenedorCotizaciones" class="row p-4 rounded-4">
+          <div class=" col-md-4 d-none d-lg-block  rounded-4 align-items-center text-center">
+            <img src="../assets/TCO-OptiTec-logos_transparent.webp" alt="" srcset="" style="width: 70%;">
+            <h2 class="ContentText">TCO-Optitec</h2>
+            <h5 class="Contentparrafo">Lideres en el Sector</h5>
+          </div>
+          <div class="col-md-8">
+            <form id="FormularioCotizacion">
+              <div class="row d-flex">
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Nombre" class="textCotizacion">Nombre y Apellidos</label>
+                  <input type="text" class=" input id=" Nombre">
+                </div>
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Cedula" class=" textCotizacion">Cedula</label>
+                  <input type="text" class="input" id="Cedula">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Telefono" class=" textCotizacion">Telefono</label>
+                  <input type="text" class="input" id="Telefono">
+                </div>
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Email" class=" textCotizacion">Email</label>
+                  <input type="text" class="input" id="Email">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="NombreEmpresa" class=" textCotizacion">Nombre de la Empresa</label>
+                  <input type="text" class="input" id="NombreEmpresa">
+                </div>
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Nit" class=" textCotizacion">Nit</label>
+                  <input type="text" class="input" id="Nit">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Medidas" class="textCotizacion">Medida de Caseton (alto x base x ancho) </label>
+                  <input type="text" class="input" id="Medidas">
+                </div>
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Cantidad" class=" textCotizacion">Cantidad</label>
+                  <input type="text" class="input" id="Cantidad">
+                </div>
+              </div>
+              <div class="row  mb-3">
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="Direccion" class=" textCotizacion">Direccion</label>
+                  <input type="text" class="input" id="Direccion">
+                </div>
+                <div class="col-md-6 mb-4 contentIntput">
+                  <label for="MetodoEntrega" class=" textCotizacion">Metodo Entrega</label>
+                  <input type="text" class="input" id="MetodoEntrega">
+                </div>
+              </div>
+
+              <div class="row mb-5">
+                <div class="col-md-6 mb-3">
+                  <label for="TipoMaterial" class="textCotizacion">Tipo de Material</label>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <select id="TipoMaterial">
+                    <option value="Polistireno">Polistireno expandido</option>
+                    <option value="Madera">Madera</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12 text-center">
+                <button type="submit" class="btn btsol col-md-4" id="RegistrarCotizacion">Enviar</button>
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-------------------------------- Contenido Footer -------------------------------->
+
+  <footer class="pie-pagina">
+    <div class="grupo-1 d-flex justify-content-between">
+      <div class="col-md-4 textp">
+        <div class="mb-4 d-flex align-items-center">
+          <div style="max-width: 15%;">
+            <img src="../assets/TCO-OptiTec-logos_transparent.webp" alt="" srcset="" style="width: 100%;">
+          </div>
+          <a class="textfot text-decoration-none" href="#">TCO-Optitec</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h2 class="textfot">Acerca de Nosotros</h2>
+        <p class="textp">En TCO-Optitect, nos dedicamos a la excelencia en la construcción sostenible.
+          Somos líderes en la fabricación y distribución de casetones, ofreciendo soluciones
+          innovadoras para la construcción de estructuras eficientes y resistentes.</p>
+      </div>
+
+      <div class="col-md-4 box px-4">
+        <h2>Nuestras redes sociales</h2>
+        <div class="red-social">
+          <a href="https://web.facebook.com/profile.php?id=61552003807716" class="fa fa-facebook" target="_blank"><i
+              class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/tco_optitec/" class="fa fa-instagram" target="_blank"><i
+              class="bi bi-instagram"></i></a>
+          <a href="https://twitter.com/TcoOptitec" class="fa fa-twitter" target="_blank"><i
+              class="bi bi-twitter"></i></a>
+          <a href="https://www.youtube.com/channel/UC0__geujTGfG1oDb0GlyO4Q" class="fa fa-youtube" target="_blank"><i
+              class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="linea-horizontal">
+
+    </div>
+    <div class="grupo-2">
+      <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+    </div>
+  </footer>
+
+
+  <!-------------------------------- Enlaces de Js Bootstrap -------------------------------->
+  <script src="/BACKEND/Cotizaciones.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

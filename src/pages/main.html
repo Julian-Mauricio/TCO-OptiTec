@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" href="../assets/letra-t.png" type="image/png">
+    <link rel="stylesheet" href="../styles/main.css">
+    <title>Main Pages</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid"
+                style="height: 200px; display: flex; align-items: center; justify-content: center;">
+                <div class="mb-4 d-flex align-items-center justify-content-center">
+                    <div style="max-width: 6%;">
+                        <a href="../pages/main.html"><img src="../assets/TCO-OptiTec-logos_transparent.webp" alt=""
+                                srcset="" style="width: 100%;"></a>
+                    </div>
+                    <a class="navbar-brand logonav" href="#" style="margin-left: 2rem;"> TCO-Optitec</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: center;">
+                        <ul class="navbar-nav  mb-2 mb-lg-0 text-center">
+                            <li class="nav-item">
+                                <a href="../pages/main.html"
+                                    class="textNav nav-link text-decoration-none px-5">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="textNav nav-link text-decoration-none px-5">Información de la
+                                    compañía</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="textNav nav-link px-5">Cotiza con Nosotros</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="d-flex" style="margin-right: 2rem;">
+                        <button class="btn btn-outline-warning me-4" type="submit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdropLogin"> <span><i
+                                    class="bi bi-person-fill me-1"></i></span>Iniciar seccion</button>
+                        <button class="btn btn btn-warning buttonlogin" type="submit" data-bs-toggle="modal"
+                            data-bs-target="#staticBackdropCrearCuenta"><span><i
+                                    class="bi bi-person-plus-fill me-1"></i></span>Registrase</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </nav>
+    </header>
+
+
+
+
+
+    <main class="mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5 banner px-5" id="conten">
+                    <h2 class="textbanner"> Especialistas </h2>
+                    <h2 class="textbannerc mb-4">En Construcion</h2>
+                    <p class="textp mb-4">
+                        TCO-Optitec es una empresa que impulsa la innovación en tecnología óptica y se esfuerza
+                        por mejorar la vida de las personas a través de sus productos y su compromiso con la
+                        sostenibilidad.
+                    </p>
+                    <a href="/INTERFACES/2.Pantalla_Cotizacion.HTML"><button id="botonBanner" type="button"
+                            class="btn btn-warning">COTIZA CON NOSOTROS</button></a>
+                </div>
+                <div class="col-md-6 px-5">
+                    <img src="../assets/Banner.png" alt="" srcset="">
+                </div>
+            </div>
+
+
+            <!-------------------------------- Modal Login -------------------------------->
+            <section>
+                <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div id="ContenedorLogin" class="modal-body p-5">
+                                <h1><i class="bi bi-person-circle"></i></h1>
+                                <h1 class="modal-title" id="staticBackdropLabel">LOGIN</h1>
+                                <form id="formularioLogin" class="text-left">
+                                    <label class="mb-2" for="UsernameLoguearse">USER NAME</label>
+                                    <div class="mb-5"><input id="UsernameLoguearse" class="Login w-100"
+                                            placeholder="Username" type="text" required></div>
+
+                                    <label class="mb-2" for="ContraseñaLoguearse">PASSWORD</label>
+                                    <div class="mb-5"><input id="PasswordLoguearse" class="Login w-100"
+                                            placeholder="Contraseña" type="password" required> </div>
+
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-warning w-100 mb-4"
+                                            id="EnviarLogin">LOGIN</button>
+                                        <button type="button" class="btn btn-secondary w-100"
+                                            data-bs-dismiss="modal">CLOSE</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <hr>
+                            <div class="text-center mb-3 text-primary">
+                                <a class="text-decoration-none" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdropLoginReCup">RECUPERAR PASSWORD !!!</a>
+                            </div>
+                            <div class="text-center mb-3 text-primary">
+                                <a class="text-decoration-none" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdropCrearCuenta">CREAR CUENTA !!!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-------------------------------- Modal Registro -------------------------------->
+
+            <section>
+                <div class="modal fade" id="staticBackdropCrearCuenta" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div id="ContenedorLogin" class="modal-body p-5">
+                                <h1><i class="bi bi-person-circle"></i></h1>
+                                <h1 class="modal-title" id="staticBackdropLabel">LOGUEAR</h1>
+                                <form id="FormularioRegistro" class="text-left">
+                                    <label class="mb-2" for="NombreRegistro">Nombre</label>
+                                    <div class="mb-5"><input id="NombreRegistro" class="LoginRegistro w-100"
+                                            placeholder="Nombre" type="text" required></div>
+
+                                    <label class="mb-2" for="ApellidoRegistro">Apellido</label>
+                                    <div class="mb-5"><input id="ApellidoRegistro" class="LoginRegistro w-100"
+                                            placeholder="Apellido" type="text" required></div>
+
+                                    <label class="mb-2" for="DniRegistro">Dni</label>
+                                    <div class="mb-5"><input id="DniRegistro" class="LoginRegistro w-100"
+                                            placeholder="Dni" type="number" required></div>
+
+                                    <label class="mb-2" for="DireccionRegistro">Direccion</label>
+                                    <div class="mb-5"><input id="DireccionRegistro" class="LoginRegistro w-100"
+                                            placeholder="Direccion" type="text" required></div>
+
+                                    <label class="mb-2" for="CorreoRegistro">Correo</label>
+                                    <div class="mb-5"><input id="CorreoRegistro" class="LoginRegistro w-100"
+                                            placeholder="Correo" type="email" required></div>
+
+                                    <label class="mb-2" for="TelefonoRegistro">Telefono</label>
+                                    <div class="mb-5"><input id="TelefonoRegistro" class="LoginRegistro w-100"
+                                            placeholder="Telefono" type="number" required></div>
+
+                                    <label class="mb-2" for="UsuarioRegistro">Usuario</label>
+                                    <div class="mb-5"><input id="UsuarioRegistro" class="LoginRegistro w-100"
+                                            placeholder="Usuario" type="text" required></div>
+
+                                    <label class="mb-2" for="ContraseñaRegistro">Password</label>
+                                    <div class="mb-5"><input id="PasswordRegistro" class="LoginRegistro w-100"
+                                            placeholder="Contraseña" type="password" required></div>
+
+                                    <label class="mb-2" for="FechaNacimientoRegistro">Fecha de Nacimiento</label>
+                                    <div class="mb-5"><input id="FechaNacimientoRegistro" class="LoginRegistro w-100"
+                                            placeholder="Fecha de Nacimiento" type="date" required></div>
+
+                                    <label class="mb-2" for="GeneroRegistro">Genero</label>
+                                    <select class="mb-5  LoginRegistro w-100" id="GeneroRegistro" name="GeneroRegistro">
+                                        <option value="M">MASCULINO</option>
+                                        <option value="F">FEMENINO</option>
+                                        <option value="ND">NO IDENTIFICADO</option>
+                                    </select>
+
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-warning w-100 mb-4"
+                                            id="EnviarRegistro">LOGUEAR</button>
+                                        <button type="button" class="btn btn-secondary w-100"
+                                            data-bs-dismiss="modal">CLOSE</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <!-------------------------------- Modal Recuperar Contraseña -------------------------------->
+
+            <section>
+                <div class="modal" id="staticBackdropLoginReCup">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div id="ContenedorReCup" class="modal-body p-5">
+                                <h1><i class="bi bi-person-circle"></i></h1>
+                                <h1 class="modal-title" id="staticBackdropLabel">LOGIN RECUPERAR PASSWORD</h1>
+                                <form id="FormularioReCup" class="text-left">
+                                    <label class="mb-2" for="UsernameLoguearse">USER NAME</label>
+                                    <div class="mb-5"><input id="UsernameRecup" class="Login w-100"
+                                            placeholder="Username" type="text" required></div>
+
+                                    <label class="mb-2" for="ContraseñaLoguearse">NEW PASSWORD</label>
+                                    <div class="mb-5"><input id="PasswordRecup" class="Login w-100"
+                                            placeholder="Contraseña" type="password" required></div>
+
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-warning w-100 mb-4"
+                                            id="EnviarRecup">RECUPERAR
+                                            PASSWORD</button>
+                                        <button type="button" class="btn btn-secondary w-100"
+                                            data-bs-dismiss="modal">CLOSE</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="" id="Introducion">
+                <div class="container textp">
+                    <div class="row">
+                        <div class="col-lg-12 text-center mt-4">
+                            <h1 class="textbannerc">TCO-OptiTec</h1>
+                            <p>TCO-OptiTec se caracteriza por producir casetones de alta calidad que cumplen con los
+                                estándares más exigentes de la industria de la construcción.</p>
+                        </div>
+                    </div>
+                    <div id="ContenedorTargetasUno" class="row">
+                        <div id="TargetaUno" class="col-12 d-md-flex d-sm-block align-items-center text-center">
+                            <div class="contenedores col-4 d-block px-lg-5 px-md-3">
+                                <i class="bi bi-pie-chart-fill text-warning"></i>
+                                <h3>Excelencia en cada detalle</h3>
+                                <p>TCO-OptiTec se ha destacado por su dedicación a la calidad en cada aspecto de sus
+                                    productos, desde la selección de materiales hasta el diseño y la fabricación.</p>
+                            </div>
+                            <div class="contenedores col-4 d-block px-lg-5 px-md-3">
+                                <i class="bi bi-pie-chart text-warning"></i>
+                                <h3>La calidad como pilar fundamental</h3>
+                                <p>La firma se enorgullece de ofrecer casetones que cumplen con altos estándares de
+                                    precisión y fiabilidad, garantizando que cada unidad producida cumpla con los
+                                    requisitos
+                                    más rigurosos de la construcción moderna.</p>
+                            </div>
+                            <div class="contenedores col-4 d-block px-lg-5 px-md-3">
+                                <i class="bi bi-pie-chart-fill text-warning"></i>
+                                <h3>Casetones de precisión y fiabilidad</h3>
+                                <p>La firma se enorgullece de ofrecer casetones que cumplen con altos estándares de
+                                    precisión y fiabilidad, garantizando que cada unidad producida cumpla con los
+                                    requisitos
+                                    más rigurosos de la construcción moderna..</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-md-flex d-sm-block align-items-center text-center">
+                            <div class="contenedores col-4 d-block px-lg-5 px-md-3">
+                                <i class="bi bi-pie-chart text-warning"></i>
+                                <h3>Compromiso imbatible con la calidad</h3>
+                                <p>TCO-OptiTec demuestra su compromiso inquebrantable con la calidad al realizar pruebas
+                                    rigurosas y controles exhaustivos en cada etapa de la fabricación, asegurando que
+                                    sus
+                                    casetones cumplan con los más altos estándares de calidad.</p>
+                            </div>
+                            <div class="contenedores col-4 d-block px-lg-5 px-md-3">
+                                <i class="bi bi-pie-chart-fill text-warning"></i>
+                                <h3>Innovación para la calidad continua</h3>
+                                <p>La empresa fomenta la innovación constante en su proceso de fabricación, buscando
+                                    nuevas
+                                    tecnologías y métodos para mejorar la calidad de sus casetones y satisfacer las
+                                    cambiantes necesidades del mercado.</p>
+                            </div>
+                            <div class="contenedores col-4 d-block px-lg-5 px-md-3">
+                                <i class="bi bi-pie-chart text-warning"></i>
+                                <h3>Sostenibilidad y calidad en armonía</h3>
+                                <p>TCO-OptiTec fusiona su compromiso con la sostenibilidad ambiental y la alta calidad
+                                    en la
+                                    producción de sus casetones, asegurando que cada producto refleje esta armoniosa
+                                    combinación para el beneficio de sus clientes y del planeta.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section class="" id="Introducion">
+                <div class="container">
+                    <div class="row textp">
+
+                        <div class="col-lg-6 mt-4 px-5">
+                            <h1><span class="textbannerc">Nuestros 18 </span> <br />
+                                años de logros</h1>
+                            <p>Con nuestro esfuerzo hemos llegado a esto.</p>
+                        </div>
+
+                        <div id="Certificaciones" class="col-lg-6 align-items-center">
+                            <div id="TargetaUno" class="col-md-12  d-md-flex m-0 justify-content-between">
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                    <h4>100%</h4>
+                                    <p>Alta calidad y certificaciones</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                    <h4>500+</h4>
+                                    <p>Clientes</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                    <h4>500+</h4>
+                                    <p>Clientes</p>
+                                </div>
+                            </div>
+                            <div id="TargetaUno" class="col-md-12  d-md-flex d-none justify-content-between">
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                    <h4>100+</h4>
+                                    <p>crecimiento sostenido</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                    <h4>100</h4>
+                                    <p>Países</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-shield-fill-check"></i>
+                                    <h4>100</h4>
+                                    <p>Países</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="pie-pagina">
+        <div class="grupo-1 d-flex justify-content-between">
+            <div class="col-md-4 textp">
+                <div class="mb-4 d-flex align-items-center">
+                    <div style="max-width: 15%;">
+                        <img src="../assets/TCO-OptiTec-logos_transparent.webp" alt="" srcset="" style="width: 100%;">
+                    </div>
+                    <a class="textfot text-decoration-none" href="#">TCO-Optitec</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="textfot">Acerca de Nosotros</h2>
+                <p class="textp">En TCO-Optitect, nos dedicamos a la excelencia en la construcción sostenible.
+                    Somos líderes en la fabricación y distribución de casetones, ofreciendo soluciones
+                    innovadoras para la construcción de estructuras eficientes y resistentes.</p>
+            </div>
+
+            <div class="col-md-4 box px-4">
+                <h2>Nuestras redes sociales</h2>
+                <div class="red-social">
+                    <a href="https://web.facebook.com/profile.php?id=61552003807716" class="fa fa-facebook"
+                        target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/tco_optitec/" class="fa fa-instagram" target="_blank"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://twitter.com/TcoOptitec" class="fa fa-twitter" target="_blank"><i
+                            class="bi bi-twitter"></i></a>
+                    <a href="https://www.youtube.com/channel/UC0__geujTGfG1oDb0GlyO4Q" class="fa fa-youtube"
+                        target="_blank"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="linea-horizontal">
+
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2021 <b>SLee Dw</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+
+    <script src="../../BACKEND/LoginInicio.js"></script>
+    <script src="../../BACKEND/LoginRegistro.js"></script>
+    <script src="../../BACKEND/LoginContraseña.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
