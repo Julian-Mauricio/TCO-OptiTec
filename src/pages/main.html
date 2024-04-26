@@ -63,9 +63,9 @@
 
 
 
-    <main class="mb-4">
+    <main class="mb-5">
         <div class="container">
-            <div class="row">
+            <div class="row ">
                 <div class="col-md-5 banner px-5" id="conten">
                     <h2 class="textbanner"> Especialistas </h2>
                     <h2 class="textbannerc mb-4">En Construcion</h2>
@@ -88,35 +88,30 @@
                 <div class="modal fade" id="staticBackdropLogin" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div id="ContenedorLogin" class="modal-body p-5">
-                                <h1><i class="bi bi-person-circle"></i></h1>
-                                <h1 class="modal-title" id="staticBackdropLabel">LOGIN</h1>
-                                <form id="formularioLogin" class="text-left">
-                                    <label class="mb-2" for="UsernameLoguearse">USER NAME</label>
-                                    <div class="mb-5"><input id="UsernameLoguearse" class="Login w-100"
-                                            placeholder="Username" type="text" required></div>
+                        <div class="modal-content modalLogin">
+                            <h1 class="iconSet" data-bs-dismiss="modal"><i class="bi bi-arrow-bar-right"></i></h1>
+                            <h1 class="iconModal"><i class="bi bi-person-circle"></i></h1>
+                            <div id="ContenedorLogin" class="modal-body">
+                                <h1 class="modal-title textTitleModal" id="staticBackdropLabel">Login</h1>
+                                <form id="formularioLogin" class="text-left mt-2 mb-4">
+                                    <input id="UsernameLoguearse" class="Login intputModal w-100 mb-2"
+                                        placeholder="Username" type="text" required>
 
-                                    <label class="mb-2" for="ContraseñaLoguearse">PASSWORD</label>
-                                    <div class="mb-5"><input id="PasswordLoguearse" class="Login w-100"
-                                            placeholder="Contraseña" type="password" required> </div>
-
+                                    <input id="PasswordLoguearse" class="Login intputModal w-100 mb-4"
+                                        placeholder="Contraseña" type="password" required>
                                     <div class="d-block">
-                                        <button type="button" class="btn btn-warning w-100 mb-4"
+                                        <button type="button" class="btn botonLogin w-100 mb-4"
                                             id="EnviarLogin">LOGIN</button>
-                                        <button type="button" class="btn btn-secondary w-100"
-                                            data-bs-dismiss="modal">CLOSE</button>
+
+                                    </div>
+                                    <div class="text-center mb-3">
+                                        <a class="enlass" data-bs-toggle="modal"
+                                            data-bs-target="#staticBackdropLoginReCup">RECUPERAR PASSWORD !!!</a>
                                     </div>
                                 </form>
                             </div>
-                            <hr>
-                            <div class="text-center mb-3 text-primary">
-                                <a class="text-decoration-none" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdropLoginReCup">RECUPERAR PASSWORD !!!</a>
-                            </div>
-                            <div class="text-center mb-3 text-primary">
-                                <a class="text-decoration-none" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdropCrearCuenta">CREAR CUENTA !!!</a>
+                            <div>
+                                <h2 style="color: transparent;">sdsd</h2>
                             </div>
                         </div>
                     </div>
@@ -130,48 +125,48 @@
                 <div class="modal fade" id="staticBackdropCrearCuenta" data-bs-backdrop="static"
                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div id="ContenedorLogin" class="modal-body p-5">
-                                <h1><i class="bi bi-person-circle"></i></h1>
-                                <h1 class="modal-title" id="staticBackdropLabel">LOGUEAR</h1>
-                                <form id="FormularioRegistro" class="text-left">
-                                    <label class="mb-2" for="NombreRegistro">Nombre</label>
-                                    <div class="mb-5"><input id="NombreRegistro" class="LoginRegistro w-100"
-                                            placeholder="Nombre" type="text" required></div>
+                        <div class="modal-content modalRegister">
+                            <h1 class="iconSetRes" data-bs-dismiss="modal"><i class="bi bi-arrow-bar-right"></i></h1>
+                            <h1 class="iconModal"><i class="bi bi-person-plus-fill"></i></h1>
+                            <div id="ContenedorRegister" class="modal-body">
+                                <h1 class="modal-title textTitleModal" id="staticBackdropLabel">Sign Up</h1>
+                                <form id="FormularioReCup" class="text-left mt-2 mb-4">
+                                    <input id="NombreRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Nombre" type="text" required>
 
-                                    <label class="mb-2" for="ApellidoRegistro">Apellido</label>
-                                    <div class="mb-5"><input id="ApellidoRegistro" class="LoginRegistro w-100"
-                                            placeholder="Apellido" type="text" required></div>
 
-                                    <label class="mb-2" for="DniRegistro">Dni</label>
-                                    <div class="mb-5"><input id="DniRegistro" class="LoginRegistro w-100"
-                                            placeholder="Dni" type="number" required></div>
+                                    <input id="ApellidoRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Apellido" type="text" required>
 
-                                    <label class="mb-2" for="DireccionRegistro">Direccion</label>
-                                    <div class="mb-5"><input id="DireccionRegistro" class="LoginRegistro w-100"
-                                            placeholder="Direccion" type="text" required></div>
 
-                                    <label class="mb-2" for="CorreoRegistro">Correo</label>
-                                    <div class="mb-5"><input id="CorreoRegistro" class="LoginRegistro w-100"
-                                            placeholder="Correo" type="email" required></div>
+                                    <input id="DniRegistro" class="LoginRegistro intputModal mb-2 w-100" placeholder="Dni"
+                                        type="number" required>
 
-                                    <label class="mb-2" for="TelefonoRegistro">Telefono</label>
-                                    <div class="mb-5"><input id="TelefonoRegistro" class="LoginRegistro w-100"
-                                            placeholder="Telefono" type="number" required></div>
 
-                                    <label class="mb-2" for="UsuarioRegistro">Usuario</label>
-                                    <div class="mb-5"><input id="UsuarioRegistro" class="LoginRegistro w-100"
-                                            placeholder="Usuario" type="text" required></div>
+                                    <input id="DireccionRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Direccion" type="text" required>
 
-                                    <label class="mb-2" for="ContraseñaRegistro">Password</label>
-                                    <div class="mb-5"><input id="PasswordRegistro" class="LoginRegistro w-100"
-                                            placeholder="Contraseña" type="password" required></div>
 
-                                    <label class="mb-2" for="FechaNacimientoRegistro">Fecha de Nacimiento</label>
-                                    <div class="mb-5"><input id="FechaNacimientoRegistro" class="LoginRegistro w-100"
-                                            placeholder="Fecha de Nacimiento" type="date" required></div>
+                                    <input id="CorreoRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Correo" type="email" required>
 
-                                    <label class="mb-2" for="GeneroRegistro">Genero</label>
+
+                                    <input id="TelefonoRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Telefono" type="number" required>
+
+
+                                    <input id="UsuarioRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Usuario" type="text" required>
+
+
+                                    <input id="PasswordRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Contraseña" type="password" required>
+
+
+                                    <input id="FechaNacimientoRegistro" class="LoginRegistro mb-2 intputModal w-100"
+                                        placeholder="Fecha de Nacimiento" type="date" required>
+
+
                                     <select class="mb-5  LoginRegistro w-100" id="GeneroRegistro" name="GeneroRegistro">
                                         <option value="M">MASCULINO</option>
                                         <option value="F">FEMENINO</option>
@@ -179,14 +174,16 @@
                                     </select>
 
                                     <div class="d-block">
-                                        <button type="button" class="btn btn-warning w-100 mb-4"
+                                        <button type="button" class="btn botonLogin w-100 mb-4"
                                             id="EnviarRegistro">LOGUEAR</button>
-                                        <button type="button" class="btn btn-secondary w-100"
-                                            data-bs-dismiss="modal">CLOSE</button>
                                     </div>
                                 </form>
                             </div>
+                            <div>
+                                <h2 style="color: transparent;">sdsd</h2>
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -198,37 +195,36 @@
             <section>
                 <div class="modal" id="staticBackdropLoginReCup">
                     <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div id="ContenedorReCup" class="modal-body p-5">
-                                <h1><i class="bi bi-person-circle"></i></h1>
-                                <h1 class="modal-title" id="staticBackdropLabel">LOGIN RECUPERAR PASSWORD</h1>
-                                <form id="FormularioReCup" class="text-left">
-                                    <label class="mb-2" for="UsernameLoguearse">USER NAME</label>
-                                    <div class="mb-5"><input id="UsernameRecup" class="Login w-100"
-                                            placeholder="Username" type="text" required></div>
-
-                                    <label class="mb-2" for="ContraseñaLoguearse">NEW PASSWORD</label>
-                                    <div class="mb-5"><input id="PasswordRecup" class="Login w-100"
-                                            placeholder="Contraseña" type="password" required></div>
-
+                        <div class="modal-content modalLogin">
+                            <h1 class="iconSet" data-bs-dismiss="modal"><i class="bi bi-arrow-bar-right"></i></h1>
+                            <h1 class="iconModal"><i class="bi bi-key-fill"></i></h1>
+                            <div id="ContenedorLogin" class="modal-body">
+                                <h1 class="modal-title textTitleModal" id="staticBackdropLabel">Recover password</h1>
+                                <form id="FormularioReCup" class="text-left mt-2 mb-4">
+                                        <input id="UsernameRecup" class="Login intputModal mb-4 w-100"
+                                        placeholder="Username" type="text" required>
+                               <input id="PasswordRecup" class="Login intputModal mb-4 w-100"
+                                        placeholder="Contraseña" type="password" required>
                                     <div class="d-block">
-                                        <button type="button" class="btn btn-warning w-100 mb-4"
-                                            id="EnviarRecup">RECUPERAR
-                                            PASSWORD</button>
-                                        <button type="button" class="btn btn-secondary w-100"
-                                            data-bs-dismiss="modal">CLOSE</button>
+                                        <button type="button" class="btn botonLogin w-100 mb-4"
+                                        id="EnviarRecup">Recover</button>
+
                                     </div>
                                 </form>
                             </div>
-
+                            <div>
+                                <h2 style="color: transparent;">sdsd</h2>
+                            </div>
                         </div>
+
+                    
                     </div>
                 </div>
             </section>
-            <section class="" id="Introducion">
+            <section id="Introducion">
                 <div class="container textp">
                     <div class="row">
-                        <div class="col-lg-12 text-center mt-4">
+                        <div class="col-lg-12 text-center">
                             <h1 class="textbannerc">TCO-OptiTec</h1>
                             <p>TCO-OptiTec se caracteriza por producir casetones de alta calidad que cumplen con los
                                 estándares más exigentes de la industria de la construcción.</p>
